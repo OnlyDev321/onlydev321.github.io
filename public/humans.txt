@@ -1,0 +1,19 @@
+/* TEAM */
+  Full-Stack Software Engineer & UX/UI Designer: Tran Hau (김진호 / OnlyDev)
+  Contact:    onlydev.321 [at] gmail.com
+  GitHub:     https://github.com/OnlyDev321
+  Facebook:   https://www.facebook.com/tran.hau.691306/
+  Instagram:  https://www.instagram.com/kim_jinho2412/
+  TikTok:     https://www.tiktok.com/@kim_jinho2412
+  From:       Seoul, South Korea (Soongsil University) & Vietnam
+  Goal:       Full-Stack Development & Bridge Software Engineer (BrSE)
+
+/* SITE */
+  Standards:    HTML5, CSS3, ES2024, WCAG 2.2 AA
+  Components:   React 19, TypeScript, Tailwind CSS v4
+  Motion:       Framer Motion, Lenis smooth scroll, Three.js
+  Build:        Vite 8
+  Fonts:        Bricolage Grotesque, Geist, Geist Mono, Instrument Serif
+
+/* THANKS */
+  Open source: Vite, React, Framer Motion, Lenis, Three.js, Lucide.

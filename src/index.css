@@ -1,0 +1,625 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   TRAN HAU (김진호) — ONLYDEV PORTFOLIO · DESIGN SYSTEM
+   "An editorial spec sheet that moves like a demo reel."
+   Impeccable by default (passes review with motion off), kinetic on purpose
+   (budget spent in exactly seven named devices). Light is the default theme;
+   dark is an equal-parity toggle. One chrome accent: Signal Cyan.
+   ============================================================================ */
+
+/* ---- Self-hosted fonts (latin subset, variable woff2, same-origin) -------- */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/fonts/bricolage.woff2") format("woff2");
+  font-weight: 200 800;
+  font-stretch: 75% 100%;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/geist-mono.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/fonts/instrument-serif.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/fonts/instrument-serif-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+
+/* ============================================================================
+   TOKENS — Tailwind v4 @theme (fonts + modular type scale + container)
+   ============================================================================ */
+@theme {
+  --font-display: "Bricolage Grotesque", "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+
+  /* Modular scale, ratio 1.26. Display steps fluid; UI/body fixed. */
+  --text-mega: clamp(3.4rem, 11vw, 9.6rem);
+  --text-mega--line-height: 0.90;
+  --text-mega--letter-spacing: -0.045em;
+  --text-mega--font-weight: 800;
+
+  --text-display: clamp(2.4rem, 7.5vw, 5.25rem);
+  --text-display--line-height: 1.0;
+  --text-display--letter-spacing: -0.035em;
+  --text-display--font-weight: 700;
+
+  --text-h1: clamp(2rem, 5.2vw, 3.25rem);
+  --text-h1--line-height: 1.04;
+  --text-h1--letter-spacing: -0.025em;
+  --text-h1--font-weight: 700;
+
+  --text-h2: clamp(1.55rem, 3.8vw, 2.4rem);
+  --text-h2--line-height: 1.12;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h2--font-weight: 700;
+
+  --text-h3: 1.2rem;
+  --text-h3--line-height: 1.35;
+  --text-h3--letter-spacing: -0.01em;
+  --text-h3--font-weight: 600;
+
+  --text-lede: clamp(1.05rem, 1.8vw, 1.35rem);
+  --text-lede--line-height: 1.55;
+  --text-lede--letter-spacing: -0.005em;
+
+  --text-body: 1rem;
+  --text-body--line-height: 1.65;
+
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+
+  --text-eyebrow: 0.72rem;
+  --text-eyebrow--line-height: 1;
+  --text-eyebrow--letter-spacing: 0.16em;
+  --text-eyebrow--font-weight: 500;
+
+  --text-data: 0.8125rem;
+  --text-data--line-height: 1.4;
+  --text-data--font-weight: 500;
+
+  /* Larger data tier — stat/highlight VALUES (one token across card + modal). */
+  --text-data-lg: 0.95rem;
+  --text-data-lg--line-height: 1.2;
+  --text-data-lg--font-weight: 600;
+
+  --container-3xl: 1200px;
+}
+
+/* ============================================================================
+   THEME COLOR TOKENS — single source of truth, AA-verified both themes.
+   Light is the default (:root). Dark is equal-parity via [data-theme="dark"].
+   ============================================================================ */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f7f8fb;
+  --bg-elev: #eef1f7;
+  --surface: #ffffff;
+  --surface-2: #f0f3f9;
+  --line: rgba(13, 21, 38, 0.08);
+  --line-strong: rgba(13, 21, 38, 0.16);
+
+  --ink: #0c1322;
+  --ink-muted: #475067;
+  --ink-faint: #586585;
+
+  --accent: #0a7fa3;          /* Signal Cyan — the one chrome accent */
+  --accent-strong: #086683;   /* accent text at small sizes (AAA) */
+  --accent-ink: #ffffff;      /* text on accent fill */
+  --accent-glow: rgba(10, 127, 163, 0.12);
+
+  --highlight: #9a4a06;       /* warm "the numbers" — stats only */
+
+  --ok: #0b7a52;
+  --warn: #9a5b00;
+  --err: #c42b45;
+
+  --shadow-sm: 0 2px 10px rgba(13, 21, 38, 0.05), 0 8px 30px rgba(13, 21, 38, 0.06);
+  --shadow-md: 0 10px 24px rgba(13, 21, 38, 0.08), 0 28px 60px rgba(13, 21, 38, 0.10);
+  --shadow-glow: 0 10px 40px var(--accent-glow);
+
+  --noise-opacity: 0.04;
+  --modal-backdrop: rgba(13, 21, 38, 0.45);
+  --card-overlay: rgba(255, 255, 255, 0.78);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #070a12;
+  --bg-elev: #0c111f;
+  --surface: #11172a;
+  --surface-2: #19223a;
+  --line: rgba(255, 255, 255, 0.07);
+  --line-strong: rgba(255, 255, 255, 0.14);
+
+  --ink: #eef2fc;
+  --ink-muted: #9aa8c6;
+  --ink-faint: #74849f;
+
+  --accent: #34d6f0;
+  --accent-strong: #34d6f0;
+  --accent-ink: #04121a;
+  --accent-glow: rgba(52, 214, 240, 0.20);
+
+  --highlight: #f0b84a;
+
+  --ok: #34d399;
+  --warn: #fbbf24;
+  --err: #fb7185;
+
+  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.36), 0 8px 30px rgba(0, 0, 0, 0.42);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5), 0 24px 60px rgba(0, 0, 0, 0.55);
+  --shadow-glow: 0 10px 40px var(--accent-glow);
+
+  --noise-opacity: 0.06;
+  --modal-backdrop: rgba(4, 7, 14, 0.84);
+  --card-overlay: rgba(8, 12, 22, 0.6);
+}
+
+/* ============================================================================
+   SCALES — spacing · radii · section rhythm · motion · z-index
+   ============================================================================ */
+:root {
+  --space-1: 0.25rem; --space-2: 0.5rem;  --space-3: 0.75rem; --space-4: 1rem;
+  --space-5: 1.5rem;  --space-6: 2rem;     --space-7: 3rem;    --space-8: 4rem;
+  --space-9: 6rem;    --space-10: 8rem;
+
+  --r-xs: 0.375rem; --r-sm: 0.625rem; --r-md: 1rem; --r-lg: 1.5rem; --r-pill: 9999px;
+
+  --section-y: clamp(4rem, 9vw, 9rem);
+  --section-y-tight: clamp(2.5rem, 5vw, 4.5rem);
+  --section-y-hero: clamp(6rem, 12vh, 11rem);
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-inout: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-reel: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-snap: cubic-bezier(0.34, 1.4, 0.64, 1);
+
+  /* z-index scale: dropdown 30 · nav 40 · rail 60 · backdrop 100 · modal 110 · toast 120 · cursor 9000 */
+  --z-nav: 40; --z-rail: 60; --z-backdrop: 100; --z-modal: 110; --z-cursor: 9000;
+}
+
+@media (max-width: 480px)  { :root { --section-y: clamp(2.5rem, 9vw, 3.25rem); } }
+@media (min-width: 1920px) { :root { --section-y: clamp(5rem, 5vw, 7.5rem); } }
+
+/* ============================================================================
+   RESET + BASE
+   ============================================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: 6rem;
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s var(--ease-out), color 0.4s var(--ease-out);
+  overflow-x: hidden;
+  min-width: 320px;
+}
+[data-theme="dark"] body { line-height: 1.7; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  margin: 0;
+  font-weight: 700;
+  text-wrap: balance;
+  font-optical-sizing: auto;
+}
+h1, h2 { font-variation-settings: "opsz" 96; }
+p { margin: 0; text-wrap: pretty; }
+
+/* Italic emphasis — Instrument Serif, the contrast move (replaces gradient text). */
+.serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* Mono carries real data — tabular figures so columns align and don't jitter. */
+.font-mono, .eyebrow, .section-index, .data {
+  font-variant-numeric: tabular-nums;
+}
+
+img, svg, video { max-width: 100%; height: auto; display: block; }
+button { font: inherit; color: inherit; }
+input, textarea, select { font-size: max(16px, 1rem); }
+
+::selection { background: color-mix(in srgb, var(--accent) 28%, transparent); color: var(--ink); }
+
+/* Scrollbar — neutral, accent on hover. No gradient. */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 9999px; border: 3px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ============================================================================
+   TEXTURE + ATMOSPHERE
+   ============================================================================ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--noise-opacity);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+/* Ambient glow blob — cap 2 concurrent, never animate the blur radius. */
+.ambient-glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+@media (min-width: 1024px) { .ambient-glow { filter: blur(80px); } }
+@media (min-width: 1920px) { .ambient-glow { filter: blur(110px); } }
+
+.glass {
+  background: color-mix(in srgb, var(--surface) 65%, transparent);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid var(--line);
+}
+@media (prefers-reduced-transparency: reduce) {
+  .glass { background: var(--surface); -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+
+/* ============================================================================
+   EDITORIAL LABELS + LINKS
+   ============================================================================ */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-eyebrow);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 500;
+}
+.section-index {
+  font-family: var(--font-mono);
+  font-size: var(--text-eyebrow);
+  letter-spacing: 0.18em;
+  color: var(--ink-faint);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.data {
+  font-family: var(--font-mono);
+  font-size: var(--text-data);
+  font-weight: 500;
+}
+
+.thesis, .pull-quote { hanging-punctuation: first last; }
+.pull-quote {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.0;
+  text-wrap: balance;
+  font-variation-settings: "opsz" 96;
+}
+
+.link-underline {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--ink);
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1.5px;
+  background: currentColor;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.24s var(--ease-out);
+}
+.link-underline:hover::after,
+.link-underline:focus-visible::after { transform-origin: left; transform: scaleX(1); }
+
+/* ============================================================================
+   BUTTONS — radius --r-sm, 240ms State tier, press scale 0.97
+   ============================================================================ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 3rem;
+  padding: 0 1.55rem;
+  border-radius: var(--r-sm);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  background: var(--ink);
+  color: var(--bg);
+  transition: transform 0.24s var(--ease-out), background 0.24s var(--ease-out),
+              color 0.24s var(--ease-out), box-shadow 0.24s var(--ease-out);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: var(--shadow-glow);
+}
+.btn-primary:active { transform: scale(0.97); }
+.btn-primary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 3rem;
+  padding: 0 1.45rem;
+  border-radius: var(--r-sm);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  background: var(--surface);
+  transition: transform 0.24s var(--ease-out), border-color 0.24s var(--ease-out), color 0.24s var(--ease-out);
+}
+.btn-ghost:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent-strong); }
+.btn-ghost:active { transform: scale(0.97); }
+.btn-ghost:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+/* Chips / tags — pill, mono, AA-clamped accent on hover */
+.chip {
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  border-radius: var(--r-pill);
+  font-family: var(--font-mono);
+  font-size: var(--text-data);
+  color: var(--ink-muted);
+  transition: border-color 0.18s var(--ease-out), color 0.18s var(--ease-out), transform 0.18s var(--ease-out);
+}
+.chip:hover, .chip:focus-visible {
+  border-color: color-mix(in srgb, var(--chip-accent, var(--accent)) 55%, transparent);
+  color: color-mix(in srgb, var(--chip-accent, var(--accent)) 60%, var(--ink));
+  transform: translateY(-2px);
+}
+[data-theme="dark"] .chip:hover, [data-theme="dark"] .chip:focus-visible {
+  color: var(--chip-accent, var(--accent));
+}
+
+kbd {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-xs);
+  background: var(--surface-2);
+  padding: 0.1rem 0.35rem;
+  color: var(--ink-faint);
+}
+
+/* ============================================================================
+   SECTION RHYTHM + CONTAINER
+   ============================================================================ */
+section { position: relative; z-index: 1; }
+.section-y { padding-block: var(--section-y); }
+.section-y-tight { padding-block: var(--section-y-tight); }
+
+.bp-xxl-container { max-width: var(--container-3xl); }
+@media (min-width: 1920px) { .bp-xxl-container { max-width: 1640px; } }
+
+.divide-rule {
+  position: relative;
+}
+.divide-rule::before {
+  content: '';
+  position: absolute;
+  inset-inline: 0; top: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
+  pointer-events: none;
+}
+
+/* Performance: paint below-fold sections only when near the viewport.
+   Per-section intrinsic size; the pinned reel is excluded (sets its own). */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1800px;
+}
+@media (min-width: 1024px) { .cv-auto { contain-intrinsic-size: 1px 1400px; } }
+
+/* ============================================================================
+   KINETIC DEVICES (the seven, and nothing else)
+   ============================================================================ */
+@keyframes char-rise {
+  0%   { opacity: 0; transform: translateY(0.45em); letter-spacing: 0.08em; filter: blur(6px); }
+  60%  { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0); letter-spacing: -0.045em; filter: blur(0); }
+}
+@keyframes mask-up { 0% { transform: translateY(110%); } 100% { transform: translateY(0); } }
+@keyframes marquee { 0% { transform: translate3d(0,0,0); } 100% { transform: translate3d(-50%,0,0); } }
+@keyframes pulse-ring { 0% { transform: scale(0.85); opacity: 1; } 100% { transform: scale(2.6); opacity: 0; } }
+@keyframes draw-line { 0% { transform: scaleY(0); } 100% { transform: scaleY(1); } }
+
+.animate-pulse-ring { animation: pulse-ring 2s ease-out infinite; }
+.animate-marquee { animation: marquee var(--marquee-duration, 40s) linear infinite; }
+.marquee-track:hover > .animate-marquee { animation-play-state: paused; }
+
+/* Hero mega wordmark — device #1: char-by-char rise, once, LCP-safe. */
+.hero-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.90;
+  font-variation-settings: "opsz" 96;
+}
+.hero-name .char {
+  display: inline-block;
+  white-space: pre;
+  /* The active animation auto-promotes; no permanent will-change (it would
+     hold ~11 compositor layers with a filter hint for the whole session). */
+  animation: char-rise 0.9s var(--ease-out) both;
+}
+
+/* Mask reveal — overflow-clipped line rising once on entry. */
+.reveal-mask { display: inline-block; overflow: hidden; vertical-align: bottom; }
+.reveal-mask > span { display: inline-block; animation: mask-up 0.7s var(--ease-out) both; }
+
+/* Outline display text for the single marquee ribbon (device #4). */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.4px var(--ink);
+}
+
+/* ============================================================================
+   MAGNETIC CURSOR (device #5) — accent-tinted, never a second hue.
+   ============================================================================ */
+@media (hover: hover) and (pointer: fine) {
+  .cursor-dot, .cursor-ring {
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: var(--z-cursor);
+    border-radius: 9999px;
+    transform: translate3d(-50%, -50%, 0);
+    will-change: transform;
+  }
+  .cursor-dot {
+    width: 6px; height: 6px;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+    transition: opacity 0.2s ease, transform 0.06s linear;
+    mix-blend-mode: difference;
+  }
+  .cursor-ring {
+    width: 34px; height: 34px;
+    border: 1px solid color-mix(in srgb, var(--accent) 65%, transparent);
+    background: color-mix(in srgb, var(--accent) 6%, transparent);
+    transition: width 0.24s var(--ease-out), height 0.24s var(--ease-out),
+                background 0.24s var(--ease-out), border-color 0.24s var(--ease-out), opacity 0.25s ease;
+  }
+  .cursor-ring.is-snapped {
+    width: 60px; height: 60px;
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    border-color: color-mix(in srgb, var(--accent) 80%, transparent);
+  }
+  .cursor-ring.is-pressed { width: 24px; height: 24px; }
+  [data-cursor="target"] { cursor: none; }
+}
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .cursor-dot, .cursor-ring { display: none; }
+}
+
+/* ============================================================================
+   THEME VIEW-TRANSITION (device #7) — circular clip from pointer origin
+   ============================================================================ */
+@supports (view-transition-name: x) {
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+  ::view-transition-old(root) { z-index: 1; }
+  ::view-transition-new(root) { z-index: 2; }
+  @keyframes vt-circle-in {
+    from { clip-path: circle(0 at var(--theme-origin-x, 50%) var(--theme-origin-y, 50%)); }
+    to   { clip-path: circle(var(--theme-radius, 1500px) at var(--theme-origin-x, 50%) var(--theme-origin-y, 50%)); }
+  }
+  ::view-transition-new(root) { animation: vt-circle-in 0.7s var(--ease-out) both; }
+}
+
+/* Hide the dark-only WebGL layer in light mode. */
+[data-theme="light"] .hero-shader-layer { display: none !important; }
+
+/* Reel card category pill — accent owns border/dot; text stays ink (AA on light). */
+.card-pill {
+  background: var(--card-overlay);
+  color: var(--ink);
+  border-color: color-mix(in srgb, var(--card-accent, var(--accent)) 45%, transparent);
+}
+
+/* ============================================================================
+   ACCESSIBILITY
+   ============================================================================ */
+.skip-link {
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 10000;
+  padding: 12px 20px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+  border-radius: 0 0 var(--r-sm) 0;
+  transform: translateY(-200%);
+  transition: transform 0.2s ease;
+}
+.skip-link:focus, .skip-link:focus-visible { transform: translateY(0); }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+/* Reduced motion = the true baseline. Kill transforms/scrub/marquee/cursor;
+   keep opacity/color fades that aid comprehension. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  ::view-transition-new(root), ::view-transition-old(root) { animation: none !important; }
+}
+
+/* ============================================================================
+   RESPONSIVE ROOT SIZING
+   ============================================================================ */
+@media (max-width: 480px)  { html { font-size: 15.5px; scroll-padding-top: 5rem; } }
+@media (min-width: 1920px) { html { font-size: 17.5px; } }

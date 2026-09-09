@@ -1,0 +1,55 @@
+{
+  "name": "Tran Hau (김진호) — Full-Stack Engineer & UX/UI Designer",
+  "short_name": "Tran Hau",
+  "description": "Full-Stack Software Engineer & UX/UI Designer based in Seoul, South Korea. Studying at Soongsil University. Building scalable web apps with React, Next.js, Spring Boot, and AI integrations.",
+  "start_url": "/",
+  "scope": "/",
+  "id": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "portrait-primary",
+  "background_color": "#f7f8fb",
+  "theme_color": "#0a7fa3",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["productivity", "business", "developer", "portfolio"],
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "monochrome" }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-preview.svg",
+      "sizes": "1200x630",
+      "type": "image/svg+xml",
+      "form_factor": "wide",
+      "label": "Tran Hau (김진호) — Full-Stack Engineer & UX/UI Designer portfolio cover"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Selected work",
+      "short_name": "Work",
+      "description": "Open-source projects and systems by OnlyDev321.",
+      "url": "/#work",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch via email.",
+      "url": "/#contact",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Resume (PDF)",
+      "short_name": "Resume",
+      "description": "Software engineer resume.",
+      "url": "/resume.pdf",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

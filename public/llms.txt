@@ -1,0 +1,32 @@
+# Tran Hau (김진호) — Full-Stack Software Engineer & UX/UI Designer
+
+> Tran Hau (Korean name: 김진호 / Kim Jin-ho, GitHub: OnlyDev321) is a Full-Stack Software Engineer and UX/UI Designer based in Seoul, South Korea. He is currently studying Software Engineering at Soongsil University (숭실대학교). He builds modern web applications using React, Next.js, and Spring Boot, integrates video and voice AI models, and aims to connect Vietnamese and Korean software engineering ecosystems as a Bridge Software Engineer (BrSE).
+
+## Summary
+
+- Name: Tran Hau (Korean name: 김진호 / Kim Jin-ho)
+- Handle: OnlyDev / OnlyDev321
+- Role: Full-Stack Software Engineer & UX/UI Designer · Aspiring BrSE
+- Location: Seoul, South Korea (Soongsil University)
+- Email: onlydev.321@gmail.com
+- GitHub: https://github.com/OnlyDev321
+- Facebook: https://www.facebook.com/tran.hau.691306/
+- Instagram: https://www.instagram.com/kim_jinho2412/
+- TikTok: https://www.tiktok.com/@kim_jinho2412
+- Core Stack: TypeScript, JavaScript, React 19, Next.js, Java (Spring Boot), Python, C++, MySQL, MongoDB, Tailwind CSS, Figma
+
+## Key Public Projects
+
+- [Deepterview-v2](https://github.com/OnlyDev321/deepterview-v2): AI-powered video interview analysis evaluating emotional expressions, micro-facial cues, and behavioral indicators in real time (TypeScript, React, Computer Vision, Node.js).
+- [CoffeeAI](https://github.com/OnlyDev321/CoffeeAI): Voice AI-powered coffee ordering system built with Java, featuring real-time speech recognition (STT), automatic menu and customization parsing, and automated checkout.
+- [Demian-shop](https://github.com/OnlyDev321/Demian-shop): Lightweight web product information extraction engine based on ViDE visual layout analysis for unstructured e-commerce websites (Python).
+- [MFC-ChatAppWithoutBadWord](https://github.com/OnlyDev321/MFC-ChatAppWithoutBadWord): High-performance real-time desktop chat system with personalized prohibited-word filtering, custom blacklists, and automated moderation (C++, MFC, Winsock).
+- [MOJI](https://github.com/OnlyDev321/MOJI): Real-time chat web application with WebSockets, presence detection, and expressive messaging (TypeScript, React).
+- [TrafficSafe](https://github.com/OnlyDev321/TrafficSafe): Arduino-powered pedestrian safety system with ultrasonic vehicle detection and automatic barrier control (C++, IoT).
+- [todoX](https://github.com/OnlyDev321/todoX): Highly customizable task management app with personalized theme styles (JavaScript).
+- [Figma-To-HTML](https://github.com/OnlyDev321/Figma-To-HTML): Pixel-perfect responsive web conversion from Figma design systems.
+
+## Contact
+
+- Email: onlydev.321@gmail.com
+- GitHub: https://github.com/OnlyDev321

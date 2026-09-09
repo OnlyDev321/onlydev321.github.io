@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!--
+    Open Graph preview card — 1200×630.
+    Mirrors the live site: tri-color brand (cyan + deep purple + gold),
+    editorial typography, "month six" thesis, gold-on-stats per
+    achievement-color psychology. Renders identically across LinkedIn,
+    Twitter/X, Slack, Discord, Telegram, WhatsApp.
+  -->
+  <defs>
+    <!-- Background — deep ink with a slight cool wash -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c1124"/>
+      <stop offset="1" stop-color="#06080f"/>
+    </linearGradient>
+
+    <!-- Brand gradient (cyan → deep purple) — used in wordmark + logo -->
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#22d3ee"/>
+      <stop offset="1"   stop-color="#a78bfa"/>
+    </linearGradient>
+
+    <!-- Top rule — cyan → violet → gold → fade. The full triad in a line. -->
+    <linearGradient id="topRule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0.00" stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset="0.10" stop-color="#22d3ee" stop-opacity="1"/>
+      <stop offset="0.45" stop-color="#a78bfa" stop-opacity="1"/>
+      <stop offset="0.80" stop-color="#fbbf24" stop-opacity="1"/>
+      <stop offset="1.00" stop-color="#fbbf24" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Ambient glows: cyan top-left, violet bottom-right, gold mid-right -->
+    <radialGradient id="glowCyan" cx="0.12" cy="0.20" r="0.55">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowViolet" cx="0.88" cy="0.85" r="0.55">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowGold" cx="0.82" cy="0.42" r="0.32">
+      <stop offset="0" stop-color="#fbbf24" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Faint grid, masked to fade at the edges so it never crowds text -->
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridFade" cx="0.5" cy="0.5" r="0.62">
+      <stop offset="0"   stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="0.65" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="1"   stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMask">
+      <rect width="1200" height="630" fill="url(#gridFade)"/>
+    </mask>
+
+    <!-- Status-pulse soft halo around the emerald dot -->
+    <radialGradient id="pulseHalo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#10b981" stop-opacity="0.55"/>
+      <stop offset="1"   stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ============ LAYERS ============ -->
+
+  <!-- 1. background ink -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- 2. fine grid, masked center-bright -->
+  <g mask="url(#gridMask)">
+    <rect width="1200" height="630" fill="url(#grid)"/>
+  </g>
+
+  <!-- 3. ambient glows: cyan / violet / gold -->
+  <rect width="1200" height="630" fill="url(#glowCyan)"/>
+  <rect width="1200" height="630" fill="url(#glowViolet)"/>
+  <rect width="1200" height="630" fill="url(#glowGold)"/>
+
+  <!-- 4. top accent rule — full triad in 2px -->
+  <rect x="0" y="0" width="1200" height="2" fill="url(#topRule)"/>
+
+  <!-- 5. ghost wordmark (huge "A" watermark, far right, behind everything) -->
+  <text x="1240" y="540" text-anchor="end"
+        font-family="'Bricolage Grotesque', 'Inter Tight', system-ui, sans-serif"
+        font-weight="800" font-size="540" letter-spacing="-22"
+        fill="#22d3ee" fill-opacity="0.045">A</text>
+
+  <!-- ============ TOP BAR ============ -->
+
+  <!-- Logo mark + Tran Hau wordmark, top-left -->
+  <g transform="translate(64, 60)">
+    <rect width="48" height="48" rx="12" fill="url(#brand)"/>
+    <text x="24" y="34" text-anchor="middle"
+          font-family="'Bricolage Grotesque', 'Inter Tight', system-ui, sans-serif"
+          font-weight="800" font-size="26" fill="#ffffff">H</text>
+    <text x="64" y="32"
+          font-family="'Bricolage Grotesque', 'Inter Tight', system-ui, sans-serif"
+          font-weight="700" font-size="20" letter-spacing="-0.5"
+          fill="#f1f5ff">Tran Hau<tspan fill="#22d3ee">.</tspan></text>
+  </g>
+
+  <!-- Status pill, top-right -->
+  <g transform="translate(780, 70)">
+    <rect width="356" height="34" rx="17"
+          fill="#10b981" fill-opacity="0.10"
+          stroke="#10b981" stroke-opacity="0.40" stroke-width="1"/>
+    <circle cx="20" cy="17" r="9" fill="url(#pulseHalo)"/>
+    <circle cx="20" cy="17" r="4" fill="#10b981"/>
+    <text x="36" y="22"
+          font-family="'JetBrains Mono', ui-monospace, monospace"
+          font-size="12" letter-spacing="2"
+          fill="#10b981">AVAILABLE · FULL-STACK &amp; BrSE</text>
+  </g>
+
+  <!-- ============ EYEBROW + NAME + THESIS ============ -->
+
+  <!-- Eyebrow -->
+  <text x="64" y="220"
+        font-family="'JetBrains Mono', ui-monospace, monospace"
+        font-size="13" letter-spacing="3"
+        fill="#4d5f80">
+    <tspan fill="#22d3ee">[</tspan>
+    <tspan dx="6">FULL-STACK ENGINEER &amp; UX/UI DESIGNER · SEOUL, KR</tspan>
+    <tspan dx="6" fill="#22d3ee">]</tspan>
+  </text>
+
+  <!-- Mega name — editorial display -->
+  <text x="64" y="346"
+        font-family="'Bricolage Grotesque', 'Inter Tight', system-ui, sans-serif"
+        font-weight="800" font-size="108" letter-spacing="-4"
+        fill="#f1f5ff">Tran <tspan fill="url(#brand)">Hau</tspan><tspan
+              font-family="'Instrument Serif', 'Georgia', serif"
+              font-style="italic" font-weight="400"
+              fill="#a78bfa">.</tspan>
+        <tspan font-size="46" font-weight="400" fill="#8a9bbe" dx="20">김진호</tspan></text>
+
+  <!-- Thesis -->
+  <text x="64" y="408"
+        font-family="'Bricolage Grotesque', 'Inter Tight', system-ui, sans-serif"
+        font-weight="500" font-size="26" letter-spacing="-0.4"
+        fill="#8a9bbe">Full-stack web apps, <tspan
+              font-family="'Instrument Serif', 'Georgia', serif"
+              font-style="italic" font-weight="400" font-size="30"
+              fill="#f1f5ff">voice &amp; vision AI</tspan>, and UX/UI engineering.</text>
+
+  <!-- Hairline divider — cyan → transparent -->
+  <rect x="64" y="446" width="84" height="1" fill="#22d3ee" fill-opacity="0.65"/>
+
+  <!-- ============ STATS BAND (gold = achievement) ============ -->
+
+  <!-- Each stat: a tiny gold rule, the value in gold, the label in faint mono. -->
+  <g transform="translate(64, 488)">
+    <!-- 0 post-launch crashes -->
+    <g>
+      <rect width="22" height="1" y="-6" fill="#fbbf24"/>
+      <text font-family="'Bricolage Grotesque', 'Inter Tight', system-ui, sans-serif"
+            font-weight="800" font-size="50" letter-spacing="-1.5"
+            fill="#fbbf24">0</text>
+      <text y="34"
+            font-family="'JetBrains Mono', ui-monospace, monospace"
+            font-size="11" letter-spacing="2"
+            fill="#4d5f80">POST-LAUNCH CRASHES</text>
+    </g>
+    <!-- 50K+ users -->
+    <g transform="translate(260, 0)">
+      <rect width="22" height="1" y="-6" fill="#fbbf24"/>
+      <text font-family="'Bricolage Grotesque', 'Inter Tight', system-ui, sans-serif"
+            font-weight="800" font-size="50" letter-spacing="-1.5"
+            fill="#fbbf24">50K+</text>
+      <text y="34"
+            font-family="'JetBrains Mono', ui-monospace, monospace"
+            font-size="11" letter-spacing="2"
+            fill="#4d5f80">USERS IN PRODUCTION</text>
+    </g>
+    <!-- ↓ 35% cold-start -->
+    <g transform="translate(540, 0)">
+      <rect width="22" height="1" y="-6" fill="#fbbf24"/>
+      <text font-family="'Bricolage Grotesque', 'Inter Tight', system-ui, sans-serif"
+            font-weight="800" font-size="50" letter-spacing="-1.5"
+            fill="#fbbf24">↓ 35%</text>
+      <text y="34"
+            font-family="'JetBrains Mono', ui-monospace, monospace"
+            font-size="11" letter-spacing="2"
+            fill="#4d5f80">COLD-START TIME</text>
+    </g>
+    <!-- 6 open-sourced apps -->
+    <g transform="translate(820, 0)">
+      <rect width="22" height="1" y="-6" fill="#fbbf24"/>
+      <text font-family="'Bricolage Grotesque', 'Inter Tight', system-ui, sans-serif"
+            font-weight="800" font-size="50" letter-spacing="-1.5"
+            fill="#fbbf24">6</text>
+      <text y="34"
+            font-family="'JetBrains Mono', ui-monospace, monospace"
+            font-size="11" letter-spacing="2"
+            fill="#4d5f80">OPEN-SOURCED APPS</text>
+    </g>
+  </g>
+
+  <!-- ============ FOOTER ============ -->
+
+  <!-- Footer hairline -->
+  <rect x="64" y="582" width="1072" height="1" fill="#ffffff" fill-opacity="0.06"/>
+
+  <!-- URL + meta -->
+  <text x="64" y="608"
+        font-family="'JetBrains Mono', ui-monospace, monospace"
+        font-size="13" letter-spacing="1"
+        fill="#4d5f80">onlydev321.github.io</text>
+  <text x="1136" y="608" text-anchor="end"
+        font-family="'JetBrains Mono', ui-monospace, monospace"
+        font-size="13" letter-spacing="1"
+        fill="#4d5f80">Seoul, South Korea · Remote worldwide · 24h replies</text>
+</svg>
