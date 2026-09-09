@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#070a12" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- Apply saved/system theme before first paint (light is the default). -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          var dark = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        } catch (e) { document.documentElement.setAttribute('data-theme', 'light'); }
+      })();
+    </script>
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="mask-icon" href="/favicon.svg" color="#0a7fa3" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Self-hosted fonts — preload the two LCP faces only (display + body). -->
+    <link rel="preload" href="/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/geist.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+
+    <link rel="dns-prefetch" href="https://github.com" />
+    <link rel="prefetch" href="/og-preview.png" as="image" type="image/png" />
+
+    <!-- Primary SEO -->
+    <title>Tran Hau (김진호) — Full-Stack Engineer &amp; UX/UI Designer | OnlyDev</title>
+    <meta name="description" content="Tran Hau (김진호 / OnlyDev), Full-Stack Software Engineer &amp; UX/UI Designer in Seoul, South Korea. Studying at Soongsil University. Building scalable web applications with React, Next.js, Spring Boot, and AI integrations (video &amp; voice AI). Open to software engineering &amp; BrSE opportunities." />
+    <meta name="author" content="Tran Hau (김진호)" />
+    <meta name="keywords" content="Tran Hau, Kim Jin-ho, 김진호, OnlyDev, OnlyDev321, Full-Stack Engineer, BrSE, Bridge Software Engineer, Soongsil University, React developer, Next.js developer, Spring Boot developer, Java developer, C++ developer, UI/UX Designer, Seoul Korea software engineer, Vietnam software engineer" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+
+    <meta name="geo.region" content="KR-11" />
+    <meta name="geo.placename" content="Seoul, South Korea" />
+    <meta name="geo.position" content="37.5665;126.9780" />
+
+    <link rel="canonical" href="https://onlydev321.github.io/" />
+    <link rel="alternate" hreflang="en" href="https://onlydev321.github.io/" />
+    <link rel="alternate" hreflang="x-default" href="https://onlydev321.github.io/" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+    <!-- Entity verification (rel=me) -->
+    <link rel="me" href="https://github.com/OnlyDev321" />
+    <link rel="me" href="https://www.facebook.com/tran.hau.691306/" />
+    <link rel="me" href="https://www.instagram.com/kim_jinho2412/" />
+    <link rel="me" href="https://www.tiktok.com/@kim_jinho2412" />
+    <link rel="me" href="mailto:onlydev.321@gmail.com" />
+    <link rel="author" href="https://onlydev321.github.io/#person" />
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Tran Hau (김진호) — Full-Stack Engineer &amp; UX/UI Designer" />
+    <meta property="og:title" content="Tran Hau (김진호) — Full-Stack Engineer &amp; UX/UI Designer" />
+    <meta property="og:description" content="Software engineering student at Soongsil University in Seoul. I build full-stack web applications, voice and vision AI integrations, and responsive UX/UI designs. Explore open-source projects on GitHub." />
+    <meta property="og:image" content="https://onlydev321.github.io/og-preview.png" />
+    <meta property="og:image:secure_url" content="https://onlydev321.github.io/og-preview.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Tran Hau (김진호) — Full-Stack Engineer &amp; UX/UI Designer portfolio cover" />
+    <meta property="og:url" content="https://onlydev321.github.io/" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="profile:first_name" content="Hau" />
+    <meta property="profile:last_name" content="Tran" />
+    <meta property="profile:username" content="OnlyDev321" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tran Hau (김진호) — Full-Stack Engineer &amp; UX/UI Designer" />
+    <meta name="twitter:description" content="Full-Stack Engineer &amp; UX/UI Designer in Seoul, South Korea. Studying at Soongsil University. React, Next.js, Spring Boot, and AI integrations." />
+    <meta name="twitter:image" content="https://onlydev321.github.io/og-preview.png" />
+    <meta name="twitter:image:alt" content="Tran Hau (김진호) — Full-Stack Engineer &amp; UX/UI Designer" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Tran Hau" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="msapplication-TileColor" content="#0a7fa3" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://onlydev321.github.io/#person",
+      "name": "Tran Hau",
+      "givenName": "Hau",
+      "familyName": "Tran",
+      "additionalName": "김진호",
+      "url": "https://onlydev321.github.io/",
+      "image": { "@type": "ImageObject", "url": "https://onlydev321.github.io/og-preview.png", "width": 1200, "height": 630 },
+      "jobTitle": "Full-Stack Software Engineer & UX/UI Designer",
+      "alternateName": ["Tran Hau", "Kim Jin-ho", "OnlyDev", "OnlyDev321", "BrSE Trainee"],
+      "description": "Full-Stack Software Engineer & UX/UI Designer based in Seoul, South Korea. Studying Software Engineering at Soongsil University. Focus on React, Next.js, Java Spring Boot, Python, and AI systems.",
+      "email": "mailto:onlydev.321@gmail.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Seoul", "addressCountry": "KR" },
+      "nationality": [
+        { "@type": "Country", "name": "Vietnam" }
+      ],
+      "knowsLanguage": [
+        { "@type": "Language", "name": "Vietnamese" },
+        { "@type": "Language", "name": "Korean" },
+        { "@type": "Language", "name": "English" }
+      ],
+      "knowsAbout": ["TypeScript", "JavaScript", "React", "Next.js", "Spring Boot", "Java", "Python", "C++", "HTML5", "CSS3", "Tailwind CSS", "MySQL", "MongoDB", "AI Emotion Analysis", "Speech Recognition", "ViDE Visual Layout Analysis", "UX/UI Design", "Figma", "Bridge Software Engineering"],
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Soongsil University", "address": { "@type": "PostalAddress", "addressLocality": "Seoul", "addressCountry": "KR" } },
+      "sameAs": [
+        "https://github.com/OnlyDev321",
+        "https://www.facebook.com/tran.hau.691306/",
+        "https://www.instagram.com/kim_jinho2412/",
+        "https://www.tiktok.com/@kim_jinho2412"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://onlydev321.github.io/#website",
+      "name": "Tran Hau (김진호) — Portfolio",
+      "url": "https://onlydev321.github.io/",
+      "description": "The personal portfolio of Tran Hau (김진호 / OnlyDev) — Full-Stack Software Engineer & UX/UI Designer.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://onlydev321.github.io/#person" },
+      "author": { "@id": "https://onlydev321.github.io/#person" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Open-source projects by Tran Hau (OnlyDev321)",
+      "numberOfItems": 8,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "item": { "@type": "SoftwareApplication", "name": "Deepterview-v2", "description": "AI-powered interview analysis evaluating candidates' emotional expressions and behavioral cues in real time.", "url": "https://github.com/OnlyDev321/deepterview-v2", "programmingLanguage": "TypeScript" } },
+        { "@type": "ListItem", "position": 2, "item": { "@type": "SoftwareApplication", "name": "CoffeeAI", "description": "AI-powered voice coffee ordering system built with Java, real-time speech recognition, and automatic menu extraction.", "url": "https://github.com/OnlyDev321/CoffeeAI", "programmingLanguage": "Java" } },
+        { "@type": "ListItem", "position": 3, "item": { "@type": "SoftwareApplication", "name": "Demian-shop", "description": "Lightweight product extraction based on ViDE visual layout analysis for unstructured e-commerce sites.", "url": "https://github.com/OnlyDev321/Demian-shop", "programmingLanguage": "Python" } },
+        { "@type": "ListItem", "position": 4, "item": { "@type": "SoftwareApplication", "name": "MFC-ChatAppWithoutBadWord", "description": "Real-time C++ desktop chat system with custom prohibited-word filtering and automated moderation.", "url": "https://github.com/OnlyDev321/MFC-ChatAppWithoutBadWord", "programmingLanguage": "C++" } },
+        { "@type": "ListItem", "position": 5, "item": { "@type": "SoftwareApplication", "name": "MOJI", "description": "Modern real-time chat application with expressive messaging, presence detection, and fluid UI.", "url": "https://github.com/OnlyDev321/MOJI", "programmingLanguage": "TypeScript" } },
+        { "@type": "ListItem", "position": 6, "item": { "@type": "SoftwareApplication", "name": "TrafficSafe", "description": "Arduino-powered pedestrian safety system with ultrasonic vehicle detection and automatic barrier control.", "url": "https://github.com/OnlyDev321/TrafficSafe", "programmingLanguage": "C++" } },
+        { "@type": "ListItem", "position": 7, "item": { "@type": "SoftwareApplication", "name": "todoX", "description": "Expressive task management and productivity application with custom personalization themes.", "url": "https://github.com/OnlyDev321/todoX", "programmingLanguage": "JavaScript" } },
+        { "@type": "ListItem", "position": 8, "item": { "@type": "SoftwareApplication", "name": "Figma-To-HTML", "description": "Handcrafted, pixel-perfect responsive HTML5/CSS3 conversion adhering strictly to design token specifications.", "url": "https://github.com/OnlyDev321/Figma-To-HTML", "programmingLanguage": "HTML" } }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://onlydev321.github.io/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Who is Tran Hau (김진호)?", "acceptedAnswer": { "@type": "Answer", "text": "Tran Hau (Korean name: 김진호 / Kim Jin-ho) is a Software Engineering student at Soongsil University in Seoul, South Korea, working as a Full-Stack Software Engineer & UX/UI Designer." } },
+        { "@type": "Question", "name": "What technologies does Tran Hau specialize in?", "acceptedAnswer": { "@type": "Answer", "text": "React, Next.js, TypeScript, Java (Spring Boot), Python, C++, MySQL, MongoDB, and AI integration including video emotion analysis, speech recognition, and ViDE visual layout extraction." } },
+        { "@type": "Question", "name": "What is his career goal?", "acceptedAnswer": { "@type": "Answer", "text": "To become a high-impact Bridge Software Engineer (BrSE) connecting Korean and Vietnamese tech ecosystems, while building scalable full-stack applications with state-of-the-art UX/UI." } },
+        { "@type": "Question", "name": "How can I contact him?", "acceptedAnswer": { "@type": "Answer", "text": "Email onlydev.321@gmail.com, GitHub github.com/OnlyDev321, or on Facebook and Instagram." } }
+      ]
+    }
+    </script>
+    <script type="module" crossorigin src="/assets/index-2JdQrDjR.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-COnpUsM8.js">
+    <link rel="modulepreload" crossorigin href="/assets/motion-CNLXT5PO.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-vxCWRI8M.js">
+    <link rel="modulepreload" crossorigin href="/assets/projects-BxvIMnNH.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BwjAz4yz.css">
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <noscript>
+      <h1>Tran Hau (김진호) — Full-Stack Engineer &amp; UX/UI Designer</h1>
+      <p>Software engineering student at Soongsil University (숭실대학교) in Seoul, South Korea. Passionate about full-stack web applications, AI integrations, and UX/UI design.</p>
+      <p>Contact: <a href="mailto:onlydev.321@gmail.com">onlydev.321@gmail.com</a></p>
+      <ul>
+        <li><a href="https://github.com/OnlyDev321">GitHub: OnlyDev321</a></li>
+        <li><a href="https://www.facebook.com/tran.hau.691306/">Facebook</a></li>
+        <li><a href="https://www.instagram.com/kim_jinho2412/">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@kim_jinho2412">TikTok</a></li>
+      </ul>
+      <h2>Featured Open-Source Projects</h2>
+      <ol>
+        <li><a href="https://github.com/OnlyDev321/deepterview-v2">Deepterview-v2</a>: AI-powered interview analysis evaluating candidates' emotional expressions and behavioral cues from video interviews.</li>
+        <li><a href="https://github.com/OnlyDev321/CoffeeAI">CoffeeAI</a>: AI-powered voice coffee ordering system built with Java and real-time speech recognition.</li>
+        <li><a href="https://github.com/OnlyDev321/Demian-shop">Demian-shop</a>: ViDE visual layout analysis web product information extraction in Python.</li>
+        <li><a href="https://github.com/OnlyDev321/MFC-ChatAppWithoutBadWord">MFC-ChatAppWithoutBadWord</a>: Real-time C++ chat system with custom prohibited-word filtering.</li>
+      </ol>
+    </noscript>
+  </body>
+</html>

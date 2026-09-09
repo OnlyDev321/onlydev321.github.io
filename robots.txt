@@ -1,0 +1,126 @@
+# https://onlydev321.github.io/robots.txt
+# Tran Hau (김진호) — Full-Stack Software Engineer & UX/UI Designer. Single-page, fully
+# crawlable, and intentionally open to AI / LLM search engines (see below).
+# LLM-readable summary: https://onlydev321.github.io/llms.txt
+
+# ---------------------------------------------------------------------------
+# Default policy — allow all good-citizen crawlers.
+# ---------------------------------------------------------------------------
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /dist/
+
+# ---------------------------------------------------------------------------
+# Major search engines — explicit allow with no crawl delay.
+# ---------------------------------------------------------------------------
+User-agent: Googlebot
+Allow: /
+Disallow:
+
+User-agent: Googlebot-Image
+Allow: /
+Allow: /og-preview.png
+Allow: /og-preview.svg
+Allow: /favicon.svg
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# ---------------------------------------------------------------------------
+# AI / LLM crawlers — explicitly allowed. The portfolio is meant to be
+# discoverable by AI search engines (ChatGPT search, Perplexity, Claude, etc.)
+# Anyone hiring is increasingly using these tools to short-list candidates.
+# ---------------------------------------------------------------------------
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# ---------------------------------------------------------------------------
+# Sitemap discovery
+# ---------------------------------------------------------------------------
+Sitemap: https://onlydev321.github.io/sitemap.xml
+
+# ---------------------------------------------------------------------------
+# Host preference (Yandex / mirror disambiguation)
+# ---------------------------------------------------------------------------
+Host: https://onlydev321.github.io
