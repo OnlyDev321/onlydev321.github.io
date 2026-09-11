@@ -275,6 +275,9 @@ input, textarea, select { font-size: max(16px, 1rem); }
 ::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 9999px; border: 3px solid var(--bg); }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
 /* ============================================================================
    TEXTURE + ATMOSPHERE
    ============================================================================ */

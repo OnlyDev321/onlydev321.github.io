@@ -1,11 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import {
-  motion,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+  ArrowLeft,
+  ArrowRight,
+  ArrowUpRight,
+  ExternalLink,
+  MoveHorizontal,
+} from "lucide-react";
 import { GithubIcon } from "../components/SocialIcons";
 import { Container } from "../components/ui";
 import { Reveal } from "../components/Kinetic";
@@ -15,22 +16,12 @@ import { flagshipProjects, secondaryProjects } from "../data/projects";
 import type { Project } from "../types";
 
 /* -------------------------------------------------------------------------- *
- *  WORK — the centerpiece (device #3: pinned horizontal reel).                *
+ *  WORK — horizontal draggable showcase with natural vertical page scroll.   *
  *                                                                             *
- *  On a wide pointer-capable viewport with motion allowed, the eight flagship *
- *  cards live on a single horizontal track. An outer wrapper grows tall       *
- *  (viewport height + the track's horizontal overflow) so that a sticky       *
- *  h-screen stage stays pinned while vertical scroll is *scrubbed* into a     *
- *  horizontal translate. The first panel is the section intro so the reel     *
- *  reads as one editorial spread.                                             *
- *                                                                             *
- *  On touch / narrow / reduced-motion, the same eight cards become a native   *
- *  horizontal scroll-snap strip below a normal stacked intro — every card     *
- *  stays reachable with zero scripted motion (the spec's true baseline).      *
- *                                                                             *
- *  Accent discipline: project.accent is scoped per card via --card-accent and *
- *  used ONLY for borders, dots, glows and the big ghost number. All card text *
- *  stays --ink / --ink-muted so it passes AA on the light default.            *
+ *  - Vertical mouse wheel up/down scrolls the page up/down normally.         *
+ *  - Left-click drag (or touch / trackpad swipe / arrow buttons) pans cards   *
+ *    smoothly horizontally with inertial glide.                              *
+ *  - Accidental clicks are suppressed during drag so cards don't open modals. *
  * -------------------------------------------------------------------------- */
 
 const ease = [0.23, 1, 0.32, 1] as const;
@@ -71,29 +62,24 @@ function FlagshipCard({
   const npm = isNpmDemo(project.demo);
   const valueColor = "color-mix(in srgb, var(--card-accent) 60%, var(--ink))";
 
-  /* Cards size to their content; the reel track's `items-stretch` then makes
-   * every card equal to the TALLEST card, so the densest card never clips and
-   * the rest still share one height. A min-h keeps short cards substantial. */
   const sizing =
     variant === "reel"
-      ? "w-[clamp(300px,80vw,540px)] min-h-[clamp(440px,68vh,600px)]"
-      : "w-[85vw] max-w-[440px] min-h-[clamp(440px,70vh,600px)] h-auto";
+      ? "w-[clamp(300px,40vw,520px)] min-h-[clamp(460px,65vh,590px)]"
+      : "w-[85vw] max-w-[440px] min-h-[clamp(440px,68vh,580px)] h-auto";
 
   const open = () => onOpen(project);
 
   return (
     <article
-      data-cursor="target"
       style={
         { ["--card-accent" as string]: project.accent } as React.CSSProperties
       }
-      className={`group relative flex flex-shrink-0 snap-center flex-col overflow-hidden rounded-[var(--r-lg)] border border-[color:var(--line)] bg-[color:var(--surface)] shadow-[var(--shadow-sm)] transition-[transform,box-shadow] duration-[240ms] [transition-timing-function:var(--ease-out)] hover:-translate-y-1.5 hover:shadow-[var(--shadow-md)] ${sizing}`}
+      className={`group relative flex flex-shrink-0 flex-col overflow-hidden rounded-[var(--r-lg)] border border-[color:var(--line)] bg-[color:var(--surface)] shadow-[var(--shadow-sm)] transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1.5 hover:border-[color:var(--line-strong)] hover:shadow-[var(--shadow-md)] ${sizing}`}
     >
       {/* Stretched overlay button — fills the card to open the case study while
-       * sitting BELOW the real links (which are raised with relative + z-10). */}
+       * sitting BELOW the real links. */}
       <button
         type="button"
-        data-cursor="target"
         onClick={open}
         aria-label={`Open case study for ${project.name}`}
         className="absolute inset-0 z-0 cursor-pointer rounded-[var(--r-lg)] outline-none transition-transform focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)] active:scale-95"
@@ -108,9 +94,7 @@ function FlagshipCard({
         }}
       />
 
-      {/* HEADER PLATE — accent glow, ghost number, monogram, status, source.
-       * pointer-events-none lets header clicks fall through to the overlay; the
-       * GitHub link re-enables them so it stays independently clickable. */}
+      {/* HEADER PLATE — accent glow, ghost number, monogram, status, source. */}
       <header
         className="pointer-events-none relative isolate z-10 flex items-start justify-between gap-3 px-6 pb-5 pt-6 sm:px-7"
         style={{
@@ -231,7 +215,10 @@ function FlagshipCard({
 
         {/* Footer row — case-study cue + conditional demo link. */}
         <div className="mt-auto flex items-center justify-between gap-3 border-t border-[color:var(--line)] pt-4">
-          <span className="link-underline font-display text-small font-semibold text-[color:var(--ink)]">
+          <span
+            data-cursor="target"
+            className="link-underline font-display text-small font-semibold text-[color:var(--ink)]"
+          >
             Case study
             <ArrowUpRight
               size={15}
@@ -261,15 +248,22 @@ function FlagshipCard({
 }
 
 /* -------------------------------------------------------------------------- *
- *  REEL INTRO PANEL — the first horizontal panel (and the stacked fallback    *
- *  intro). `progress` drives the accent bar only in the pinned reel.          *
+ *  REEL INTRO PANEL — section title, overview, navigation arrows & progress  *
  * -------------------------------------------------------------------------- */
 function ReelIntro({
   variant,
-  progress,
+  progress = 0,
+  onPrev,
+  onNext,
+  canPrev = false,
+  canNext = true,
 }: {
   variant: "reel" | "strip";
-  progress?: ReturnType<typeof useTransform<number, number>>;
+  progress?: number;
+  onPrev?: () => void;
+  onNext?: () => void;
+  canPrev?: boolean;
+  canNext?: boolean;
 }) {
   const body = (
     <>
@@ -293,37 +287,85 @@ function ReelIntro({
       </p>
 
       {variant === "reel" ? (
-        <div className="mt-9 flex items-center gap-4">
-          <span className="font-mono text-eyebrow uppercase tracking-[0.16em] text-[color:var(--ink-faint)]">
-            Scroll to advance
-          </span>
-          <div
-            aria-hidden="true"
-            className="relative h-1 w-40 overflow-hidden rounded-[var(--r-pill)] bg-[color:var(--surface-2)]"
-          >
-            <motion.span
-              className="absolute inset-y-0 left-0 w-full origin-left rounded-[var(--r-pill)] bg-[color:var(--accent)]"
-              style={{ scaleX: progress }}
-            />
+        <div className="mt-8 flex flex-col gap-4">
+          <div className="flex items-center gap-3">
+            {/* Arrow navigation buttons */}
+            <div className="flex items-center gap-1.5">
+              <button
+                type="button"
+                onClick={onPrev}
+                disabled={!canPrev}
+                aria-label="Previous project"
+                data-cursor="target"
+                className="grid h-9 w-9 place-items-center rounded-[var(--r-sm)] border border-[color:var(--line)] bg-[color:var(--surface)] text-[color:var(--ink-muted)] transition-all duration-200 hover:border-[color:var(--accent)] hover:text-[color:var(--accent-strong)] disabled:pointer-events-none disabled:opacity-25 active:scale-95"
+              >
+                <ArrowLeft size={15} />
+              </button>
+              <button
+                type="button"
+                onClick={onNext}
+                disabled={!canNext}
+                aria-label="Next project"
+                data-cursor="target"
+                className="grid h-9 w-9 place-items-center rounded-[var(--r-sm)] border border-[color:var(--line)] bg-[color:var(--surface)] text-[color:var(--ink-muted)] transition-all duration-200 hover:border-[color:var(--accent)] hover:text-[color:var(--accent-strong)] disabled:pointer-events-none disabled:opacity-25 active:scale-95"
+              >
+                <ArrowRight size={15} />
+              </button>
+            </div>
+
+            {/* Progress Bar */}
+            <div
+              aria-hidden="true"
+              className="relative h-1 w-28 overflow-hidden rounded-[var(--r-pill)] bg-[color:var(--surface-2)]"
+            >
+              <div
+                className="absolute inset-y-0 left-0 rounded-[var(--r-pill)] bg-[color:var(--accent)] transition-all duration-150"
+                style={{ width: `${Math.round(progress * 100)}%` }}
+              />
+            </div>
           </div>
+
+          <p className="flex items-center gap-2 font-mono text-eyebrow uppercase tracking-[0.16em] text-[color:var(--ink-faint)]">
+            <MoveHorizontal size={14} className="text-[color:var(--accent)] animate-pulse" />
+            Drag or swipe to explore
+          </p>
         </div>
       ) : (
-        <p className="mt-8 inline-flex items-center gap-2 font-mono text-eyebrow uppercase tracking-[0.16em] text-[color:var(--ink-faint)]">
-          Swipe through the reel
-          <ArrowUpRight
-            size={14}
-            strokeWidth={1.5}
-            aria-hidden="true"
-            className="rotate-45"
-          />
-        </p>
+        <div className="mt-6 flex items-center justify-between gap-4">
+          <p className="inline-flex items-center gap-2 font-mono text-eyebrow uppercase tracking-[0.16em] text-[color:var(--ink-faint)]">
+            <MoveHorizontal size={14} className="text-[color:var(--accent)]" />
+            Swipe or drag cards
+          </p>
+          <div className="flex items-center gap-1.5">
+            <button
+              type="button"
+              onClick={onPrev}
+              disabled={!canPrev}
+              aria-label="Previous project"
+              data-cursor="target"
+              className="grid h-9 w-9 place-items-center rounded-[var(--r-sm)] border border-[color:var(--line)] bg-[color:var(--surface)] text-[color:var(--ink-muted)] transition-all duration-200 hover:border-[color:var(--accent)] hover:text-[color:var(--accent-strong)] disabled:pointer-events-none disabled:opacity-25 active:scale-95"
+            >
+              <ArrowLeft size={15} />
+            </button>
+            <button
+              type="button"
+              onClick={onNext}
+              disabled={!canNext}
+              aria-label="Next project"
+              data-cursor="target"
+              className="grid h-9 w-9 place-items-center rounded-[var(--r-sm)] border border-[color:var(--line)] bg-[color:var(--surface)] text-[color:var(--ink-muted)] transition-all duration-200 hover:border-[color:var(--accent)] hover:text-[color:var(--accent-strong)] disabled:pointer-events-none disabled:opacity-25 active:scale-95"
+            >
+              <ArrowRight size={15} />
+            </button>
+          </div>
+        </div>
       )}
     </>
   );
 
   if (variant === "reel") {
     return (
-      <div className="flex min-h-[clamp(440px,72vh,640px)] w-[clamp(300px,70vw,460px)] flex-shrink-0 flex-col justify-center pr-4">
+      <div className="flex min-h-[clamp(460px,65vh,590px)] w-[clamp(300px,70vw,460px)] flex-shrink-0 flex-col justify-center pr-4 select-none">
         {body}
       </div>
     );
@@ -332,66 +374,199 @@ function ReelIntro({
 }
 
 /* -------------------------------------------------------------------------- *
- *  PINNED REEL (wide + motion) — scrubbed horizontal track inside a tall      *
- *  outer wrapper whose sticky child stays h-screen.                           *
+ *  DRAGGABLE REEL — mouse drag + touch/trackpad swipe + smooth momentum       *
  * -------------------------------------------------------------------------- */
-function PinnedReel({ onOpen }: { onOpen: (p: Project) => void }) {
-  const outerRef = useRef<HTMLDivElement>(null);
+function DraggableReel({
+  onOpen,
+  isDesktop,
+}: {
+  onOpen: (p: Project) => void;
+  isDesktop: boolean;
+}) {
   const trackRef = useRef<HTMLDivElement>(null);
-  const scrollDistanceRef = useRef(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [canPrev, setCanPrev] = useState(false);
+  const [canNext, setCanNext] = useState(true);
 
-  const [wrapperHeight, setWrapperHeight] = useState(0);
-
-  const { scrollYProgress } = useScroll({
-    target: outerRef,
-    offset: ["start start", "end end"],
+  const dragRef = useRef({
+    isDown: false,
+    startX: 0,
+    scrollLeft: 0,
+    hasMoved: false,
+    lastX: 0,
+    lastTime: 0,
+    velocity: 0,
+    momentumFrame: 0,
   });
 
-  /* Function-form transform reads the measured distance ref at evaluation
-   * time, so the x range stays correct after layout / resize without re-wiring
-   * the motion value. */
-  const x = useTransform(
-    scrollYProgress,
-    (p) => -(p * scrollDistanceRef.current),
-  );
+  const updateScrollState = useCallback(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    if (max <= 0) {
+      setProgress(0);
+      setCanPrev(false);
+      setCanNext(false);
+      return;
+    }
+    const current = Math.max(0, Math.min(max, el.scrollLeft));
+    setProgress(current / max);
+    setCanPrev(current > 12);
+    setCanNext(current < max - 12);
+  }, []);
 
   useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
+    const el = trackRef.current;
+    if (!el) return;
 
-    const measure = () => {
-      const viewportWidth = window.innerWidth;
-      const distance = Math.max(0, track.scrollWidth - viewportWidth);
-      scrollDistanceRef.current = distance;
-      setWrapperHeight(window.innerHeight + distance);
+    updateScrollState();
+    el.addEventListener("scroll", updateScrollState, { passive: true });
+    window.addEventListener("resize", updateScrollState);
+
+    return () => {
+      el.removeEventListener("scroll", updateScrollState);
+      window.removeEventListener("resize", updateScrollState);
+    };
+  }, [updateScrollState]);
+
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    // Only primary button (left mouse click)
+    if (e.button !== 0) return;
+    const el = trackRef.current;
+    if (!el) return;
+
+    cancelAnimationFrame(dragRef.current.momentumFrame);
+
+    dragRef.current.isDown = true;
+    dragRef.current.startX = e.clientX;
+    dragRef.current.scrollLeft = el.scrollLeft;
+    dragRef.current.hasMoved = false;
+    dragRef.current.lastX = e.clientX;
+    dragRef.current.lastTime = performance.now();
+    dragRef.current.velocity = 0;
+  };
+
+  useEffect(() => {
+    const handlePointerMove = (e: PointerEvent) => {
+      if (!dragRef.current.isDown) return;
+      const el = trackRef.current;
+      if (!el) return;
+
+      const dx = e.clientX - dragRef.current.startX;
+      if (!dragRef.current.hasMoved && Math.abs(dx) > 6) {
+        dragRef.current.hasMoved = true;
+        setIsDragging(true);
+      }
+
+      if (dragRef.current.hasMoved) {
+        // Prevent accidental text/image selection
+        e.preventDefault();
+
+        const now = performance.now();
+        const dt = now - dragRef.current.lastTime;
+        if (dt > 0) {
+          dragRef.current.velocity = (e.clientX - dragRef.current.lastX) / dt;
+        }
+        dragRef.current.lastX = e.clientX;
+        dragRef.current.lastTime = now;
+
+        el.scrollLeft = dragRef.current.scrollLeft - dx;
+      }
     };
 
-    measure();
-    const ro = new ResizeObserver(measure);
-    ro.observe(track);
-    window.addEventListener("resize", measure);
-    window.addEventListener("orientationchange", measure);
+    const handlePointerUp = () => {
+      if (!dragRef.current.isDown) return;
+      dragRef.current.isDown = false;
+      const el = trackRef.current;
+
+      if (dragRef.current.hasMoved) {
+        // Intercept and swallow trailing click event so card modal doesn't trigger
+        const preventClick = (e: MouseEvent) => {
+          e.stopPropagation();
+          e.preventDefault();
+        };
+        window.addEventListener("click", preventClick, {
+          capture: true,
+          once: true,
+        });
+        setTimeout(() => {
+          window.removeEventListener("click", preventClick, { capture: true });
+        }, 100);
+
+        // Inertial glide momentum
+        if (el) {
+          let v = dragRef.current.velocity;
+          v = Math.max(-2.2, Math.min(2.2, v));
+          if (Math.abs(v) > 0.08) {
+            let lastT = performance.now();
+            const decay = 0.94;
+            const glide = (now: number) => {
+              const dt = now - lastT;
+              lastT = now;
+              if (Math.abs(v) > 0.02) {
+                el.scrollLeft -= v * dt;
+                v *= Math.pow(decay, dt / 16);
+                dragRef.current.momentumFrame = requestAnimationFrame(glide);
+              } else {
+                setIsDragging(false);
+              }
+            };
+            dragRef.current.momentumFrame = requestAnimationFrame(glide);
+          } else {
+            setIsDragging(false);
+          }
+        } else {
+          setIsDragging(false);
+        }
+      } else {
+        setIsDragging(false);
+      }
+    };
+
+    window.addEventListener("pointermove", handlePointerMove);
+    window.addEventListener("pointerup", handlePointerUp);
+    window.addEventListener("pointercancel", handlePointerUp);
+
     return () => {
-      ro.disconnect();
-      window.removeEventListener("resize", measure);
-      window.removeEventListener("orientationchange", measure);
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("pointerup", handlePointerUp);
+      window.removeEventListener("pointercancel", handlePointerUp);
+      cancelAnimationFrame(dragRef.current.momentumFrame);
     };
   }, []);
 
-  return (
-    <div
-      ref={outerRef}
-      style={{ height: wrapperHeight || "100vh" }}
-      className="relative"
-    >
-      {/* pt clears the floating nav so cards never sit under it; pb balances. */}
-      <div className="sticky top-0 flex h-[100svh] items-center overflow-hidden pt-[5.5rem] pb-8">
-        <motion.div
+  const scrollByAmount = (amount: number) => {
+    const el = trackRef.current;
+    if (!el) return;
+    el.scrollBy({ left: amount, behavior: "smooth" });
+  };
+
+  const onPrev = () => scrollByAmount(-500);
+  const onNext = () => scrollByAmount(500);
+
+  if (isDesktop) {
+    return (
+      <div className="relative">
+        <div
           ref={trackRef}
-          style={{ x }}
-          className="flex items-stretch gap-6 pl-[clamp(1rem,6vw,5rem)] pr-[clamp(1rem,8vw,8rem)] will-change-transform"
+          onPointerDown={handlePointerDown}
+          onDragStart={(e) => e.preventDefault()}
+          className={`flex items-stretch gap-6 overflow-x-auto select-none no-scrollbar pl-[clamp(1rem,6vw,5rem)] pr-[clamp(1rem,8vw,8rem)] py-6 ${
+            isDragging ? "cursor-grabbing" : "cursor-grab"
+          }`}
+          style={{
+            WebkitOverflowScrolling: "touch",
+          }}
         >
-          <ReelIntro variant="reel" progress={scrollYProgress} />
+          <ReelIntro
+            variant="reel"
+            progress={progress}
+            onPrev={onPrev}
+            onNext={onNext}
+            canPrev={canPrev}
+            canNext={canNext}
+          />
           {flagshipProjects.map((project, i) => (
             <FlagshipCard
               key={project.id}
@@ -401,41 +576,50 @@ function PinnedReel({ onOpen }: { onOpen: (p: Project) => void }) {
               onOpen={onOpen}
             />
           ))}
-        </motion.div>
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
-/* -------------------------------------------------------------------------- *
- *  FALLBACK STRIP (narrow / reduced-motion) — native scroll-snap.            *
- * -------------------------------------------------------------------------- */
-function FallbackStrip({ onOpen }: { onOpen: (p: Project) => void }) {
   return (
     <>
       <Container>
         <Reveal>
-          <ReelIntro variant="strip" />
+          <ReelIntro
+            variant="strip"
+            progress={progress}
+            onPrev={onPrev}
+            onNext={onNext}
+            canPrev={canPrev}
+            canNext={canNext}
+          />
         </Reveal>
       </Container>
 
-      <ul
-        className="mt-10 flex snap-x snap-mandatory list-none gap-5 overflow-x-auto px-[clamp(1rem,4vw,2rem)] pb-4 [scrollbar-width:thin] [-webkit-overflow-scrolling:touch]"
+      <div
+        ref={trackRef}
+        onPointerDown={handlePointerDown}
+        onDragStart={(e) => e.preventDefault()}
+        className={`mt-10 flex list-none gap-5 overflow-x-auto select-none no-scrollbar px-[clamp(1rem,4vw,2rem)] pb-4 ${
+          isDragging ? "cursor-grabbing" : "cursor-grab"
+        }`}
+        style={{
+          WebkitOverflowScrolling: "touch",
+        }}
         aria-label="Flagship projects"
       >
         {flagshipProjects.map((project, i) => (
-          <li key={project.id} className="flex">
+          <div key={project.id} className="flex flex-shrink-0">
             <FlagshipCard
               project={project}
               index={i}
               variant="strip"
               onOpen={onOpen}
             />
-          </li>
+          </div>
         ))}
-        {/* Trailing spacer so the last card can snap-center on wide-ish touch. */}
-        <li aria-hidden="true" className="block w-[1px] flex-shrink-0" />
-      </ul>
+        <div aria-hidden="true" className="block w-[1px] flex-shrink-0" />
+      </div>
     </>
   );
 }
@@ -505,8 +689,7 @@ function AlsoShipped({ onOpen }: { onOpen: (p: Project) => void }) {
                 }
                 className="group relative flex h-full flex-col rounded-[var(--r-md)] border border-[color:var(--line)] bg-[color:var(--surface)] p-5 shadow-[var(--shadow-sm)] transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-[color:var(--line-strong)] hover:shadow-[var(--shadow-md)]"
               >
-                {/* Stretched overlay button — opens the case study; no inner links
-                 * here so it owns the whole card. */}
+                {/* Stretched overlay button — opens the case study */}
                 <button
                   type="button"
                   data-cursor="target"
@@ -559,21 +742,19 @@ function AlsoShipped({ onOpen }: { onOpen: (p: Project) => void }) {
  *  WORK SECTION                                                               *
  * -------------------------------------------------------------------------- */
 export default function Work() {
-  const reduceMotion = useReducedMotion();
   const { width } = useWindowSize();
   const [activeModal, setActiveModal] = useState<Project | null>(null);
 
-  const pinned = width >= 1024 && !reduceMotion;
+  const isDesktop = width >= 1024;
 
   return (
-    <section id="work" aria-labelledby="work-title" className="relative">
-      {pinned ? (
-        <PinnedReel onOpen={setActiveModal} />
-      ) : (
-        <div style={{ paddingBlock: "var(--section-y)" }}>
-          <FallbackStrip onOpen={setActiveModal} />
-        </div>
-      )}
+    <section
+      id="work"
+      aria-labelledby="work-title"
+      className="relative"
+      style={{ paddingBlock: "var(--section-y)" }}
+    >
+      <DraggableReel onOpen={setActiveModal} isDesktop={isDesktop} />
 
       <motion.div
         initial={{ opacity: 0, y: 18 }}
