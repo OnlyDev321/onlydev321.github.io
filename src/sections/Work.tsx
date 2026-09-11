@@ -34,6 +34,8 @@ function statusMeta(status: Project["status"]): StatusMeta {
       return { label: "Published on npm", dot: "var(--ok)" };
     case "in-development":
       return { label: "In development", dot: "var(--warn)" };
+    case "completed":
+      return { label: "Completed", dot: "var(--ok)" };
     default:
       return { label: "Shipped", dot: "var(--accent)" };
   }
@@ -326,7 +328,10 @@ function ReelIntro({
           </div>
 
           <p className="flex items-center gap-2 font-mono text-eyebrow uppercase tracking-[0.16em] text-[color:var(--ink-faint)]">
-            <MoveHorizontal size={14} className="text-[color:var(--accent)] animate-pulse" />
+            <MoveHorizontal
+              size={14}
+              className="text-[color:var(--accent)] animate-pulse"
+            />
             Drag or swipe to explore
           </p>
         </div>
