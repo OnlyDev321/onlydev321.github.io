@@ -608,6 +608,12 @@ section { position: relative; z-index: 1; }
 .skip-link:focus, .skip-link:focus-visible { transform: translateY(0); }
 
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  outline: none !important;
+}
 
 /* Reduced motion = the true baseline. Kill transforms/scrub/marquee/cursor;
    keep opacity/color fades that aid comprehension. */

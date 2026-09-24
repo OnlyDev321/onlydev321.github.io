@@ -281,7 +281,7 @@ export default function CommandPalette({ open, onClose, theme, onToggleTheme }: 
             autoComplete="off"
             autoCorrect="off"
             spellCheck={false}
-            className="h-14 w-full border-0 bg-transparent text-[color:var(--ink)] outline-none placeholder:text-[color:var(--ink-faint)]"
+            className="h-14 w-full border-0 bg-transparent text-[color:var(--ink)] outline-none focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 placeholder:text-[color:var(--ink-faint)]"
           />
         </div>
 
