@@ -92,8 +92,8 @@ export default function Contact() {
           index="05"
           label="CONTACT"
           id="contact-heading"
-          title={['Let’s build something ', <span className="serif-italic">impactful.</span>]}
-          lede="Looking for a full-stack engineer, a UX/UI designer, or a bilingual Bridge Software Engineer (BrSE) between Korea and Vietnam? Send me a message. I read every inquiry personally and reply promptly."
+          title={['Say ', <span className="serif-italic">hello.</span>]}
+          lede="I’m a software engineering student in Seoul, looking for a full-stack, UX/UI, or BrSE role. Send me a message and I’ll reply myself."
         />
 
         <Reveal className="mt-12 lg:mt-16">
@@ -119,8 +119,8 @@ export default function Contact() {
               <div>
                 <p className={labelClass}>Focus &amp; Roles</p>
                 <p className="mt-2.5 max-w-[42ch] text-body text-[color:var(--ink-muted)]">
-                  Full-stack web applications, AI integrations, UX/UI prototyping,
-                  and Bridge Software Engineer (BrSE) roles connecting Vietnam and Korea.
+                  Full-stack web apps, AI features, and UX/UI design. Also open to
+                  BrSE work between Vietnam and Korea.
                 </p>
               </div>
 

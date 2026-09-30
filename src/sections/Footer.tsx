@@ -75,7 +75,7 @@ export default function Footer() {
           >
             .
           </span>
-          <span className="ml-3 font-mono text-[0.45em] font-normal tracking-normal text-[color:var(--ink-muted)]">
+          <span className="ml-3 font-mono text-[em] font-medium tracking-normal text-[color:var(--ink-muted)] sm:ml-4">
             (김진호)
           </span>
         </button>
