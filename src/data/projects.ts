@@ -1,20 +1,25 @@
 import type { Project } from "../types";
 
 /* -------------------------------------------------------------------------- *
- *  PROJECTS — open-source product work by Tran Hau (김진호 / OnlyDev321).      *
- *  All repositories are public on GitHub: https://github.com/OnlyDev321         *
- *                                                                             *
- *  Flagships:                                                                 *
- *    01 Deepterview-v2  — AI-powered video interview emotion analysis (TS)    *
- *    02 CoffeeAI        — Voice AI coffee ordering with Java & STT            *
- *    03 Demian-shop     — ViDE visual layout web extraction (Python)          *
- *    04 MFC-ChatApp     — High-performance C++ chat with profanity filtering  *
- *                                                                             *
- *  Secondary ("also shipped"):                                                *
- *    05 MOJI            — Modern real-time web chat (React + WebSockets)      *
- *    06 TrafficSafe     — Arduino pedestrian safety IoT system                *
- *    07 todoX           — Personalized productivity app (JS)                  *
- *    08 Figma-To-HTML   — Pixel-perfect responsive web conversion             *
+ *  PROJECTS — open-source work by Tran Hau (김진호 / OnlyDev321).               *
+ *  All repositories are public: https://github.com/OnlyDev321                    *
+ *                                                                              *
+ *  Copy rule for the case-study modal: one idea per project. The tagline says  *
+ *  what it is, the description says why it exists, the features are short       *
+ *  single-clause lines. Long feature sentences were reading like a spec sheet   *
+ *  on a phone, so everything is capped well under a full line.                  *
+ *                                                                              *
+ *  Flagships:                                                                  *
+ *    01 Deepterview-v2  — scores candidate emotion from video (TS)              *
+ *    02 CoffeeAI        — voice coffee ordering with Java & STT                 *
+ *    03 Demian-shop     — reads product info from page layout (Python)         *
+ *    04 MFC-ChatApp     — C++ desktop chat with a word filter                  *
+ *                                                                              *
+ *  Secondary ("also shipped"):                                                 *
+ *    05 MOJI            — real-time web chat (React + WebSockets)               *
+ *    06 TrafficSafe     — Arduino pedestrian safety system                     *
+ *    07 todoX           — to-do app with your own colors                       *
+ *    08 Figma-To-HTML   — Figma design to responsive code                     *
  * -------------------------------------------------------------------------- */
 
 export const projects: Project[] = [
@@ -23,37 +28,28 @@ export const projects: Project[] = [
     name: "Deepterview v2",
     repo: "OnlyDev321/deepterview-v2",
     year: "2025",
-    platform: "AI Video Analysis Platform",
-    tagline:
-      "AI-powered interview analysis system evaluating candidates’ emotional expressions and behavioral cues in real time.",
+    platform: "AI video analysis",
+    tagline: "Scores how a candidate comes across, using only their video.",
     description:
-      "Deepterview-v2 is an intelligent recruitment assessment system that analyzes candidate video feeds. It processes facial landmarks, micro-expressions, speech fluctuations, and behavioral signals to generate quantitative, objective performance reports for interviewers and HR teams.",
+      "Built for interviewers, who have to watch a lot of footage. It reads the video and turns what it sees into scores and a timeline you can actually check.",
     features: [
-      "Multi-modal emotion and micro-expression detection from video streams",
-      "Real-time candidate engagement, composure, and confidence metrics scoring",
-      "Interactive dashboard featuring timeline-based behavioral cue breakdowns",
-      "High-performance TypeScript and React architecture with fluid visual telemetry",
-      "Privacy-conscious video processing pipeline with exportable analytical summaries",
+      "Reads emotion from the video stream",
+      "Timeline of where the cues showed up",
+      "Works live or on a recording",
+      "Report you can export and share",
     ],
-    tech: [
-      "TypeScript",
-      "React 19",
-      "AI Video Analysis",
-      "Computer Vision",
-      "Node.js",
-      "Tailwind CSS",
-    ],
+    tech: ["TypeScript", "React", "Node.js", "Tailwind CSS", "Computer vision"],
     github: "https://github.com/OnlyDev321/deepterview-v2",
     accent: "#0284c7",
     accentGlow: "rgba(2,132,199,0.22)",
-    category: "AI & Machine Learning",
-    status: "in-development",
+    category: "AI & machine learning",
+    status: "completed",
     tier: "flagship",
     highlights: [
-      { label: "Analysis", value: "Emotion & Cues" },
-      { label: "Video Feed", value: "Real-time & Recorded" },
-      { label: "Core Stack", value: "TypeScript + AI" },
-      { label: "Dashboard", value: "Interactive Metrics" },
+      { label: "Reads", value: "Face & voice" },
+      { label: "Scores", value: "Mood, focus" },
+      { label: "Stack", value: "TypeScript + Java Spring + Python" },
+      { label: "Output", value: "Timeline report" },
     ],
   },
   {
@@ -61,37 +57,28 @@ export const projects: Project[] = [
     name: "CoffeeAI",
     repo: "OnlyDev321/CoffeeAI",
     year: "2025",
-    platform: "Voice AI Ordering System",
-    tagline:
-      "AI-powered voice coffee ordering system built with Java, real-time speech recognition, and automatic menu parsing.",
+    platform: "Voice ordering",
+    tagline: "Order a coffee by talking instead of tapping a screen.",
     description:
-      "CoffeeAI re-imagines retail ordering with a conversational voice interface. Engineered in Java, it captures live customer speech, extracts menu items and fine-grained customization parameters (ice level, syrups, milk alternatives) through natural language parsing, and processes automated checkout.",
+      'I wanted to see if a normal sentence was enough to place an order. Say "large iced latte, less ice, oat milk" and it works out the drink and the price on its own.',
     features: [
-      "Real-time Speech-to-Text (STT) audio stream processing with ambient noise mitigation",
-      "Intelligent natural language parser for multi-item orders and complex customizations",
-      "Automated state machine managing item availability, modifiers, and dynamic pricing",
-      "Seamless checkout workflow with digital receipt generation and voice confirmation",
-      "Modular object-oriented Java architecture designed for POS kiosk integration",
+      "Turns speech into an order",
+      "Understands the details, like less ice",
+      "Confirms back before you pay",
+      "Works over real shop noise",
     ],
-    tech: [
-      "Java",
-      "Spring Boot",
-      "Speech Recognition (STT)",
-      "NLP Parsing",
-      "REST API",
-      "MySQL",
-    ],
+    tech: ["Java", "Spring Boot", "Speech recognition", "MySQL", "REST API"],
     github: "https://github.com/OnlyDev321/CoffeeAI",
     accent: "#d97706",
-    accentGlow: "rgba(217,119,6,0.22)",
-    category: "Voice AI & Retail POS",
+    accentGlow: "rgba(217,119,06,0.22)",
+    category: "Voice AI",
     status: "completed",
     tier: "flagship",
     highlights: [
-      { label: "Input", value: "Real-time Voice STT" },
-      { label: "Backend", value: "Java / OOP Engine" },
-      { label: "Parser", value: "Menu & Modifier NLP" },
-      { label: "Checkout", value: "Automated Billing" },
+      { label: "Input", value: "Your voice" },
+      { label: "Language", value: "Java" },
+      { label: "Understands", value: "Modifiers" },
+      { label: "Result", value: "Paid order" },
     ],
   },
   {
@@ -99,60 +86,47 @@ export const projects: Project[] = [
     name: "Demian-Shop",
     repo: "OnlyDev321/Demian-shop",
     year: "2025",
-    platform: "Visual Web Extraction Engine",
+    platform: "Web scraping",
     tagline:
-      "Lightweight product information extraction based on ViDE visual layout analysis for unstructured e-commerce sites.",
+      "Reads a shop page like a person scans it, not like a script does.",
     description:
-      "Demian-Shop tackles the brittleness of DOM-based web scraping by employing ViDE (Visual Data Extraction) methodologies. Rather than depending strictly on unstable CSS selectors, it evaluates the visual layout geometry and render tree of e-commerce pages to accurately locate titles, prices, specs, and images across diverse layouts.",
+      "Most scrapers break when a site changes its CSS. This one looks at where things sit on the screen, so renaming a class does not break it. The output is clean JSON.",
     features: [
-      "ViDE (Visual Data Extraction) spatial layout analysis and content block segmentation",
-      "Resilient against CSS class obfuscation, dynamic client-side hydration, and DOM mutations",
-      "Automated product schema normalization (prices, currency, stock status, specs)",
-      "High-throughput asynchronous crawling engine with rate limiting and structured JSON export",
+      "Finds items by screen position",
+      "Survives redesigns and renames",
+      "Normalizes price and stock",
+      "Crawls many pages, quietly",
     ],
-    tech: [
-      "Python",
-      "ViDE Visual Layout",
-      "DOM Tree Analysis",
-      "Web Mining",
-      "Data Normalization",
-    ],
+    tech: ["Python", "Layout analysis", "Async crawling", "JSON export"],
     github: "https://github.com/OnlyDev321/Demian-shop",
     accent: "#059669",
     accentGlow: "rgba(5,150,105,0.22)",
-    category: "Data Mining & Vision",
+    category: "Data & vision",
     status: "completed",
     tier: "flagship",
     highlights: [
-      { label: "Method", value: "ViDE Visual Layout" },
-      { label: "Target", value: "Unstructured E-comm" },
-      { label: "Resilience", value: "DOM Mutation-Proof" },
-      { label: "Language", value: "Python 3" },
+      { label: "How it works", value: "Looks at the page" },
+      { label: "Still works when", value: "Website is redesigned" },
+      { label: "Language", value: "Python + Javascript" },
+      { label: "Output", value: "Clean JSON" },
     ],
   },
   {
     id: "mfc-chatapp",
-    name: "MFC-ChatApp (BadWord Filter)",
+    name: "MFC-ChatApp",
     repo: "OnlyDev321/MFC-ChatAppWithoutBadWord",
     year: "2024",
-    platform: "Desktop Chat & Moderation",
-    tagline:
-      "Real-time C++ chat system with personalized prohibited-word filtering and automated content moderation.",
+    platform: "Desktop chat",
+    tagline: "A desktop chat that hides the words you don't want.",
     description:
-      "A high-performance Windows desktop chat application engineered with C++ and Microsoft Foundation Classes (MFC). Features client-server socket communication, multi-threaded message routing, and an ultra-fast in-memory pattern matching engine for custom user blacklists and automated profanity sanitization.",
+      "My first real networking project, and the first time sockets actually clicked. Each person has their own blocked-word list, and messages are checked before anyone sees them.",
     features: [
-      "Low-latency asynchronous socket networking powered by native Winsock APIs",
-      "Personalized blacklist management with real-time text masking and content moderation",
-      "Safe multi-threaded UI event queue ensuring zero UI freezing during heavy network traffic",
-      "Comprehensive audit logging and visual moderation violation alerts for room managers",
+      "Live chat over raw sockets",
+      "Your own blocked-word list",
+      "Filter runs before the message shows",
+      "Room manager sees every flag",
     ],
-    tech: [
-      "C++",
-      "MFC (Microsoft Foundation Classes)",
-      "Winsock Sockets",
-      "Multi-threading",
-      "Pattern Matching",
-    ],
+    tech: ["C++", "MFC", "Sockets", "Multi-threading"],
     github: "https://github.com/OnlyDev321/MFC-ChatAppWithoutBadWord",
     accent: "#db2777",
     accentGlow: "rgba(219,39,119,0.22)",
@@ -160,10 +134,10 @@ export const projects: Project[] = [
     status: "completed",
     tier: "flagship",
     highlights: [
-      { label: "Language", value: "C++ / Win32 / MFC" },
-      { label: "Networking", value: "Raw Winsock Sockets" },
-      { label: "Moderation", value: "In-Memory Filter" },
-      { label: "Concurrency", value: "Multi-Threaded" },
+      { label: "Language", value: "C++" },
+      { label: "Chat", value: "Real sockets" },
+      { label: "Filter", value: "Per user" },
+      { label: "Runs on", value: "Windows" },
     ],
   },
   {
@@ -171,26 +145,26 @@ export const projects: Project[] = [
     name: "MOJI Chat",
     repo: "OnlyDev321/MOJI",
     year: "2024",
-    platform: "Modern Web Chat",
-    tagline:
-      "Real-time expressive web chat application with live messaging, clean aesthetics, and instant sync.",
+    platform: "Web chat",
+    tagline: "A quick web chat that stays in sync while you type.",
     description:
-      "MOJI is a modern, responsive messaging web app built for fast and expressive conversations. It combines WebSocket-backed real-time bi-directional message dispatch, typing indicators, user presence detection, and an intuitive, mobile-friendly interface.",
+      "A small project to get comfortable with WebSockets. Messages arrive as you send them, and it reconnects on its own if the network drops.",
     features: [
-      "Bi-directional instant messaging via WebSockets with automatic reconnection",
-      "Real-time user presence, active status indicators, and live typing previews",
-      "Responsive interface styled with Tailwind CSS and accessible navigation",
+      "Messages arrive instantly",
+      "Shows when people are typing",
+      "Reconnects by itself",
+      "Works on a phone",
     ],
     tech: ["TypeScript", "React", "Node.js", "WebSockets", "Tailwind CSS"],
     github: "https://github.com/OnlyDev321/MOJI",
     accent: "#7c3aed",
     accentGlow: "rgba(124,58,237,0.22)",
-    category: "Web Application",
+    category: "Web app",
     status: "shipped",
     tier: "secondary",
     highlights: [
       { label: "Protocol", value: "WebSockets" },
-      { label: "Frontend", value: "TypeScript + React" },
+      { label: "Built with", value: "React" },
     ],
   },
   {
@@ -198,32 +172,26 @@ export const projects: Project[] = [
     name: "TrafficSafe",
     repo: "OnlyDev321/TrafficSafe",
     year: "2024",
-    platform: "Smart Pedestrian IoT System",
-    tagline:
-      "Arduino-powered pedestrian safety system with ultrasonic vehicle detection and automatic barrier control.",
+    platform: "IoT & hardware",
+    tagline: "A crosswalk barrier that knows a car is coming.",
     description:
-      "An embedded smart crosswalk safety mechanism designed to protect pedestrians. Utilizes ultrasonic distance sensors to monitor approaching traffic speeds, evaluates safe crossing intervals, and triggers physical servo barriers alongside visual LED alerts.",
+      "A class project that needed real hardware, which made it the most fun one. An ultrasonic sensor watches for cars, and a servo drops the barrier before anyone steps off the kerb.",
     features: [
-      "Ultrasonic distance sensing with algorithmic noise filtering for reliable vehicle detection",
-      "Automated servo-driven safety barrier control synchronized with pedestrian signals",
-      "High-contrast visual warning system for enhanced night-time and bad-weather visibility",
+      "Sensor spots an approaching car",
+      "Barrier drops on its own",
+      "Lights flash at night and in rain",
+      "Ignores sensor noise",
     ],
-    tech: [
-      "C++",
-      "Arduino",
-      "Ultrasonic Sensors",
-      "Servo Actuators",
-      "Embedded Systems",
-    ],
+    tech: ["Arduino", "C++", "Ultrasonic sensors", "Servo"],
     github: "https://github.com/OnlyDev321/TrafficSafe",
     accent: "#0891b2",
     accentGlow: "rgba(8,145,178,0.22)",
-    category: "IoT & Embedded Hardware",
+    category: "IoT & hardware",
     status: "shipped",
     tier: "secondary",
     highlights: [
-      { label: "Hardware", value: "Arduino + Sensors" },
-      { label: "Domain", value: "Smart City IoT" },
+      { label: "Hardware", value: "Arduino" },
+      { label: "Watches for", value: "Cars" },
     ],
   },
   {
@@ -231,26 +199,26 @@ export const projects: Project[] = [
     name: "todoX",
     repo: "OnlyDev321/todoX",
     year: "2024",
-    platform: "Productivity Application",
-    tagline:
-      "Create and organize your daily tasks according to your personal workflow and visual style.",
+    platform: "Productivity",
+    tagline: "A to-do list you can make look like your own.",
     description:
-      "A sleek productivity application that emphasizes user customization and distraction-free workflow. Features customizable theme palettes, tag grouping, local persistence, and fluid animations designed to keep users in flow state.",
+      "I got tired of apps that look the same as everyone else's, so the colors are the main feature. Everything is saved in the browser, so nothing to sign up for.",
     features: [
-      "Dynamic visual theme customization and personalized palette selector",
-      "Instant search, priority categorizing, and tag-based filtering",
-      "Offline-first local storage persistence ensuring zero data loss",
+      "Pick your own colors",
+      "Search and filter by tag",
+      "Saved in the browser, works offline",
+      "No account needed",
     ],
-    tech: ["JavaScript", "HTML5", "CSS3", "Local Storage", "UX Design"],
+    tech: ["JavaScript", "HTML", "CSS", "Local storage"],
     github: "https://github.com/OnlyDev321/todoX",
     accent: "#0d9488",
     accentGlow: "rgba(13,148,136,0.22)",
-    category: "Productivity & Web",
+    category: "Productivity",
     status: "shipped",
     tier: "secondary",
     highlights: [
-      { label: "Focus", value: "Customizable UX" },
-      { label: "Storage", value: "Local Persistence" },
+      { label: "Main thing", value: "Your colors" },
+      { label: "Storage", value: "In browser" },
     ],
   },
   {
@@ -258,26 +226,26 @@ export const projects: Project[] = [
     name: "Figma-To-HTML",
     repo: "OnlyDev321/Figma-To-HTML",
     year: "2024",
-    platform: "Pixel-Perfect Web Craft",
-    tagline:
-      "Handcrafted, pixel-perfect responsive HTML5/CSS3 conversion adhering strictly to design token specifications.",
+    platform: "Design to code",
+    tagline: "Turning a Figma file into code that still looks right.",
     description:
-      "A showcase of translating intricate Figma design files into production-ready, clean, semantic HTML5 and CSS3 code with smooth interactions, responsive breakpoints, and accessibility standards.",
+      "The gap between a design and a working page. This is my practice at keeping the spacing and type sizes from Figma and getting the same result in the browser.",
     features: [
-      "Faithful replication of Figma design tokens, spacing scales, and typography hierarchies",
-      "Pure semantic HTML5 layout structure with modular, maintainable CSS",
-      "Fluid responsiveness tested across mobile, tablet, and widescreen desktop viewports",
+      "Spacing and type match the design",
+      "Works on phone, tablet, desktop",
+      "Clean readable markup",
+      "Keyboard and screen reader friendly",
     ],
-    tech: ["Figma", "HTML5", "CSS3", "Responsive Design", "A11y"],
+    tech: ["Figma", "HTML", "CSS", "Responsive design"],
     github: "https://github.com/OnlyDev321/Figma-To-HTML",
     accent: "#9333ea",
-    accentGlow: "rgba(147,51,234,0.22)",
-    category: "Design & Frontend",
+    accentGlow: "rgba(147,51,238,0.22)",
+    category: "Design & frontend",
     status: "shipped",
     tier: "secondary",
     highlights: [
-      { label: "Craft", value: "Pixel-Perfect UI" },
-      { label: "Source", value: "Figma System" },
+      { label: "Source", value: "Figma file" },
+      { label: "Result", value: "Working page" },
     ],
   },
 ];

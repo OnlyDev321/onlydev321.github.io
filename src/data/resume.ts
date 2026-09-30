@@ -8,34 +8,10 @@ export const experience: Experience[] = [
     period: "2023 – Present",
     current: true,
     bullets: [
-      "Engineering full-stack web and desktop applications across React, Next.js, Spring Boot, and C++.",
-      "Architected AI-powered integrations: deepterview-v2 for interview video emotion analysis and CoffeeAI for real-time voice speech ordering.",
-      "Formulating bilingual technical specs (Korean & Vietnamese) to bridge product requirements and engineering execution.",
-      "Practicing clean code, modular architecture, and CI/CD automation across multiple open-source repositories.",
-    ],
-  },
-  {
-    role: "Frontend Developer & UX/UI Designer",
-    company: "Soongsil University (숭실대학교)",
-    location: "Seoul & Remote",
-    period: "2023 – Present",
-    current: true,
-    bullets: [
-      "Transformed intricate Figma design systems into responsive, accessible HTML5/CSS3 and React codebases (Figma-To-HTML).",
-      "Designed modern, fluid UI components with Tailwind CSS and Framer Motion, lifting interactive responsiveness.",
-      "Built lightweight web productivity and chat apps (todoX, MOJI) with WebSocket real-time communication and offline-first storage.",
-    ],
-  },
-  {
-    role: "Software Engineering Researcher",
-    company: "Soongsil University (숭실대학교)",
-    location: "Seoul, South Korea",
-    period: "2023 – Present",
-    current: true,
-    bullets: [
-      "Conducted research on ViDE (Visual Data Extraction) layout analysis for unstructured e-commerce data extraction (Demian-shop).",
-      "Built multi-threaded C++ Winsock desktop systems with custom regex blacklist filtering (MFC-ChatAppWithoutBadWord).",
-      "Engineered IoT pedestrian crosswalk protection hardware with Arduino, ultrasonic sensors, and automated barrier servos (TrafficSafe).",
+      "I build web and desktop apps with React, Next.js, Spring Boot and C++.",
+      "Two of my projects use AI: deepterview-v2 reads emotions from interview videos, and CoffeeAI takes coffee orders by voice.",
+      "I write specs in Korean and Vietnamese, so the person explaining the idea and the person coding understand each other.",
+      "I try to keep my code tidy and set up CI/CD, mostly on my own open-source projects.",
     ],
   },
 ];
@@ -45,7 +21,7 @@ export const education: Education[] = [
     degree: "BSc Software Engineering",
     institution: "Soongsil University (숭실대학교)",
     period: "2023 – Present",
-    note: "Seoul, South Korea · Focus on Web Development, UX/UI Design & AI Systems",
+    note: "Seoul, South Korea · Focus on Web Development, UX/UI Design",
   },
 ];
 
@@ -55,11 +31,6 @@ export const certifications: Certification[] = [
     issuer: "National Institute for International Education",
     year: "2023 - present",
   },
-  {
-    name: "Software Engineering & Full-Stack Track",
-    issuer: "Soongsil University SE Lab",
-    year: "2023 - present",
-  },
 ];
 
 /* Skills — grouped to mirror the <Stack /> bento. Verified against the actual
@@ -67,56 +38,55 @@ export const certifications: Certification[] = [
  * UI; kept for type back-compat. */
 export const skills: Skill[] = [
   // Core engineering — foundational languages
-  { name: "TypeScript (strict)", category: "Core" },
-  { name: "JavaScript (ES2024)", category: "Core" },
-  { name: "Java (Spring Boot)", category: "Core" },
+  { name: "TypeScript", category: "Core" },
+  { name: "JavaScript", category: "Core" },
+  { name: "Java", category: "Core" },
   { name: "Python", category: "Core" },
   { name: "C++", category: "Core" },
   { name: "C", category: "Core" },
 
-  // Web — modern responsive interfaces
-  { name: "React 19", category: "Web" },
+  // Web — building the pages users see
+  { name: "React", category: "Web" },
   { name: "Next.js", category: "Web" },
   { name: "Vite", category: "Web" },
-  { name: "Tailwind CSS v4", category: "Web" },
-  { name: "HTML5 / Semantic Web", category: "Web" },
-  { name: "CSS3 / Modern Layouts", category: "Web" },
+  { name: "Tailwind CSS", category: "Web" },
+  { name: "HTML", category: "Web" },
+  { name: "CSS", category: "Web" },
   { name: "Framer Motion", category: "Web" },
   { name: "Bootstrap", category: "Web" },
 
-  // Backend & data — APIs, realtime, databases
+  // Backend & data — the server and the database
   { name: "Spring Boot", category: "Backend" },
   { name: "Node.js", category: "Backend" },
   { name: "Express.js", category: "Backend" },
   { name: "NestJS", category: "Backend" },
-  { name: "RESTful APIs", category: "Backend" },
+  { name: "REST APIs", category: "Backend" },
   { name: "WebSockets", category: "Backend" },
   { name: "MySQL", category: "Backend" },
-  { name: "MongoDB Atlas", category: "Backend" },
+  { name: "MongoDB", category: "Backend" },
 
-  // AI / ML — vision, audio & visual data mining
-  { name: "Video Emotion Analysis", category: "AI" },
-  { name: "Speech Recognition (STT)", category: "AI" },
-  { name: "ViDE Visual Layout Extraction", category: "AI" },
-  { name: "Computer Vision", category: "AI" },
-  { name: "OpenAI API & Prompting", category: "AI" },
-  { name: "Data Normalization", category: "AI" },
+  // AI / ML — the parts that read or understand something
+  { name: "Emotion detection", category: "AI" },
+  { name: "Speech recognition", category: "AI" },
+  { name: "Web scraping", category: "AI" },
+  { name: "Computer vision", category: "AI" },
+  { name: "OpenAI API", category: "AI" },
+  { name: "Data cleaning", category: "AI" },
 
   // Systems & tooling
-  { name: "Git & GitHub Actions", category: "Systems" },
+  { name: "Git & GitHub", category: "Systems" },
   { name: "Docker", category: "Systems" },
-  { name: "Winsock / Sockets (C++)", category: "Systems" },
+  { name: "Sockets (C++)", category: "Systems" },
   { name: "Multi-threading", category: "Systems" },
-  { name: "Arduino / Embedded IoT", category: "Systems" },
+  { name: "Arduino", category: "Systems" },
   { name: "Postman", category: "Systems" },
   { name: "VS Code", category: "Systems" },
-  { name: "Vercel", category: "Systems" },
+  { name: "Vercel & Render", category: "Systems" },
 
   // Design & craft
   { name: "Figma", category: "Design" },
-  { name: "UX/UI Design", category: "Design" },
-  { name: "Pixel-perfect Prototyping", category: "Design" },
-  { name: "Design Tokens", category: "Design" },
-  { name: "Responsive Layouts", category: "Design" },
-  { name: "Accessibility (A11y)", category: "Design" },
+  { name: "UI design", category: "Design" },
+  { name: "Prototyping", category: "Design" },
+  { name: "Design tokens", category: "Design" },
+  { name: "Responsive layout", category: "Design" },
 ];

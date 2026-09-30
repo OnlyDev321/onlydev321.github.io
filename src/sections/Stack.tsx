@@ -17,13 +17,12 @@ import { Reveal } from '../components/Kinetic'
 
 /* Layer order, top of the stack to the surface, with editorial relabels. */
 const layers: { category: string; label: string }[] = [
-  { category: 'Core', label: 'Core engineering' },
-  { category: 'Systems', label: 'Systems & tooling' },
-  { category: 'AI', label: 'AI / ML' },
-  { category: 'Mobile', label: 'Mobile' },
-  { category: 'Backend', label: 'Backend & infra' },
+  { category: 'Core', label: 'Languages' },
   { category: 'Web', label: 'Web' },
-  { category: 'Design', label: 'Design & craft' },
+  { category: 'Backend', label: 'Backend & database' },
+  { category: 'AI', label: 'AI' },
+  { category: 'Systems', label: 'Tools & deployment' },
+  { category: 'Design', label: 'Design' },
 ]
 
 export default function Stack() {
@@ -33,8 +32,8 @@ export default function Stack() {
         <SectionHeader
           index="02"
           label="STACK"
-          title={['Everything I ', <span key="ship" className="serif-italic">ship with.</span>]}
-          lede="The actual tools behind the projects above, grouped by where they live in the stack. Not a tag cloud."
+          title={['Everything I ', <span key="use" className="serif-italic">use.</span>]}
+          lede="These are the tools I use, sorted by where they fit in a project. Most of them I learned by building the projects above."
           id="stack-heading"
         />
 

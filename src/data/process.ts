@@ -1,51 +1,46 @@
 export interface ProcessStep {
-  id: string
-  index: string
-  title: string
-  body: string
-  artifacts: string[]
+  id: string;
+  index: string;
+  title: string;
+  body: string;
+  artifacts: string[];
 }
 
-/* How a product gets from an idea to something people actually use. */
+/* How a project actually goes out, from the first sketch to a live URL. */
 export const processSteps: ProcessStep[] = [
   {
-    id: 'frame',
-    index: '01',
-    title: 'Frame',
-    body:
-      'Before code, the question. I find the real problem (the one users feel, not the one the brief describes) and surface the hard constraints early so they shape the architecture instead of the bug list.',
-    artifacts: ['Problem statement', 'Constraint map', 'Success metrics'],
+    id: "design",
+    index: "01",
+    title: "Design",
+    body: "I start in Figma, not in code. I set the colors, the fonts and the spacing first, then build a small design system out of them, so the screens I design later already look like one app.",
+    artifacts: ["Design tokens", "UI components", "Figma screens"],
   },
   {
-    id: 'architect',
-    index: '02',
-    title: 'Architect',
-    body:
-      'A typed, modular foundation with predictable state and clear seams: the kind of structure a framework, an LLM, and a mobile app can all share. Decisions get written down so the system survives past month six.',
-    artifacts: ['Module map', 'Typed boundaries', 'Performance budget'],
+    id: "frontend",
+    index: "02",
+    title: "Frontend",
+    body: "Then I build the interface from that design system. It has to work on a phone and on a laptop, and it has to show what is loading, what worked and what went wrong. Most of the real work here is the small states nobody notices until they are missing.",
+    artifacts: ["Responsive layout", "State & data flow", "Loading + error UI"],
   },
   {
-    id: 'build',
-    index: '03',
-    title: 'Build',
-    body:
-      'Vertical slices over horizontal layers. The first PR is something you can touch (a feed, a chat, a training loop), not a folder of utils. Ship daily, review continuously, refactor on the third pass.',
-    artifacts: ['Vertical-slice MVP', 'Design system', 'Test harness'],
+    id: "backend",
+    index: "03",
+    title: "Backend",
+    body: "After that I write the server side: what the data looks like in the database, and what the API lets you do with it. I decide the shape of the data first, because changing it later is much more work than getting it right at the start.",
+    artifacts: ["Database schema", "API endpoints", "Error handling"],
   },
   {
-    id: 'ship',
-    index: '04',
-    title: 'Ship',
-    body:
-      'CI that enforces the budget, env-aware builds, signed releases, OTA where it fits. Deployments that used to take a day take ten minutes, and stop failing the way they used to.',
-    artifacts: ['CI/CD pipeline', 'Crash + perf telemetry', 'Release playbook'],
+    id: "connect",
+    index: "04",
+    title: "Connect & test",
+    body: "Now I join the two halves together and actually break them on purpose. Empty inputs, a request that times out, a user who is not logged in. I want to find those problems myself, because otherwise real users find them for me.",
+    artifacts: ["tests", "pass"],
   },
   {
-    id: 'measure',
-    index: '05',
-    title: 'Measure',
-    body:
-      'Cold-start, frame drops, crash-free sessions, retention, eval scores. Numbers I can defend in a roadmap meeting, and if something regresses, the dashboard tells us before users do.',
-    artifacts: ['Perf budgets', 'Crash-free %', 'Eval gates'],
+    id: "deploy",
+    index: "05",
+    title: "Deploy & watch",
+    body: "I put it live on Vercel or Render, and then I do not walk away. I read the logs, check the speed and the errors, and fix whatever shows up. A deploy that used to take a whole day now takes about ten minutes.",
+    artifacts: ["CI auto deploy", "Logs & error tracking", "Live fixes"],
   },
-]
+];

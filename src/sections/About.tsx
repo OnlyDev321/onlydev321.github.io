@@ -23,13 +23,13 @@ export default function About() {
           className="thesis mt-6 text-display text-[color:var(--ink)]"
         >
           {[
-            'I connect modern code with human experience. The ',
-            <span key="frontend" className="serif-italic text-[color:var(--ink)]">interface</span>,
-            ' that users love, the ',
-            <span key="backend" className="serif-italic text-[color:var(--ink)]">architecture</span>,
-            ' that scales underneath, and the ',
-            <span key="bridge" className="serif-italic text-[color:var(--ink)]">bridge</span>,
-            ' that brings cross-cultural software teams together.',
+            'I like the part where a ',
+            <span key="frontend" className="serif-italic text-[color:var(--ink)]">screen</span>,
+            ' feels easy, the ',
+            <span key="backend" className="serif-italic text-[color:var(--ink)]">code</span>,
+            ' behind it stays clean, and ',
+            <span key="bridge" className="serif-italic text-[color:var(--ink)]">two languages</span>,
+            ' are enough to get it built.',
           ]}
         </KineticText>
 

@@ -1,73 +1,121 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react'
-import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
-import { ArrowDown, ArrowRight, Download } from 'lucide-react'
-import { GithubIcon, InstagramIcon, FacebookIcon, TiktokIcon } from '../components/SocialIcons'
-import LocalTime from '../components/LocalTime'
-import { Container } from '../components/ui'
-import { scrollToId } from '../lib/smoothScroll'
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { ArrowDown, ArrowRight, Download } from "lucide-react";
+import {
+  GithubIcon,
+  InstagramIcon,
+  FacebookIcon,
+  TiktokIcon,
+} from "../components/SocialIcons";
+import LocalTime from "../components/LocalTime";
+import { Container } from "../components/ui";
+import { scrollToId } from "../lib/smoothScroll";
 
 /* Three.js hero layer is dark-only, gated, and lazy — never on the light
  * default, on touch, on reduced-motion, or on low-RAM devices (see gate). */
-const HeroAmbient = lazy(() => import('../components/HeroAmbient'))
+const HeroAmbient = lazy(() => import("../components/HeroAmbient"));
 
-const ease = [0.23, 1, 0.32, 1] as const
+const ease = [0.23, 1, 0.32, 1] as const;
 
 /* Honest, repo-verifiable proof — the solo open-source body of work. */
 const proof = [
-  { value: '13', label: 'public repositories' },
-  { value: '6', label: 'core languages' },
-  { value: '3+', label: 'AI & systems builds' },
-]
+  { value: "10+", label: "public repositories" },
+  { value: "6", label: "core languages" },
+];
 
 const socials = [
-  { href: 'https://github.com/OnlyDev321',                 icon: <GithubIcon size={16} />,    label: 'GitHub' },
-  { href: 'https://www.facebook.com/tran.hau.691306/',    icon: <FacebookIcon size={16} />,  label: 'Facebook' },
-  { href: 'https://www.instagram.com/kim_jinho2412/',     icon: <InstagramIcon size={16} />, label: 'Instagram' },
-  { href: 'https://www.tiktok.com/@kim_jinho2412',        icon: <TiktokIcon size={16} />,    label: 'TikTok' },
-]
+  {
+    href: "https://github.com/OnlyDev321",
+    icon: <GithubIcon size={16} />,
+    label: "GitHub",
+  },
+  {
+    href: "https://www.facebook.com/tran.hau.691306/",
+    icon: <FacebookIcon size={16} />,
+    label: "Facebook",
+  },
+  {
+    href: "https://www.instagram.com/kim_jinho2412/",
+    icon: <InstagramIcon size={16} />,
+    label: "Instagram",
+  },
+  {
+    href: "https://www.tiktok.com/@kim_jinho2412",
+    icon: <TiktokIcon size={16} />,
+    label: "TikTok",
+  },
+];
 
 /* WebGL eligibility gate (perf): dark theme + fine pointer + motion allowed
  * + adequate RAM. Re-checked on theme change via the data-theme observer. */
 function useShaderEligible(): boolean {
-  const reduceMotion = useReducedMotion()
-  const [eligible, setEligible] = useState(false)
+  const reduceMotion = useReducedMotion();
+  const [eligible, setEligible] = useState(false);
   useEffect(() => {
-    if (reduceMotion || typeof window === 'undefined' || !window.matchMedia) return
+    if (reduceMotion || typeof window === "undefined" || !window.matchMedia)
+      return;
     const check = () => {
-      const capable = window.matchMedia('(min-width: 768px) and (hover: hover) and (pointer: fine)').matches
-      const dark = document.documentElement.getAttribute('data-theme') === 'dark'
-      const mem = (navigator as Navigator & { deviceMemory?: number }).deviceMemory
-      const enoughRam = mem === undefined || mem >= 4
-      setEligible(capable && dark && enoughRam)
-    }
-    check()
-    const obs = new MutationObserver(check)
-    obs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] })
-    return () => obs.disconnect()
-  }, [reduceMotion])
-  return eligible
+      const capable = window.matchMedia(
+        "(min-width: 768px) and (hover: hover) and (pointer: fine)",
+      ).matches;
+      const dark =
+        document.documentElement.getAttribute("data-theme") === "dark";
+      const mem = (navigator as Navigator & { deviceMemory?: number })
+        .deviceMemory;
+      const enoughRam = mem === undefined || mem >= 4;
+      setEligible(capable && dark && enoughRam);
+    };
+    check();
+    const obs = new MutationObserver(check);
+    obs.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+    return () => obs.disconnect();
+  }, [reduceMotion]);
+  return eligible;
 }
 
-function CharReveal({ text, baseDelay = 0, italic = false }: { text: string; baseDelay?: number; italic?: boolean }) {
+function CharReveal({
+  text,
+  baseDelay = 0,
+  italic = false,
+}: {
+  text: string;
+  baseDelay?: number;
+  italic?: boolean;
+}) {
   return (
-    <span className={italic ? 'serif-italic' : undefined}>
-      {text.split('').map((c, i) => (
-        <span key={`${c}-${i}`} className="char" style={{ animationDelay: `${baseDelay + 0.04 * i}s` }}>
+    <span className={italic ? "serif-italic" : undefined}>
+      {text.split("").map((c, i) => (
+        <span
+          key={`${c}-${i}`}
+          className="char"
+          style={{ animationDelay: `${baseDelay + 0.04 * i}s` }}
+        >
           {c}
         </span>
       ))}
     </span>
-  )
+  );
 }
 
 export default function Hero() {
-  const shaderOn = useShaderEligible()
-  const reduceMotion = useReducedMotion()
-  const ref = useRef<HTMLElement>(null)
+  const shaderOn = useShaderEligible();
+  const reduceMotion = useReducedMotion();
+  const ref = useRef<HTMLElement>(null);
 
   /* Device #2 — atmosphere parallax (never on text), clamped small. */
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const atmoY = useTransform(scrollYProgress, [0, 1], ['0%', '18%'])
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const atmoY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
 
   return (
     <section
@@ -75,7 +123,10 @@ export default function Hero() {
       ref={ref}
       aria-label="Introduction"
       className="relative isolate overflow-hidden"
-      style={{ paddingTop: 'calc(var(--section-y-hero) + 1rem)', paddingBottom: 'var(--section-y-hero)' }}
+      style={{
+        paddingTop: "calc(var(--section-y-hero) + 1rem)",
+        paddingBottom: "var(--section-y-hero)",
+      }}
     >
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:gap-14">
@@ -89,7 +140,10 @@ export default function Hero() {
             >
               <LocalTime />
               <span className="inline-flex items-center gap-2 font-mono text-eyebrow uppercase tracking-[0.16em] text-[color:var(--ink-faint)]">
-                <span aria-hidden="true" className="relative h-1.5 w-1.5 rounded-full bg-[color:var(--ok)] before:absolute before:inset-0 before:animate-pulse-ring before:rounded-full before:bg-[color:var(--ok)]" />
+                <span
+                  aria-hidden="true"
+                  className="relative h-1.5 w-1.5 rounded-full bg-[color:var(--ok)] before:absolute before:inset-0 before:animate-pulse-ring before:rounded-full before:bg-[color:var(--ok)]"
+                />
                 Open to work
               </span>
             </motion.div>
@@ -105,10 +159,18 @@ export default function Hero() {
               <span aria-hidden="true" className="block">
                 <CharReveal text="Tran" />
               </span>
-              <span aria-hidden="true" className="flex flex-wrap items-baseline gap-x-3 text-[color:var(--ink)]">
+              <span
+                aria-hidden="true"
+                className="flex flex-wrap items-baseline gap-x-3 text-[color:var(--ink)]"
+              >
                 <span>
                   <CharReveal text="Hau" baseDelay={0.26} italic />
-                  <span className="char serif-italic text-[color:var(--accent-strong)]" style={{ animationDelay: '0.45s' }}>.</span>
+                  <span
+                    className="char serif-italic text-[color:var(--accent-strong)]"
+                    style={{ animationDelay: "0.45s" }}
+                  >
+                    .
+                  </span>
                 </span>
                 <span className="font-mono text-[0.38em] font-normal tracking-normal text-[color:var(--ink-muted)]">
                   (김진호)
@@ -117,10 +179,20 @@ export default function Hero() {
             </h1>
 
             <p className="reveal-mask mt-6 block max-w-[60ch] text-lede text-[color:var(--ink-muted)]">
-              <span style={{ animationDelay: '0.5s' }}>
-                Software engineering student at <span className="font-medium text-[color:var(--ink)]">Soongsil University</span> in Seoul.
-                I build full-stack web applications, integrate <span className="serif-italic text-[color:var(--ink)]">voice &amp; vision AI</span>,
-                and craft clean, accessible <span className="serif-italic text-[color:var(--ink)]">UX/UI</span> architectures bridging Vietnam and Korea.
+              <span style={{ animationDelay: "0.5s" }}>
+                Software engineering student at{" "}
+                <span className="font-medium text-[color:var(--ink)]">
+                  Soongsil University
+                </span>{" "}
+                in Seoul. I build web apps, add{" "}
+                <span className="serif-italic text-[color:var(--ink)]">
+                  AI
+                </span>{" "}
+                to them, and keep the{" "}
+                <span className="serif-italic text-[color:var(--ink)]">
+                  design
+                </span>{" "}
+                simple.
               </span>
             </p>
 
@@ -130,11 +202,29 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.5, ease }}
               className="mt-9 flex flex-wrap items-center gap-3"
             >
-              <a href="#work" data-cursor="target" onClick={e => { e.preventDefault(); scrollToId('work') }} className="btn-primary group">
+              <a
+                href="#work"
+                data-cursor="target"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToId("work");
+                }}
+                className="btn-primary group"
+              >
                 View the work
-                <ArrowRight size={18} strokeWidth={1.5} aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1" />
+                <ArrowRight
+                  size={18}
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                  className="transition-transform duration-200 group-hover:translate-x-1"
+                />
               </a>
-              <a href="/resume.pdf" download data-cursor="target" className="btn-ghost">
+              <a
+                href="/resume.pdf"
+                download
+                data-cursor="target"
+                className="btn-ghost"
+              >
                 <Download size={16} strokeWidth={1.5} aria-hidden="true" />
                 Download resume
               </a>
@@ -147,15 +237,22 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.7, ease }}
               className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-[color:var(--line)] pt-6"
             >
-              {proof.map(p => (
+              {proof.map((p) => (
                 <span key={p.label} className="flex items-baseline gap-2">
-                  <span className="data text-data-lg text-[color:var(--highlight)]">{p.value}</span>
-                  <span className="text-small text-[color:var(--ink-faint)]">{p.label}</span>
+                  <span className="data text-data-lg text-[color:var(--highlight)]">
+                    {p.value}
+                  </span>
+                  <span className="text-small text-[color:var(--ink-faint)]">
+                    {p.label}
+                  </span>
                 </span>
               ))}
-              <span aria-hidden="true" className="hidden h-3 w-px bg-[color:var(--line-strong)] sm:block" />
+              <span
+                aria-hidden="true"
+                className="hidden h-3 w-px bg-[color:var(--line-strong)] sm:block"
+              />
               <ul className="flex items-center gap-2">
-                {socials.map(s => (
+                {socials.map((s) => (
                   <li key={s.label}>
                     <a
                       href={s.href}
@@ -176,11 +273,18 @@ export default function Hero() {
           {/* ---- Right: atmosphere (WebGL dark / CSS glow light). Decorative,
                  so it is hidden on mobile where the wordmark must lead. ---- */}
           <div className="relative hidden min-h-[460px] lg:block">
-            <motion.div aria-hidden="true" style={{ y: reduceMotion ? 0 : atmoY }} className="absolute inset-0">
+            <motion.div
+              aria-hidden="true"
+              style={{ y: reduceMotion ? 0 : atmoY }}
+              className="absolute inset-0"
+            >
               <div className="grid-bg absolute inset-0 rounded-[var(--r-lg)] opacity-60 [mask-image:radial-gradient(ellipse_at_center,#000_30%,transparent_72%)]" />
               <div
                 className="ambient-glow top-[10%] left-[15%] h-[60%] w-[70%]"
-                style={{ background: 'radial-gradient(circle, var(--accent-glow), transparent 65%)' }}
+                style={{
+                  background:
+                    "radial-gradient(circle, var(--accent-glow), transparent 65%)",
+                }}
               />
               {shaderOn && (
                 <Suspense fallback={null}>
@@ -200,7 +304,10 @@ export default function Hero() {
         <motion.a
           href="#about"
           data-cursor="target"
-          onClick={e => { e.preventDefault(); scrollToId('about') }}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToId("about");
+          }}
           aria-label="Scroll down"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -208,11 +315,14 @@ export default function Hero() {
           className="group mt-14 inline-flex items-center gap-2 font-mono text-eyebrow uppercase tracking-[0.18em] text-[color:var(--ink-faint)]"
         >
           <span>Scroll</span>
-          <span aria-hidden="true" className="grid h-7 w-7 place-items-center rounded-full border border-[color:var(--line-strong)] transition-colors duration-200 group-hover:border-[color:var(--accent)] group-hover:text-[color:var(--accent-strong)]">
+          <span
+            aria-hidden="true"
+            className="grid h-7 w-7 place-items-center rounded-full border border-[color:var(--line-strong)] transition-colors duration-200 group-hover:border-[color:var(--accent)] group-hover:text-[color:var(--accent-strong)]"
+          >
             <ArrowDown size={12} strokeWidth={1.5} />
           </span>
         </motion.a>
       </Container>
     </section>
-  )
+  );
 }

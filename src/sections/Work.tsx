@@ -283,9 +283,8 @@ function ReelIntro({
       </h2>
 
       <p className="mt-5 max-w-[42ch] text-lede text-[color:var(--ink-muted)]">
-        Eight flagship builds, every claim grounded in a public repository. A
-        framework, a self-training LLM, a published library, on-device ML, and
-        the apps that run on them.
+        Projects with public repositories. From frameworks and LLMs to ML apps
+        and libraries.
       </p>
 
       {variant === "reel" ? (
@@ -648,8 +647,8 @@ function AlsoShipped({ onOpen }: { onOpen: (p: Project) => void }) {
           </Reveal>
           <Reveal delay={0.05}>
             <h3 className="mt-4 text-h2 text-[color:var(--ink)]">
-              Smaller builds,{" "}
-              <span className="serif-italic">same standard.</span>
+              Small ones,{" "}
+              <span className="serif-italic">also on GitHub.</span>
             </h3>
           </Reveal>
           <Reveal
@@ -657,8 +656,8 @@ function AlsoShipped({ onOpen }: { onOpen: (p: Project) => void }) {
             delay={0.08}
             className="mt-3 max-w-[52ch] text-body text-[color:var(--ink-muted)]"
           >
-            Focused apps and tools that ship the same discipline at a smaller
-            scope. Public repositories, every one.
+            Smaller things I made to learn something. All of them are on
+            GitHub.
           </Reveal>
         </div>
 

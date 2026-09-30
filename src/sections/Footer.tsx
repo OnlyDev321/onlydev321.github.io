@@ -1,8 +1,13 @@
-import { ArrowUp } from 'lucide-react'
-import { GithubIcon, InstagramIcon, FacebookIcon, TiktokIcon } from '../components/SocialIcons'
-import { Container } from '../components/ui'
-import LocalTime from '../components/LocalTime'
-import { scrollToId, scrollToTop } from '../lib/smoothScroll'
+import { ArrowUp } from "lucide-react";
+import {
+  GithubIcon,
+  InstagramIcon,
+  FacebookIcon,
+  TiktokIcon,
+} from "../components/SocialIcons";
+import { Container } from "../components/ui";
+import LocalTime from "../components/LocalTime";
+import { scrollToId, scrollToTop } from "../lib/smoothScroll";
 
 /* -------------------------------------------------------------------------- *
  *  FOOTER — full-width mega-signature over --bg-elev (chrome, not a Section). *
@@ -12,23 +17,39 @@ import { scrollToId, scrollToTop } from '../lib/smoothScroll'
  * -------------------------------------------------------------------------- */
 
 const sitemap = [
-  { id: 'about',      label: 'About' },
-  { id: 'work',       label: 'Work' },
-  { id: 'stack',      label: 'Stack' },
-  { id: 'process',    label: 'Process' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'contact',    label: 'Contact' },
-] as const
+  { id: "about", label: "About" },
+  { id: "work", label: "Work" },
+  { id: "stack", label: "Stack" },
+  { id: "process", label: "Process" },
+  { id: "experience", label: "Experience" },
+  { id: "contact", label: "Contact" },
+] as const;
 
 const connect = [
-  { href: 'https://github.com/OnlyDev321',                 icon: <GithubIcon size={16} />,    label: 'GitHub · OnlyDev321' },
-  { href: 'https://www.facebook.com/tran.hau.691306/',    icon: <FacebookIcon size={16} />,  label: 'Facebook' },
-  { href: 'https://www.instagram.com/kim_jinho2412/',     icon: <InstagramIcon size={16} />, label: 'Instagram' },
-  { href: 'https://www.tiktok.com/@kim_jinho2412',        icon: <TiktokIcon size={16} />,    label: 'TikTok' },
-] as const
+  {
+    href: "https://github.com/OnlyDev321",
+    icon: <GithubIcon size={16} />,
+    label: "GitHub · OnlyDev321",
+  },
+  {
+    href: "https://www.facebook.com/tran.hau.691306/",
+    icon: <FacebookIcon size={16} />,
+    label: "Facebook",
+  },
+  {
+    href: "https://www.instagram.com/kim_jinho2412/",
+    icon: <InstagramIcon size={16} />,
+    label: "Instagram",
+  },
+  {
+    href: "https://www.tiktok.com/@kim_jinho2412",
+    icon: <TiktokIcon size={16} />,
+    label: "TikTok",
+  },
+] as const;
 
 export default function Footer() {
-  const year = new Date().getFullYear()
+  const year = new Date().getFullYear();
 
   return (
     <footer
@@ -44,19 +65,25 @@ export default function Footer() {
           aria-label="Tran Hau (김진호) — back to top"
           className="group block w-full text-left font-display text-display font-bold tracking-[-0.035em] text-[color:var(--ink)] transition-[transform,opacity] duration-200 ease-[var(--ease-out)] active:scale-[0.985] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[color:var(--accent)]"
         >
-          Tran{' '}
+          Tran{" "}
           <span className="serif-italic text-[color:var(--ink)] transition-colors duration-200 group-hover:text-[color:var(--accent-strong)]">
             Hau
           </span>
-          <span aria-hidden="true" className="serif-italic text-[color:var(--accent-strong)]">.</span>
+          <span
+            aria-hidden="true"
+            className="serif-italic text-[color:var(--accent-strong)]"
+          >
+            .
+          </span>
           <span className="ml-3 font-mono text-[0.45em] font-normal tracking-normal text-[color:var(--ink-muted)]">
             (김진호)
           </span>
         </button>
 
         <p className="mt-6 max-w-[60ch] text-body text-[color:var(--ink-muted)]">
-          Full-Stack Software Engineer &amp; UX/UI Designer based in Seoul, South Korea.
-          Studying at Soongsil University and engineering open-source projects on GitHub.
+          Full-Stack Software Engineer &amp; UX/UI Designer based in Seoul,
+          South Korea. Studying at Soongsil University and engineering
+          open-source projects on GitHub.
         </p>
 
         {/* ---- Columns: Status · Sitemap · Connect (stack on mobile) ---- */}
@@ -80,12 +107,15 @@ export default function Footer() {
           <nav aria-label="Footer navigation" className="md:col-span-4">
             <p className="eyebrow">Sitemap</p>
             <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2.5">
-              {sitemap.map(l => (
+              {sitemap.map((l) => (
                 <li key={l.id}>
                   <a
                     href={`#${l.id}`}
                     data-cursor="target"
-                    onClick={e => { e.preventDefault(); scrollToId(l.id) }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToId(l.id);
+                    }}
                     className="link-underline inline-flex min-h-[44px] items-center text-small text-[color:var(--ink-muted)]"
                   >
                     {l.label}
@@ -110,7 +140,7 @@ export default function Footer() {
           <div className="md:col-span-4">
             <p className="eyebrow">Connect</p>
             <div className="mt-4 flex flex-wrap items-center gap-2">
-              {connect.map(s => (
+              {connect.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
@@ -140,11 +170,9 @@ export default function Footer() {
         {/* ---- Colophon — mono, tabular ---- */}
         <div className="mt-12 flex flex-col gap-3 border-t border-[color:var(--line)] pt-6 text-data tabular-nums text-[color:var(--ink-faint)] sm:flex-row sm:items-center sm:justify-between">
           <p>© {year} Tran Hau (김진호) · OnlyDev. All rights reserved.</p>
-          <p>
-            Built with React 19 + Vite. Soongsil University · Seoul, Korea.
-          </p>
+          <p>Soongsil University · Seoul, Korea.</p>
         </div>
       </Container>
     </footer>
-  )
+  );
 }

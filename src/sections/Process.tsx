@@ -35,8 +35,8 @@ export default function Process() {
         <SectionHeader
           index="03"
           label="PROCESS"
-          title={['From idea to ', <span key="shipped" className="serif-italic">shipped.</span>]}
-          lede="No surprises in the middle. The same discipline behind a framework, a model, and an app."
+          title={['From idea to ', <span key="deploy" className="serif-italic">deploy.</span>]}
+          lede="The same five steps every time, whether it is a small app or a bigger system."
           id="process-heading"
         />
 
