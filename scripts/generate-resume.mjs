@@ -97,7 +97,6 @@ const html = `<!doctype html>
   .summary {
     color: #334155;
     font-size: 9pt;
-    text-align: justify;
     line-height: 1.45;
   }
 
@@ -165,10 +164,10 @@ const html = `<!doctype html>
     font-size: 7pt;
   }
 
-  .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+  .note {
+    font-size: 8.8pt;
+    color: #334155;
+    margin-top: 1px;
   }
 </style>
 </head>
@@ -177,7 +176,7 @@ const html = `<!doctype html>
 <div class="header">
   <div class="name-block">
     <h1>TRAN HAU <span>(김진호)</span></h1>
-    <div class="title">Web Developer &amp; UI/UX Designer</div>
+    <div class="title">Web Developer &amp; BrSE (Bridge Software Engineer)</div>
   </div>
   <div class="contact-block">
     <div>Seoul, South Korea · Soongsil Univ.</div>
@@ -188,123 +187,146 @@ const html = `<!doctype html>
 </div>
 
 <div class="section">
-  <div class="section-title">Professional Summary</div>
+  <div class="section-title">About Me</div>
   <p class="summary">
-    Creative and engineering-disciplined <strong>Web Developer &amp; UI/UX Designer</strong> currently studying Software Engineering at <strong>Soongsil University</strong> in Seoul. Combines strong computer science fundamentals with refined design sensibilities, specializing in translating Figma design systems and user workflows into high-performance, responsive, accessible web applications using <strong>React 19, TypeScript, Tailwind CSS, and Framer Motion</strong>. Trilingual communicator (Vietnamese, Korean, English) passionate about design tokens, micro-interactions, WCAG AA standards, and building intuitive cross-cultural web interfaces.
+    Software Engineering student at <strong>Soongsil University</strong> in Seoul, graduating 2027. I build web apps from the design stage to the deploy stage: Figma screens, React and TypeScript on the front, Java or Node.js on the back, and the database in between. I work in <strong>Vietnamese and Korean</strong>, so I can help a client explain the idea and a developer build it without anything getting lost in between. Looking for a role as a <strong>BrSE</strong> or a full-stack web developer.
   </p>
 </div>
 
 <div class="section">
-  <div class="section-title">Technical &amp; Design Skills</div>
+  <div class="section-title">Skills</div>
   <div class="skills-grid">
-    <div class="skill-category">UI/UX Design:</div>
-    <div class="skill-list">Figma, Wireframing, High-Fidelity Prototyping, Design Systems, Typography, Responsive Grids, WCAG 2.1 AA Accessibility, User Journey Mapping.</div>
-    <div class="skill-category">Frontend &amp; Web:</div>
-    <div class="skill-list">React 19, TypeScript, JavaScript (ES6+), Next.js, HTML5 Semantic Markup, CSS3 / Modern Flexbox &amp; Grid, Tailwind CSS (v3 &amp; v4), Framer Motion, Lenis Scroll.</div>
-    <div class="skill-category">APIs &amp; Browser Tech:</div>
-    <div class="skill-list">WebSocket (Real-time), MediaStream API, Web Audio API, RESTful Integration, LocalStorage / State Management, Vite, Three.js / WebGL.</div>
+    <div class="skill-category">Frontend:</div>
+    <div class="skill-list">React, TypeScript, JavaScript, HTML, CSS, Tailwind CSS,</div>
+    <div class="skill-category">Backend:</div>
+    <div class="skill-list">Java, Spring Boot, Node.js, Express, REST APIs, WebSockets, MySQL, MongoDB.</div>
+    <div class="skill-category">AI:</div>
+    <div class="skill-list">Speech recognition, computer vision, emotion detection, web scraping, OpenAI API.</div>
+    <div class="skill-category">Other languages:</div>
+    <div class="skill-list">Python, C++, C.</div>
+    <div class="skill-category">Design:</div>
+    <div class="skill-list">Figma, design systems, responsive layout, UI design</div>
+    <div class="skill-category">Tools:</div>
+    <div class="skill-list">Git, GitHub, Docker, Postman, VS Code, Vercel, Render.</div>
     <div class="skill-category">Languages:</div>
-    <div class="skill-list"><strong>Vietnamese</strong> (Native), <strong>Korean</strong> (Fluent — TOPIK, Academic/Daily Seoul), <strong>English</strong> (Professional Working Proficiency).</div>
+    <div class="skill-list"><strong>Vietnamese</strong> (native), <strong>Korean</strong> (fluent, TOPIK 5), <strong>English</strong> (working).</div>
   </div>
 </div>
 
 <div class="section">
-  <div class="section-title">Featured Web &amp; Design Projects</div>
+  <div class="section-title">Projects</div>
 
   <div class="item">
     <div class="item-header">
       <div>
-        <span class="item-title">Portfolio Web Architecture &amp; Design System</span>
-        <span class="item-role"> — Lead Designer &amp; Developer</span>
+        <span class="item-title">Deepterview v2</span>
+        <span class="item-role"> — AI video interview analysis</span>
       </div>
-      <span class="item-meta">onlydev321.github.io · 2024</span>
+      <span class="item-meta">github.com/OnlyDev321/deepterview-v2 · 2025</span>
     </div>
-    <div class="item-tech">React 19 · TypeScript · Tailwind CSS v4 · Framer Motion · Three.js · Vite</div>
+    <div class="item-tech">TypeScript · React · Node.js · Tailwind CSS · Computer vision</div>
     <ul class="item-desc">
-      <li>Designed and engineered an editorial, kinetic web portfolio with dark/light mode contrast parity and custom design tokens.</li>
-      <li>Implemented interactive UI components: fuzzy-match Command Palette (<code>⌘K</code>), 60fps horizontal work reel, magnetic cursor, and reduced-motion fallback.</li>
-      <li>Achieved 100/100 performance and accessibility scores with semantic HTML5, zero render blocking, and optimized asset delivery.</li>
+      <li>Scores a candidate from their video: emotion, focus, and where in the recording the cues showed up.</li>
+      <li>Works on a live call or a saved recording, and exports a report the interviewer can check.</li>
     </ul>
   </div>
 
   <div class="item">
     <div class="item-header">
       <div>
-        <span class="item-title">Deepterview-v2 (AI Video Interview Web Platform)</span>
-        <span class="item-role"> — Frontend &amp; UI/UX</span>
+        <span class="item-title">CoffeeAI</span>
+        <span class="item-role"> — voice ordering system</span>
       </div>
-      <span class="item-meta">github.com/OnlyDev321/deepterview-v2 · 2024</span>
+      <span class="item-meta">github.com/OnlyDev321/CoffeeAI · 2025</span>
     </div>
-    <div class="item-tech">TypeScript · React 19 · Tailwind CSS · MediaStream API · Web Audio API</div>
+    <div class="item-tech">Java · Spring Boot · MySQL · REST API · Speech recognition</div>
     <ul class="item-desc">
-      <li>Designed a low-cognitive-load, distraction-free interview UI prioritizing user comfort during automated AI video assessments.</li>
-      <li>Integrated browser MediaStream and audio analysis APIs to deliver real-time webcam feedback and interactive audio waveform meters.</li>
-      <li>Engineered comprehensive analytical dashboards with clear metric hierarchy, visual scoring charts, and responsive layouts.</li>
+      <li>Turns a normal sentence into an order: "large iced latte, less ice, oat milk" becomes a priced order.</li>
+      <li>Built the backend as a Java service, so it can sit behind a POS counter later.</li>
     </ul>
   </div>
 
   <div class="item">
     <div class="item-header">
       <div>
-        <span class="item-title">MOJI (Real-Time Collaborative Web Messenger)</span>
-        <span class="item-role"> — Frontend Developer</span>
+        <span class="item-title">Demian-Shop</span>
+        <span class="item-role"> — product scraper</span>
       </div>
-      <span class="item-meta">github.com/OnlyDev321/MOJI · 2024</span>
+      <span class="item-meta">github.com/OnlyDev321/Demian-shop · 2025</span>
     </div>
-    <div class="item-tech">React · TypeScript · WebSocket · CSS3 · Modern UI Components</div>
+    <div class="item-tech">Python · Layout analysis · Async crawling · JSON export</div>
     <ul class="item-desc">
-      <li>Crafted a modern, frictionless messaging UI featuring room switching, live chat feeds, typing indicators, and emoji reactions.</li>
-      <li>Designed fluid responsive drawer navigation for seamless usability across both mobile screens and desktop viewports.</li>
-      <li>Integrated WebSocket event listeners for instant two-way message updates with efficient, re-render-minimized state flow.</li>
+      <li>Finds products by where they sit on the page, so it keeps working after a site gets redesigned.</li>
+      <li>Output is clean JSON with price and stock already tidied up.</li>
     </ul>
   </div>
 
   <div class="item">
     <div class="item-header">
       <div>
-        <span class="item-title">todoX (Personalized Task &amp; Habit Workflow)</span>
-        <span class="item-role"> — Solo Designer &amp; Dev</span>
+        <span class="item-title">MFC-ChatApp</span>
+        <span class="item-role"> — desktop chat with a word filter</span>
       </div>
-      <span class="item-meta">github.com/OnlyDev321/todoX · 2023</span>
+      <span class="item-meta">github.com/OnlyDev321/MFC-ChatAppWithoutBadWord · 2024</span>
     </div>
-    <div class="item-tech">JavaScript (ES6+) · HTML5 · CSS3 Flexbox &amp; Grid · LocalStorage API</div>
+    <div class="item-tech">C++ · MFC · Winsock sockets · Multi-threading</div>
     <ul class="item-desc">
-      <li>Designed a clean, habit-forming productivity app featuring customizable color themes and tactile micro-interactions.</li>
-      <li>Architected an intuitive task management system with priority filters, drag-and-drop workflows, and offline persistence.</li>
-      <li>Built with zero external CSS frameworks, delivering instant load performance (&lt;50ms) and lightweight bundle footprint.</li>
+      <li>Chat over raw sockets, with a blocked-word list per person that is checked before a message shows.</li>
+      <li>Room manager sees every flagged message.</li>
     </ul>
   </div>
 
   <div class="item">
     <div class="item-header">
       <div>
-        <span class="item-title">Figma-To-HTML (Design-to-Code Engineering)</span>
-        <span class="item-role"> — UI Implementer</span>
+        <span class="item-title">Portfolio Site</span>
+        <span class="item-role"> — design and build</span>
       </div>
-      <span class="item-meta">github.com/OnlyDev321/Figma-To-HTML · 2023</span>
+      <span class="item-meta">onlydev321.github.io · 2026</span>
     </div>
-    <div class="item-tech">Figma · Semantic HTML5 · CSS3 Custom Properties · Responsive Design</div>
+    <div class="item-tech">React 19 · TypeScript · Tailwind CSS v4 · Framer Motion · Three.js</div>
     <ul class="item-desc">
-      <li>Translated complex multi-screen Figma design specifications into 100% pixel-perfect, accessible, semantic web pages.</li>
-      <li>Established a maintainable CSS architecture leveraging reusable design tokens for typography, spacing, and elevation.</li>
+      <li>Built the whole site myself, from the design system in Figma to the deploy on GitHub Pages.</li>
+      <li>Dark and light mode, a keyboard shortcut palette, and a reduced-motion fallback for accessibility.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <div>
+        <span class="item-title">Smaller builds</span>
+        <span class="item-role"> — MOJI, TrafficSafe, todoX, Figma-To-HTML</span>
+      </div>
+      <span class="item-meta">github.com/OnlyDev321 · 2024</span>
+    </div>
+    <div class="item-tech">React · Node.js · WebSockets · Arduino · JavaScript · Figma</div>
+    <ul class="item-desc">
+      <li>Real-time web chat, an Arduino crosswalk safety system, a customisable to-do app, and Figma-to-code practice.</li>
     </ul>
   </div>
 </div>
 
 <div class="section">
-  <div class="section-title">Education &amp; Academic Background</div>
+  <div class="section-title">Education</div>
   <div class="item">
     <div class="item-header">
       <div>
         <span class="item-title">Soongsil University (숭실대학교)</span>
         <span class="item-role"> — Seoul, South Korea</span>
       </div>
-      <span class="item-meta">2022 – Present</span>
+      <span class="item-meta">2023 – 2027</span>
     </div>
-    <div style="font-size: 8.8pt; color: #334155; margin-top: 1px;">
-      <strong>Bachelor of Science in Software Engineering</strong> · Key studies: Human-Computer Interaction (HCI), Web Systems &amp; Programming, UI/UX Engineering, Software Architecture. Active contributor in student tech initiatives.
+    <div class="note">
+      <strong>BSc Software Engineering</strong> · Courses include web programming, HCI, UI/UX engineering, and software architecture.
     </div>
   </div>
+</div>
+
+<div class="section">
+  <div class="section-title">How I Work</div>
+  <p class="summary">
+    Design first, then build, then test, then deploy. I write the spec so both sides agree on what to build, and I keep the code readable enough that the next person can pick it up. See <a href="https://onlydev321.github.io">onlydev321.github.io</a> for the full write-up.
+  </p>
 </div>
 
 </body>
