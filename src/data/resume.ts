@@ -59,11 +59,12 @@ export const skills: Skill[] = [
   { name: "Spring Boot", category: "Backend" },
   { name: "Node.js", category: "Backend" },
   { name: "Express.js", category: "Backend" },
-  { name: "NestJS", category: "Backend" },
+  // { name: "NestJS", category: "Backend" },
   { name: "REST APIs", category: "Backend" },
   { name: "WebSockets", category: "Backend" },
   { name: "MySQL", category: "Backend" },
   { name: "MongoDB", category: "Backend" },
+  { name: "PostgreSQL", category: "Backend" },
 
   // AI / ML — the parts that read or understand something
   { name: "Emotion detection", category: "AI" },

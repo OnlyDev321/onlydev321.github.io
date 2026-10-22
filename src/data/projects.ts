@@ -10,19 +10,51 @@ import type { Project } from "../types";
  *  on a phone, so everything is capped well under a full line.                  *
  *                                                                              *
  *  Flagships:                                                                  *
- *    01 Deepterview-v2  — scores candidate emotion from video (TS)              *
- *    02 CoffeeAI        — voice coffee ordering with Java & STT                 *
- *    03 Demian-shop     — reads product info from page layout (Python)         *
- *    04 MFC-ChatApp     — C++ desktop chat with a word filter                  *
+ *    01 CampusMatch     — university study & team matching (Next.js/Spring)     *
+ *    02 Deepterview-v2  — scores candidate emotion from video (TS)              *
+ *    03 CoffeeAI        — voice coffee ordering with Java & STT                 *
+ *    04 Demian-shop     — reads product info from page layout (Python)         *
+ *    05 MFC-ChatApp     — C++ desktop chat with a word filter                  *
  *                                                                              *
  *  Secondary ("also shipped"):                                                 *
- *    05 MOJI            — real-time web chat (React + WebSockets)               *
- *    06 TrafficSafe     — Arduino pedestrian safety system                     *
+ *    06 MOJI            — real-time web chat (React + WebSockets)               *
  *    07 todoX           — to-do app with your own colors                       *
- *    08 Figma-To-HTML   — Figma design to responsive code                     *
+ *    08 MMDL            — vision-language model tuning for MMMU (Qwen-VL)      *
+ *    09 Wumpus World    — propositional logic AI agent in Python               *
+ *    10 TrafficSafe     — Arduino pedestrian safety system                     *
+ *    11 Figma-To-HTML   — Figma design to responsive code                     *
  * -------------------------------------------------------------------------- */
 
 export const projects: Project[] = [
+  {
+    id: "campus-match",
+    name: "CampusMatch",
+    repo: "OnlyDev321/campus-match",
+    year: "2025",
+    platform: "University team matching",
+    tagline: "Find verified study buddies and project teammates across campus.",
+    description:
+      "Built to solve the university team-project struggle: finding reliable group members without the ghosting. Students log in via campus portal, browse by course code or major, and apply to balanced teams with clear role quotas.",
+    features: [
+      "1-click campus SSO verification",
+      "3-step department & course filter",
+      "Role quotas for balanced teams",
+      "Quick apply modal & leader approval",
+    ],
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Spring Boot", "PostgreSQL"],
+    github: "https://github.com/OnlyDev321/campus-match",
+    accent: "#2563eb",
+    accentGlow: "rgba(37,99,235,0.22)",
+    category: "Full-stack web",
+    status: "in-development",
+    tier: "flagship",
+    highlights: [
+      { label: "Auth", value: "Campus SSO" },
+      { label: "Filter", value: "Course & dept" },
+      { label: "Stack", value: "Next.js + Spring Boot" },
+      { label: "Balance", value: "Role quotas" },
+    ],
+  },
   {
     id: "deepterview-v2",
     name: "Deepterview v2",
@@ -168,33 +200,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "trafficsafe",
-    name: "TrafficSafe",
-    repo: "OnlyDev321/TrafficSafe",
-    year: "2024",
-    platform: "IoT & hardware",
-    tagline: "A crosswalk barrier that knows a car is coming.",
-    description:
-      "A class project that needed real hardware, which made it the most fun one. An ultrasonic sensor watches for cars, and a servo drops the barrier before anyone steps off the kerb.",
-    features: [
-      "Sensor spots an approaching car",
-      "Barrier drops on its own",
-      "Lights flash at night and in rain",
-      "Ignores sensor noise",
-    ],
-    tech: ["Arduino", "C++", "Ultrasonic sensors", "Servo"],
-    github: "https://github.com/OnlyDev321/TrafficSafe",
-    accent: "#0891b2",
-    accentGlow: "rgba(8,145,178,0.22)",
-    category: "IoT & hardware",
-    status: "shipped",
-    tier: "secondary",
-    highlights: [
-      { label: "Hardware", value: "Arduino" },
-      { label: "Watches for", value: "Cars" },
-    ],
-  },
-  {
     id: "todox",
     name: "todoX",
     repo: "OnlyDev321/todoX",
@@ -219,6 +224,87 @@ export const projects: Project[] = [
     highlights: [
       { label: "Main thing", value: "Your colors" },
       { label: "Storage", value: "In browser" },
+    ],
+  },
+  {
+    id: "mmdl",
+    name: "MMDL",
+    repo: "fijitlwkr/MMDL",
+    year: "2025",
+    platform: "Multimodal AI",
+    tagline: "Fine-tuning vision-language models for complex reasoning.",
+    description:
+      "A research project fine-tuning Qwen3-VL-4B-Instruct to improve reasoning benchmarks on MMMU and MMMU-Pro. Features an automated generation and frozen-rule evaluation pipeline.",
+    features: [
+      "Qwen-VL instruction fine-tuning",
+      "MMMU & MMMU-Pro benchmarks",
+      "Automated evaluation pipeline",
+      "Strict scoring & error analysis",
+    ],
+    tech: ["Python", "PyTorch", "Vision-Language", "Qwen-VL", "MMMU"],
+    github: "https://github.com/fijitlwkr/MMDL",
+    accent: "#e11d48",
+    accentGlow: "rgba(225,29,72,0.22)",
+    category: "Deep learning",
+    status: "shipped",
+    tier: "secondary",
+    highlights: [
+      { label: "Base model", value: "Qwen3-VL-4B" },
+      { label: "Benchmark", value: "MMMU & Pro" },
+    ],
+  },
+  {
+    id: "wumpus-world",
+    name: "Wumpus World",
+    repo: "OnlyDev321/wumpus-world",
+    year: "2025",
+    platform: "AI Agent & logic",
+    tagline: "An AI agent that reasons through a dangerous cave to find the gold.",
+    description:
+      "Built to explore knowledge-based reasoning. The agent gathers percepts like breeze and stench, updates its propositional logic knowledge base, and uses BFS to safely navigate and grab the gold.",
+    features: [
+      "Propositional logic inference",
+      "BFS safe pathfinding",
+      "Real-time AI thought HUD",
+      "Pygame 2D grid & fog of war",
+    ],
+    tech: ["Python", "Pygame", "AI Agent", "Propositional Logic", "BFS"],
+    github: "https://github.com/OnlyDev321/wumpus-world",
+    accent: "#ca8a04",
+    accentGlow: "rgba(202,138,4,0.22)",
+    category: "AI & logic",
+    status: "shipped",
+    tier: "secondary",
+    highlights: [
+      { label: "Inference", value: "Propositional logic" },
+      { label: "Search", value: "BFS pathfinding" },
+    ],
+  },
+  {
+    id: "trafficsafe",
+    name: "TrafficSafe",
+    repo: "OnlyDev321/TrafficSafe",
+    year: "2024",
+    platform: "IoT & hardware",
+    tagline: "A crosswalk barrier that knows a car is coming.",
+    description:
+      "A class project that needed real hardware, which made it the most fun one. An ultrasonic sensor watches for cars, and a servo drops the barrier before anyone steps off the kerb.",
+    features: [
+      "Sensor spots an approaching car",
+      "Barrier drops on its own",
+      "Lights flash at night and in rain",
+      "Ignores sensor noise",
+    ],
+    tech: ["Arduino", "C++", "Ultrasonic sensors", "Servo"],
+    github: "https://github.com/OnlyDev321/TrafficSafe",
+    accent: "#0891b2",
+    accentGlow: "rgba(8,145,178,0.22)",
+    category: "IoT & hardware",
+    status: "shipped",
+    tier: "secondary",
+    highlights: [
+      { label: "Hardware", value: "Arduino" },
+      { label: "Watches for", value: "Cars" },
     ],
   },
   {

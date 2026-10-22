@@ -57,16 +57,10 @@ export default function Footer() {
       className="relative z-[1] border-t border-[color:var(--line)] bg-[color:var(--bg-elev)] pb-10 pt-[clamp(3.5rem,7vw,6rem)]"
     >
       <Container>
-        {/* ---- Mega-signature — also the back-to-top control ---- */}
-        <button
-          type="button"
-          data-cursor="target"
-          onClick={scrollToTop}
-          aria-label="Tran Hau (김진호) — back to top"
-          className="group block w-full text-left font-display text-display font-bold tracking-[-0.035em] text-[color:var(--ink)] transition-[transform,opacity] duration-200 ease-[var(--ease-out)] active:scale-[0.985] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[color:var(--accent)]"
-        >
+        {/* ---- Mega-signature ---- */}
+        <div className="block w-full text-left font-display text-xl sm:text-2xl font-bold tracking-[-0.02em] text-[color:var(--ink)]">
           Tran{" "}
-          <span className="serif-italic text-[color:var(--ink)] transition-colors duration-200 group-hover:text-[color:var(--accent-strong)]">
+          <span className="serif-italic text-[color:var(--ink)]">
             Hau
           </span>
           <span
@@ -75,12 +69,12 @@ export default function Footer() {
           >
             .
           </span>
-          <span className="ml-3 font-mono text-[em] font-medium tracking-normal text-[color:var(--ink-muted)] sm:ml-4">
+          <span className="ml-2.5 font-mono text-sm font-medium tracking-normal text-[color:var(--ink-muted)] sm:ml-3">
             (김진호)
           </span>
-        </button>
+        </div>
 
-        <p className="mt-6 max-w-[60ch] text-body text-[color:var(--ink-muted)]">
+        <p className="mt-3 max-w-[60ch] text-body text-[color:var(--ink-muted)]">
           Full-Stack Software Engineer &amp; UX/UI Designer based in Seoul,
           South Korea. Studying at Soongsil University and engineering
           open-source projects on GitHub.

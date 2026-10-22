@@ -17,13 +17,16 @@
 
 ## Key Public Projects
 
+- [CampusMatch](https://github.com/OnlyDev321/campus-match): University study and project team matching platform featuring student portal SSO verification, role quotas, and real-time application management (Next.js, React 19, Spring Boot, PostgreSQL, Tailwind CSS).
 - [Deepterview-v2](https://github.com/OnlyDev321/deepterview-v2): AI-powered video interview analysis evaluating emotional expressions, micro-facial cues, and behavioral indicators in real time (TypeScript, React, Computer Vision, Node.js).
 - [CoffeeAI](https://github.com/OnlyDev321/CoffeeAI): Voice AI-powered coffee ordering system built with Java, featuring real-time speech recognition (STT), automatic menu and customization parsing, and automated checkout.
 - [Demian-shop](https://github.com/OnlyDev321/Demian-shop): Lightweight web product information extraction engine based on ViDE visual layout analysis for unstructured e-commerce websites (Python).
 - [MFC-ChatAppWithoutBadWord](https://github.com/OnlyDev321/MFC-ChatAppWithoutBadWord): High-performance real-time desktop chat system with personalized prohibited-word filtering, custom blacklists, and automated moderation (C++, MFC, Winsock).
 - [MOJI](https://github.com/OnlyDev321/MOJI): Real-time chat web application with WebSockets, presence detection, and expressive messaging (TypeScript, React).
-- [TrafficSafe](https://github.com/OnlyDev321/TrafficSafe): Arduino-powered pedestrian safety system with ultrasonic vehicle detection and automatic barrier control (C++, IoT).
 - [todoX](https://github.com/OnlyDev321/todoX): Highly customizable task management app with personalized theme styles (JavaScript).
+- [MMDL](https://github.com/fijitlwkr/MMDL): Vision-language model fine-tuning for complex multimodal reasoning benchmarks on MMMU & MMMU-Pro (Python, PyTorch, Qwen-VL).
+- [Wumpus World](https://github.com/OnlyDev321/wumpus-world): Autonomous AI agent using propositional logic knowledge base and BFS pathfinding to navigate cave environments (Python, Pygame).
+- [TrafficSafe](https://github.com/OnlyDev321/TrafficSafe): Arduino-powered pedestrian safety system with ultrasonic vehicle detection and automatic barrier control (C++, IoT).
 - [Figma-To-HTML](https://github.com/OnlyDev321/Figma-To-HTML): Pixel-perfect responsive web conversion from Figma design systems.
 
 ## Contact

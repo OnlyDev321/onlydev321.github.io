@@ -36,7 +36,15 @@ Creative, detail-obsessed **Web Developer & UX/UI Designer** currently pursuing 
 - Architected a custom design token system in Tailwind CSS v4 featuring dual-theme parity (Dark/Light mode) with AA-contrast guarantees.
 - Built accessible interactive features including a fuzzy-search Command Palette (`⌘K`), horizontal pinned work reel, magnetic cursor, and reduced-motion fallback.
 
-### 2. **Deepterview-v2 (AI Video Interview Web Platform)** | _TypeScript, React 19, Tailwind CSS, MediaStream API_
+### 2. **CampusMatch (University Study & Team Matching Platform)** | _Next.js, React 19, TypeScript, Tailwind CSS, Spring Boot, PostgreSQL_
+
+- **Role:** Full-Stack Developer & UX Designer
+- **Repository:** [github.com/OnlyDev321/campus-match](https://github.com/OnlyDev321/campus-match)
+- Developed a university platform to connect students for group projects and study sessions, eliminating ghosting and free-riders.
+- Implemented campus SSO integration for verified student identities, a 3-step academic filter (college, department, year), and role quotas (FE/BE/Design).
+- Built a streamlined application flow with one-click quick apply, leader review dashboards, and real-time application status badges.
+
+### 3. **Deepterview-v2 (AI Video Interview Web Platform)** | _TypeScript, React 19, Tailwind CSS, MediaStream API_
 
 - **Role:** Frontend Engineer & UX Designer
 - **Repository:** [github.com/OnlyDev321/deepterview-v2](https://github.com/OnlyDev321/deepterview-v2)
@@ -44,7 +52,7 @@ Creative, detail-obsessed **Web Developer & UX/UI Designer** currently pursuing 
 - Implemented real-time webcam and audio visualization modules using browser MediaStream & Web Audio APIs.
 - Designed analytical feedback dashboards with structured data metrics, emotional indicators, and responsive card components.
 
-### 3. **MOJI (Real-Time Collaborative Chat App)** | _TypeScript, React, WebSocket, Tailwind CSS_
+### 4. **MOJI (Real-Time Collaborative Chat App)** | _TypeScript, React, WebSocket, Tailwind CSS_
 
 - **Role:** Frontend Developer & UI Designer
 - **Repository:** [github.com/OnlyDev321/MOJI](https://github.com/OnlyDev321/MOJI)
@@ -52,7 +60,7 @@ Creative, detail-obsessed **Web Developer & UX/UI Designer** currently pursuing 
 - Optimized mobile responsiveness with off-canvas sidebar drawers and touch-friendly interactive targets.
 - Integrated WebSocket event handlers for instant bidirectional message synchronization with minimal re-renders.
 
-### 4. **todoX (Personalized Task & Habit Tracker)** | _JavaScript (ES6+), HTML5, CSS3, Flexbox/Grid, LocalStorage_
+### 5. **todoX (Personalized Task & Habit Tracker)** | _JavaScript (ES6+), HTML5, CSS3, Flexbox/Grid, LocalStorage_
 
 - **Role:** Solo Creator (UX/UI Design & Frontend)
 - **Repository:** [github.com/OnlyDev321/todoX](https://github.com/OnlyDev321/todoX)

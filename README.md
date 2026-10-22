@@ -25,13 +25,16 @@ Every project here is **open-source**, with public source code on GitHub.
 
 | Project | What it is | Tech | Link |
 |---|---|---|---|
+| **CampusMatch** | University study & project team matching platform with SSO & role quotas | Next.js, React 19, Spring Boot | [repo](https://github.com/OnlyDev321/campus-match) |
 | **Deepterview-v2** | AI-powered interview video analysis for emotional & behavioral cues | TypeScript, React 19, AI Vision | [repo](https://github.com/OnlyDev321/deepterview-v2) |
 | **CoffeeAI** | AI voice ordering system with real-time speech recognition (STT) | Java, Spring Boot, NLP | [repo](https://github.com/OnlyDev321/CoffeeAI) |
 | **Demian-shop** | Product extraction via ViDE visual layout analysis for e-commerce | Python, Web Mining | [repo](https://github.com/OnlyDev321/Demian-shop) |
 | **MFC-ChatApp** | C++ desktop chat with custom prohibited-word filtering | C++, MFC, Winsock | [repo](https://github.com/OnlyDev321/MFC-ChatAppWithoutBadWord) |
 | **MOJI** | Real-time chat web application with WebSocket synchronization | TypeScript, React | [repo](https://github.com/OnlyDev321/MOJI) |
-| **TrafficSafe** | Smart pedestrian safety IoT system with ultrasonic detection & barrier control | C++, Arduino, Sensors | [repo](https://github.com/OnlyDev321/TrafficSafe) |
 | **todoX** | Personalized task management app with custom style theming | JavaScript, CSS3 | [repo](https://github.com/OnlyDev321/todoX) |
+| **MMDL** | Vision-language model fine-tuning for complex reasoning benchmarks (MMMU) | Python, PyTorch, Qwen-VL | [repo](https://github.com/fijitlwkr/MMDL) |
+| **Wumpus World** | Knowledge-based propositional logic AI agent with BFS pathfinding | Python, Pygame, AI Agent | [repo](https://github.com/OnlyDev321/wumpus-world) |
+| **TrafficSafe** | Smart pedestrian safety IoT system with ultrasonic detection & barrier control | C++, Arduino, Sensors | [repo](https://github.com/OnlyDev321/TrafficSafe) |
 | **Figma-To-HTML** | Pixel-perfect responsive web conversion from Figma design systems | HTML5, CSS3, Figma | [repo](https://github.com/OnlyDev321/Figma-To-HTML) |
 
 ---

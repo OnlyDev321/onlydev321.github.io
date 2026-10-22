@@ -682,8 +682,8 @@ function AlsoShipped({ onOpen }: { onOpen: (p: Project) => void }) {
         style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}
       >
         {secondaryProjects.map((project, i) => (
-          <li key={project.id}>
-            <Reveal delay={i * 0.08}>
+          <li key={project.id} className="h-full">
+            <Reveal delay={i * 0.08} className="flex h-full flex-col">
               <article
                 data-cursor="target"
                 style={
@@ -730,7 +730,7 @@ function AlsoShipped({ onOpen }: { onOpen: (p: Project) => void }) {
                 <p className="pointer-events-none relative z-10 mt-1 font-mono text-data text-[color:var(--ink-faint)]">
                   {project.platform}
                 </p>
-                <p className="pointer-events-none relative z-10 mt-2 text-small text-[color:var(--ink-muted)]">
+                <p className="pointer-events-none relative z-10 mt-2 min-h-[2.75rem] text-small text-[color:var(--ink-muted)]">
                   {project.tagline}
                 </p>
               </article>

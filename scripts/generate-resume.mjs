@@ -219,6 +219,21 @@ const html = `<!doctype html>
   <div class="item">
     <div class="item-header">
       <div>
+        <span class="item-title">CampusMatch</span>
+        <span class="item-role"> — university study & team matching platform</span>
+      </div>
+      <span class="item-meta">github.com/OnlyDev321/campus-match · 2025</span>
+    </div>
+    <div class="item-tech">Next.js · React 19 · TypeScript · Tailwind CSS · Spring Boot · PostgreSQL</div>
+    <ul class="item-desc">
+      <li>Connects students for course projects and study groups via campus portal SSO verification.</li>
+      <li>Features department/course multi-step filtering, role quotas for balanced teams, and real-time application tracking.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <div>
         <span class="item-title">Deepterview v2</span>
         <span class="item-role"> — AI video interview analysis</span>
       </div>
