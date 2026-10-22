@@ -1,95 +1,81 @@
 # TRAN HAU (김진호)
 
-**Web Developer & UX/UI Designer | Frontend Engineer**
+**Software Engineer & BrSE**
 
 - **Location:** Seoul, South Korea (Soongsil University)
 - **Email:** [onlydev.321@gmail.com](mailto:onlydev.321@gmail.com)
 - **Portfolio:** [onlydev321.github.io](https://onlydev321.github.io)
 - **GitHub:** [github.com/OnlyDev321](https://github.com/OnlyDev321)
-- **LinkedIn / Facebook:** [facebook.com/tran.hau.691306](https://www.facebook.com/tran.hau.691306/)
-- **Languages:** Vietnamese (Native), Korean (Fluent — TOPIK), English (Professional Working)
+- **Languages:** Vietnamese (Native), Korean (Fluent — TOPIK Level 5), English (Working proficiency / TOEIC 620)
 
 ---
 
-## 🎯 PROFESSIONAL SUMMARY
+## ABOUT ME
 
-Creative, detail-obsessed **Web Developer & UX/UI Designer** currently pursuing a Software Engineering degree at **Soongsil University** in Seoul. Combines strong engineering fundamentals with refined visual craft, specializing in turning complex requirements and Figma prototypes into fast, accessible, responsive web applications using **React 19, TypeScript, Tailwind CSS, and Framer Motion**. Passionate about design systems, micro-interactions, WCAG accessibility, and bridging multicultural product development between Vietnam and South Korea.
-
----
-
-## 🛠️ TECHNICAL & DESIGN SKILLS
-
-- **UI/UX Design:** Figma, Wireframing, User Flow Mapping, Interactive Prototyping, Design Systems & Tokens, Typography, Grid & Responsive Layouts, Accessibility (WCAG 2.1 AA), Usability Testing.
-- **Frontend & Web Development:** React 19, TypeScript, JavaScript (ES6+), Next.js, HTML5 (Semantic), CSS3 / PostCSS, Tailwind CSS (v3 & v4), Sass/SCSS, Framer Motion, Lenis Smooth Scroll, WebGL / Three.js.
-- **Web APIs & Architecture:** Responsive Web Design (Mobile-First), REST APIs, WebSocket (Real-time), MediaStream / Web Audio API, LocalStorage / State Management, Component-Driven Development.
-- **Tools & Workflow:** Git, GitHub, Vite, npm, Chrome DevTools, Vercel, GitHub Pages, ESLint, Prettier.
+Software Engineering student at **Soongsil University** in Seoul with a strong foundation in full-stack web development. Experienced in building practical web applications using **React**, **Next.js**, **Spring Boot**, and **Node.js**. Native in **Vietnamese** and fluent in **Korean (TOPIK Level 5)**, eager to apply software engineering fundamentals and hands-on project skills in a collaborative team as a Full-Stack Developer or BrSE.
 
 ---
 
-## 💼 FEATURED WEB & DESIGN PROJECTS
+## EDUCATION
 
-### 1. **Personal Portfolio Website** | _React 19, TypeScript, Tailwind CSS v4, Framer Motion, Three.js, Vite_
+- **Soongsil University — Software Engineering** | Seoul, South Korea  
+  _BSc Program · GPA: 3.6 / 4.5 · TOPCIT Level 3_ | **Mar 2021 – Aug 2025**
+- **Incheon National University — Korean Language Program** | Incheon, South Korea  
+  _2-Year Full-Time Korean Language Training · TOPIK Level 5_ | **Mar 2019 – Mar 2021**
 
-- **Role:** UI/UX Designer & Lead Frontend Developer
-- **Repository / Live:** [github.com/OnlyDev321/portfolio-onlydev](https://github.com/OnlyDev321) · [onlydev321.github.io](https://onlydev321.github.io)
-- Designed an editorial, kinetic single-page portfolio combining typographic discipline with smooth 60fps micro-interactions.
-- Architected a custom design token system in Tailwind CSS v4 featuring dual-theme parity (Dark/Light mode) with AA-contrast guarantees.
-- Built accessible interactive features including a fuzzy-search Command Palette (`⌘K`), horizontal pinned work reel, magnetic cursor, and reduced-motion fallback.
+---
 
-### 2. **CampusMatch (University Study & Team Matching Platform)** | _Next.js, React 19, TypeScript, Tailwind CSS, Spring Boot, PostgreSQL_
+## HONORS & AWARDS
 
-- **Role:** Full-Stack Developer & UX Designer
+- **Creative Engineering Design Competition — Encouragement Award** | Soongsil University | [Reward](https://drive.google.com/file/d/1CiZMEgxf0X1etHOtpRNGfKiPKyQCEfDp/view?usp=sharing)
+- **Capstone Design Exhibition & Competition — Silver Award** | Soongsil University | [Reward](https://drive.google.com/file/d/12xN4hSJNioMsMj6GasDYWtrXtzI-udNy/view?usp=sharing)
+- **Korean Language Training Certificate & Assessment — TOPIK Level 5** | Incheon National University Language Center | [Reward](https://drive.google.com/file/d/13mtINXR8kFavMt-cp7zj3X_9ZzGB2ldQ/view?usp=sharing)
+
+---
+
+## FEATURED PROJECTS
+
+### 1. **CampusMatch — University Study & Team Matching Platform** (2026)
+- **Stack:** Next.js · React · TypeScript · Tailwind CSS · Spring Boot · PostgreSQL
 - **Repository:** [github.com/OnlyDev321/campus-match](https://github.com/OnlyDev321/campus-match)
-- Developed a university platform to connect students for group projects and study sessions, eliminating ghosting and free-riders.
-- Implemented campus SSO integration for verified student identities, a 3-step academic filter (college, department, year), and role quotas (FE/BE/Design).
-- Built a streamlined application flow with one-click quick apply, leader review dashboards, and real-time application status badges.
+- Web platform connecting students for course study and project teams with student SSO verification.
+- Implemented academic filters (major, year), role quotas (FE/BE/Design), and real-time application dashboard.
 
-### 3. **Deepterview-v2 (AI Video Interview Web Platform)** | _TypeScript, React 19, Tailwind CSS, MediaStream API_
+### 2. **Wumpus World — Knowledge-Based AI Agent Simulation** (2026)
+- **Stack:** Python · Pygame · BFS
+- **Repository:** [github.com/OnlyDev321/wumpus-world](https://github.com/OnlyDev321/wumpus-world)
+- Built an autonomous agent that collects percepts (stench, breeze, glitter) to navigate hazards using propositional logic.
+- Implemented safe BFS pathfinding and rendered an interactive 2D Pygame game interface with a real-time reasoning HUD.
 
-- **Role:** Frontend Engineer & UX Designer
+### 3. **MMDL — Multimodal LLM Reasoning Benchmark Research** (2026)
+- **Stack:** Python · PyTorch · Qwen-VL · Deep Learning
+- **Repository:** [github.com/fijitlwkr/MMDL](https://github.com/fijitlwkr/MMDL)
+- Fine-tuned Qwen-VL vision-language models on college-level reasoning benchmarks (MMMU & MMMU-Pro).
+- Automated evaluation pipeline for model generation, strict rule-based scoring, and error pattern analysis.
+
+### 4. **Deepterview v2 — AI Video Interview & Behavioral Analysis** (2026)
+- **Stack:** React · TypeScript · Node.js · Tailwind CSS · Computer Vision
 - **Repository:** [github.com/OnlyDev321/deepterview-v2](https://github.com/OnlyDev321/deepterview-v2)
-- Designed a distraction-free, low-cognitive-load interview UI focused on user comfort during automated video evaluations.
-- Implemented real-time webcam and audio visualization modules using browser MediaStream & Web Audio APIs.
-- Designed analytical feedback dashboards with structured data metrics, emotional indicators, and responsive card components.
+- Web application analyzing candidate webcam video to track facial expressions, focus levels, and emotional cues.
+- Built webcam recording interface and interactive visual timeline feedback reports to summarize candidate responses.
 
-### 4. **MOJI (Real-Time Collaborative Chat App)** | _TypeScript, React, WebSocket, Tailwind CSS_
+### 5. **todoX — Minimalist Task & Productivity Web App** (2025)
+- **Stack:** JavaScript · HTML · CSS · LocalStorage
+- **Live Demo:** [todox-jo2t.onrender.com](https://todox-jo2t.onrender.com/) | **Repository:** [github.com/OnlyDev321/todoX](https://github.com/OnlyDev321/todoX)
+- Lightweight task tracker with custom theme palettes, real-time tag search, and completion status filtering.
+- Stores data directly in browser LocalStorage for instant, zero-login offline usage and fast responsiveness.
 
-- **Role:** Frontend Developer & UI Designer
-- **Repository:** [github.com/OnlyDev321/MOJI](https://github.com/OnlyDev321/MOJI)
-- Crafted an intuitive, frictionless messaging interface featuring channel lists, live message streams, typing indicators, and emoji reactions.
-- Optimized mobile responsiveness with off-canvas sidebar drawers and touch-friendly interactive targets.
-- Integrated WebSocket event handlers for instant bidirectional message synchronization with minimal re-renders.
-
-### 5. **todoX (Personalized Task & Habit Tracker)** | _JavaScript (ES6+), HTML5, CSS3, Flexbox/Grid, LocalStorage_
-
-- **Role:** Solo Creator (UX/UI Design & Frontend)
-- **Repository:** [github.com/OnlyDev321/todoX](https://github.com/OnlyDev321/todoX)
-- Designed a minimalist, distraction-free productivity tool with custom theme styling and satisfying micro-interactions.
-- Developed an ergonomic task management flow with categorization tags, completion filters, and persistent state management.
-- Implemented responsive CSS layouts with zero external UI libraries, keeping load times instant (<50ms).
-
-### 5. **Figma-To-HTML (Design System Implementation)** | _Figma, Semantic HTML5, Modern CSS3, Responsive Design_
-
-- **Role:** UI Developer
-- **Repository:** [github.com/OnlyDev321/Figma-To-HTML](https://github.com/OnlyDev321/Figma-To-HTML)
-- Translated intricate multi-page Figma design specifications into 100% pixel-perfect, clean, semantic HTML5/CSS3 templates.
-- Established a scalable CSS variables foundation (spacing scales, typography hierarchy, elevation levels).
-- Tested and verified cross-browser compatibility across Chrome, Safari, Firefox, and mobile viewports.
+### 6. **MOJI Chat — Real-Time Collaborative Messaging App** (2025)
+- **Stack:** React · TypeScript · Node.js · WebSocket · Tailwind CSS
+- **Live Demo:** [moji-frontend.vercel.app](https://moji-frontend.vercel.app/) | **Repository:** [github.com/OnlyDev321/MOJI](https://github.com/OnlyDev321/MOJI)
+- Real-time chat web app supporting live messaging, user presence status, and typing indicators via WebSockets.
+- Engineered auto-reconnect logic upon network interruptions with an ergonomic, responsive interface.
 
 ---
 
-## 🎓 EDUCATION & ACADEMIC BACKGROUND
+## TECHNICAL SKILLS & LANGUAGES
 
-**Soongsil University (숭실대학교) — Seoul, South Korea**  
-_Bachelor of Science in Software Engineering_ | **2022 – Present**
-
-- **Relevant Coursework:** Human-Computer Interaction (HCI), Web Programming & Design, Computer Networks, Software Engineering, Data Structures & Algorithms.
-- Active contributor in student software labs, focusing on modern frontend web ecosystems and cross-cultural user interface design.
-
----
-
-## 🌐 LANGUAGES & COMMUNICATION
-
-- **Vietnamese:** Native
-- **Korean:** Fluent (TOPIK, academic & professional communication in Seoul)
-- **English:** Professional Working Proficiency
+- **Languages:** JavaScript, TypeScript, Python, Java, C++, C, HTML, CSS
+- **Web & Backend:** React, Next.js, Node.js, Spring Boot, Tailwind CSS, REST APIs, WebSockets
+- **Databases & Tools:** PostgreSQL, MySQL, Git, Docker, Postman, Figma, Vercel, Render
+- **Languages:** Vietnamese (Native), Korean (Fluent — TOPIK Level 5), English (Working proficiency / TOEIC 620)

@@ -75,9 +75,8 @@ export default function Footer() {
         </div>
 
         <p className="mt-3 max-w-[60ch] text-body text-[color:var(--ink-muted)]">
-          Full-Stack Software Engineer &amp; UX/UI Designer based in Seoul,
-          South Korea. Studying at Soongsil University and engineering
-          open-source projects on GitHub.
+          Software Engineer based in Seoul, South Korea. Studying at Soongsil
+          University and engineering open-source projects on GitHub.
         </p>
 
         {/* ---- Columns: Status · Sitemap · Connect (stack on mobile) ---- */}

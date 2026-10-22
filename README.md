@@ -2,7 +2,7 @@
 
 <h1>onlydev321.github.io</h1>
 
-<p><strong>The portfolio of Tran Hau (김진호) — Full-Stack Software Engineer & UX/UI Designer. A kinetic, editorial single-page site built with React 19, TypeScript, Vite & Tailwind CSS v4.</strong></p>
+<p><strong>The portfolio of Tran Hau (김진호) — Software Engineer. A kinetic, editorial single-page site built with React 19, TypeScript, Vite & Tailwind CSS v4.</strong></p>
 
 [![GitHub](https://img.shields.io/badge/GitHub-OnlyDev321-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/OnlyDev321)
 [![Facebook](https://img.shields.io/badge/Facebook-Tran_Hau-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/tran.hau.691306/)
@@ -12,7 +12,7 @@
 
 ---
 
-The personal portfolio of **Tran Hau (김진호 / OnlyDev)**, a Full-Stack Software Engineer & UX/UI Designer studying at **Soongsil University** in Seoul, South Korea. A fast, responsive single-page application built with **React 19, TypeScript, and Vite**, styled with **Tailwind CSS v4**, animated with **Framer Motion** and **Lenis** smooth scroll, with a lazy **Three.js** hero shader in dark mode.
+The personal portfolio of **Tran Hau (김진호 / OnlyDev)**, a Software Engineer studying at **Soongsil University** in Seoul, South Korea. A fast, responsive single-page application built with **React 19, TypeScript, and Vite**, styled with **Tailwind CSS v4**, animated with **Framer Motion** and **Lenis** smooth scroll, with a lazy **Three.js** hero shader in dark mode.
 
 
 > One disciplined accent, self-hosted variable fonts, a pinned horizontal work reel, a command palette, a magnetic cursor, focus-trapped overlays, and a complete reduced-motion baseline. Zero backend, all static, and tuned for search engines and AI answer engines alike.
@@ -216,7 +216,7 @@ No license file is currently included, so all rights are reserved by the author.
 
 ## 👤 Author
 
-**Tran Hau (김진호 / OnlyDev)** — Full-Stack Software Engineer & UX/UI Designer · Seoul, South Korea
+**Tran Hau (김진호 / OnlyDev)** — Software Engineer · Seoul, South Korea
 
 [![GitHub](https://img.shields.io/badge/GitHub-OnlyDev321-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/OnlyDev321)
 [![Facebook](https://img.shields.io/badge/Facebook-Tran_Hau-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/tran.hau.691306/)

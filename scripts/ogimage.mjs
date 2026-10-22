@@ -26,7 +26,7 @@ body{width:1200px;height:630px;background:#f7f8fb;color:#0c1322;font-family:Geis
 </style></head><body>
 <div class="grid"></div><div class="glow"></div>
 <div>
-  <div class="kicker">Full-Stack Engineer &amp; UX/UI Designer &middot; Seoul, South Korea</div>
+  <div class="kicker">Software Engineer &middot; Seoul, South Korea</div>
   <div class="name">Tran Hau <span class="it">(김진호)</span><span class="it dot">.</span></div>
   <div class="sub">Software Engineering at Soongsil University. Bridging Vietnam and South Korea through AI-driven web systems, mobile apps, and refined UI craft.</div>
 </div>

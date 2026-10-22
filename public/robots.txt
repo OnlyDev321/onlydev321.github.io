@@ -1,5 +1,5 @@
 # https://onlydev321.github.io/robots.txt
-# Tran Hau (김진호) — Full-Stack Software Engineer & UX/UI Designer. Single-page, fully
+# Tran Hau (김진호) — Software Engineer. Single-page, fully
 # crawlable, and intentionally open to AI / LLM search engines (see below).
 # LLM-readable summary: https://onlydev321.github.io/llms.txt
 

@@ -1,12 +1,12 @@
-# Tran Hau (김진호) — Full-Stack Software Engineer & UX/UI Designer
+# Tran Hau (김진호) — Software Engineer
 
-> Tran Hau (Korean name: 김진호 / Kim Jin-ho, GitHub: OnlyDev321) is a Full-Stack Software Engineer and UX/UI Designer based in Seoul, South Korea. He is currently studying Software Engineering at Soongsil University (숭실대학교). He builds modern web applications using React, Next.js, and Spring Boot, integrates video and voice AI models, and aims to connect Vietnamese and Korean software engineering ecosystems as a Bridge Software Engineer (BrSE).
+> Tran Hau (Korean name: 김진호 / Kim Jin-ho, GitHub: OnlyDev321) is a Software Engineer based in Seoul, South Korea. He is currently studying Software Engineering at Soongsil University (숭실대학교). He builds modern web applications using React, Next.js, and Spring Boot, integrates video and voice AI models, and aims to connect Vietnamese and Korean software engineering ecosystems as a Bridge Software Engineer (BrSE).
 
 ## Summary
 
 - Name: Tran Hau (Korean name: 김진호 / Kim Jin-ho)
 - Handle: OnlyDev / OnlyDev321
-- Role: Full-Stack Software Engineer & UX/UI Designer · Aspiring BrSE
+- Role: Software Engineer · Aspiring BrSE
 - Location: Seoul, South Korea (Soongsil University)
 - Email: onlydev.321@gmail.com
 - GitHub: https://github.com/OnlyDev321

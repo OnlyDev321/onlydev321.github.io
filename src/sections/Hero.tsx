@@ -149,11 +149,11 @@ export default function Hero() {
             </motion.div>
 
             <p className="mt-7 font-mono text-eyebrow uppercase tracking-[0.16em] text-[color:var(--ink-faint)]">
-              Full-Stack Engineer &amp; UX/UI Designer · Seoul, South Korea
+              Software Engineer · Seoul, South Korea
             </p>
 
             <h1
-              aria-label="Tran Hau (김진호) — Full-Stack Engineer & UX/UI Designer"
+              aria-label="Tran Hau (김진호) — Software Engineer"
               className="hero-name mt-4 text-mega text-[color:var(--ink)]"
             >
               <span aria-hidden="true" className="block">

@@ -1,7 +1,7 @@
 {
-  "name": "Tran Hau (김진호) — Full-Stack Engineer & UX/UI Designer",
+  "name": "Tran Hau (김진호) — Software Engineer",
   "short_name": "Tran Hau",
-  "description": "Full-Stack Software Engineer & UX/UI Designer based in Seoul, South Korea. Studying at Soongsil University. Building scalable web apps with React, Next.js, Spring Boot, and AI integrations.",
+  "description": "Software Engineer based in Seoul, South Korea. Studying at Soongsil University. Building scalable web apps with React, Next.js, Spring Boot, and AI integrations.",
   "start_url": "/",
   "scope": "/",
   "id": "/",
@@ -24,7 +24,7 @@
       "sizes": "1200x630",
       "type": "image/svg+xml",
       "form_factor": "wide",
-      "label": "Tran Hau (김진호) — Full-Stack Engineer & UX/UI Designer portfolio cover"
+      "label": "Tran Hau (김진호) — Software Engineer portfolio cover"
     }
   ],
   "shortcuts": [
