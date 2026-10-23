@@ -326,7 +326,7 @@ const html = `<!doctype html>
 <div class="section">
   <div class="section-title">About Me</div>
   <p class="summary">
-    I am a Software Engineering student at <strong>Soongsil University</strong> in Seoul with a foundation in Software Development. Experienced in building practical web applications using <strong>React</strong>, <strong>Spring Boot</strong>, and <strong>Node.js</strong>. Native in <strong>Vietnamese</strong> and fluent in <strong>Korean (TOPIK Level 5)</strong>, <strong>English (Working proficiency)</strong>, Eager to learn and use my software skills in real projects as a Software Engineer or BrSE.
+    Software Engineering student at <strong>Soongsil University (Seoul)</strong> with a passion for building practical web applications. Combining technical skills with <strong>3 Languages (KR/EN/VN)</strong>, I bridge the gap between engineering and cross-cultural communication to deliver reliable software solutions.
   </p>
 </div>
 
@@ -349,7 +349,7 @@ const html = `<!doctype html>
       <span>Seoul, South Korea</span>
     </div>
     <div class="edu-row-sub">
-      <span>2-Year Full-Time Korean Language Training · <strong class="edu-badge">Level VI + TOPIK Level 5</strong></span>
+      <span>2-Year Full-Time Korean Language Training · <strong class="edu-badge">Level VI</strong></span>
       <span class="meta-date">Mar 2021 – Feb 2023</span>
     </div>
   </div>
@@ -401,51 +401,51 @@ const html = `<!doctype html>
     </div>
     <div class="project-tech">Next.js · React · TypeScript · Tailwind CSS · Spring Boot · PostgreSQL</div>
     <ul class="project-desc">
-      <li>Web platform connecting students to find study partners and form course project teams.</li>
-      <li>Added major/year filters, role recruitment slots (Frontend/Backend/Design), and application tracking.</li>
+      <li>Implement campus SSO authentication.</li>
+      <li>Build filters for major, course, and year.</li>
     </ul>
     <div class="project-links">
       Link: <a href="https://github.com/OnlyDev321/campus-match" target="_blank">GitHub Repo</a>
     </div>
   </div>
 
-  <!-- 2. Wumpus World -->
-  <div class="project-item">
-    <div class="project-header">
-      <div>
-        <span class="project-name">• Wumpus World</span>
-        <span class="project-pos">AI Engineer</span>
-        <span class="project-role">— Knowledge-Based AI Agent Simulation</span>
-      </div>
-      <span class="meta-date">09/2026 – 12/2026</span>
-    </div>
-    <div class="project-tech">Python · Pygame · BFS</div>
-    <ul class="project-desc">
-      <li>Built an autonomous AI bot in Python that applies logic rules to navigate hazards, dodge traps, and find gold.</li>
-      <li>Created an interactive 2D Pygame game with BFS pathfinding to visualize the agent's safe moves step-by-step.</li>
-    </ul>
-    <div class="project-links">
-      Link: <a href="https://github.com/OnlyDev321/wumpus-world" target="_blank">GitHub Repo</a>
-    </div>
-  </div>
-
-  <!-- 3. MMDL -->
+    <!-- 2. MMDL -->
   <div class="project-item">
     <div class="project-header">
       <div>
         <span class="project-name">• MMDL</span>
-        <span class="project-pos">AI / Machine Learning Engineer</span>
+        <span class="project-pos">AI</span>
         <span class="project-role">— Multimodal LLM Reasoning Benchmark Research</span>
       </div>
       <span class="meta-date">09/2026 – 12/2026</span>
     </div>
     <div class="project-tech">Python · PyTorch · Qwen-VL · Deep Learning</div>
     <ul class="project-desc">
-      <li>Fine-tuned open-source Vision-Language models (Qwen-VL) to improve AI reasoning on multimodal tasks.</li>
-      <li>Built automated evaluation pipelines to benchmark model accuracy and inspect failure patterns.</li>
+      <li>Work with Qwen-VL vision-language models.</li>
+      <li>Build scripts to run model evaluations.</li>
     </ul>
     <div class="project-links">
       Link: <a href="https://github.com/fijitlwkr/MMDL" target="_blank">GitHub Repo</a>
+    </div>
+  </div>
+
+  <!-- 3. Wumpus World -->
+  <div class="project-item">
+    <div class="project-header">
+      <div>
+        <span class="project-name">• Wumpus World</span>
+        <span class="project-pos">AI</span>
+        <span class="project-role">— Knowledge-Based AI Agent Simulation</span>
+      </div>
+      <span class="meta-date">09/2026 – 12/2026</span>
+    </div>
+    <div class="project-tech">Python · Pygame · BFS</div>
+    <ul class="project-desc">
+      <li>Build a knowledge base using propositional logic.</li>
+      <li>Use BFS to explore safe paths.</li>
+    </ul>
+    <div class="project-links">
+      Link: <a href="https://github.com/OnlyDev321/wumpus-world" target="_blank">GitHub Repo</a>
     </div>
   </div>
 
@@ -461,8 +461,8 @@ const html = `<!doctype html>
     </div>
     <div class="project-tech">React · TypeScript · Tailwind CSS · Spring Boot · Computer Vision</div>
     <ul class="project-desc">
-      <li>Built an AI mock-interview tool that records webcam video and analyzes facial expressions and eye contact.</li>
-      <li>Designed an interactive feedback dashboard with a visual timeline to summarize response performance.</li>
+      <li>Connect models that analyze facial expressions.</li>
+      <li>Work on APIs for interview sessions and scores.</li>
     </ul>
     <div class="project-links">
       Link: <a href="https://github.com/OnlyDev321/deepterview-v2" target="_blank">GitHub Repo</a>
@@ -474,15 +474,15 @@ const html = `<!doctype html>
     <div class="project-header">
       <div>
         <span class="project-name">• MOJI Chat</span>
-        <span class="project-pos">Full-stack Developer</span>
+        <span class="project-pos">Full-stack</span>
         <span class="project-role">— Real-Time Collaborative Messaging App</span>
       </div>
       <span class="meta-date">08/2025 – 11/2025</span>
     </div>
     <div class="project-tech">React · TypeScript · Express.js · WebSocket · Tailwind CSS</div>
     <ul class="project-desc">
-      <li>Real-time chat web app featuring instant messaging, live typing indicators, and user presence status.</li>
-      <li>Implemented WebSocket auto-reconnect logic to ensure smooth, uninterrupted messaging on mobile and desktop.</li>
+      <li>Add real-time messaging with WebSockets.</li>
+      <li>Show online status and typing indicators.</li>
     </ul>
     <div class="project-links">
       Links: <a href="https://moji-frontend.vercel.app/" target="_blank">Live Demo</a><span class="sep">|</span><a href="https://github.com/OnlyDev321/MOJI" target="_blank">GitHub Repo</a>
@@ -494,15 +494,15 @@ const html = `<!doctype html>
     <div class="project-header">
       <div>
         <span class="project-name">• todoX</span>
-        <span class="project-pos">Full-stack Developer</span>
+        <span class="project-pos">Full-stack</span>
         <span class="project-role">— Minimalist Task &amp; Productivity Web App</span>
       </div>
       <span class="meta-date">05/2025 – 07/2025</span>
     </div>
     <div class="project-tech">React · Node.js · MongoDB · Tailwind CSS · shadcn/ui</div>
     <ul class="project-desc">
-      <li>Lightweight task tracker with custom color themes, instant tag search, and quick status filtering.</li>
-      <li>Stored data locally with LocalStorage for fast, zero-login offline use and clean user interface.</li>
+      <li>Add tasks, tags, categories, and status options.</li>
+      <li>Build search and task completion filters.</li>
     </ul>
     <div class="project-links">
       Links: <a href="https://todox-jo2t.onrender.com/" target="_blank">Live Demo</a><span class="sep">|</span><a href="https://github.com/OnlyDev321/todoX" target="_blank">GitHub Repo</a>
@@ -532,7 +532,7 @@ const html = `<!doctype html>
     </tr>
     <tr>
       <td class="cat">Language Skills:</td>
-      <td class="val"><strong>Vietnamese</strong> (Native), <strong>Korean</strong> (Fluent, TOPIK Level 5), <strong>English</strong> (Working proficiency)</td>
+      <td class="val"><strong>Vietnamese</strong> (Native), <strong>Korean</strong> (TOPIK Level 5), <strong>English</strong> (Working)</td>
     </tr>
   </table>
 </div>
