@@ -326,7 +326,7 @@ const html = `<!doctype html>
 <div class="section">
   <div class="section-title">About Me</div>
   <p class="summary">
-    I am a Software Engineering student at <strong>Soongsil University</strong> in Seoul with a foundation in Sofeware Engineer. Experienced in building practical web applications using <strong>React</strong>, <strong>Spring Boot</strong>, and <strong>Node.js</strong>. Native in <strong>Vietnamese</strong> and fluent in <strong>Korean (TOPIK Level 5)</strong>, <strong>English (Working proficiency)</strong>, Eager to learn and use my software skills in real projects as a Sofeware Engineer or BrSE.
+    I am a Software Engineering student at <strong>Soongsil University</strong> in Seoul with a foundation in Software Development. Experienced in building practical web applications using <strong>React</strong>, <strong>Spring Boot</strong>, and <strong>Node.js</strong>. Native in <strong>Vietnamese</strong> and fluent in <strong>Korean (TOPIK Level 5)</strong>, <strong>English (Working proficiency)</strong>, Eager to learn and use my software skills in real projects as a Software Engineer or BrSE.
   </p>
 </div>
 
@@ -515,15 +515,15 @@ const html = `<!doctype html>
   <div class="section-title">Technical Skills &amp; Languages</div>
   <table class="skills-table">
     <tr>
-      <td class="cat">Language:</td>
+      <td class="cat">Programming Languages:</td>
       <td class="val">JavaScript / TypeScript, HTML / CSS, C, Java</td>
     </tr>
     <tr>
-      <td class="cat">Framework/Library:</td>
+      <td class="cat">Frameworks/Libraries:</td>
       <td class="val">React, Spring Boot, Node.js / Express, Tailwind CSS</td>
     </tr>
     <tr>
-      <td class="cat">Database:</td>
+      <td class="cat">Databases:</td>
       <td class="val">MongoDB + PostgreSQL</td>
     </tr>
     <tr>
