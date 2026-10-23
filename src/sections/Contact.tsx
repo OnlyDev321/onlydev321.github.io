@@ -165,8 +165,8 @@ export default function Contact() {
               <div>
                 <p className={labelClass}>Focus &amp; Roles</p>
                 <p className="mt-2.5 max-w-[42ch] text-body text-[color:var(--ink-muted)]">
-                  Full-stack web apps, AI features, and UX/UI design. Also open
-                  to BrSE work between Vietnam and Korea.
+                  Full-stack web apps. Also open to BrSE work between Vietnam
+                  and Korea.
                 </p>
               </div>
 

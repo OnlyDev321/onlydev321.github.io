@@ -447,7 +447,7 @@ const html = `<!doctype html>
       </div>
       <span class="meta-date">2026</span>
     </div>
-    <div class="project-tech">React · TypeScript · Node.js · Tailwind CSS · Computer Vision</div>
+    <div class="project-tech">React · TypeScript · Tailwind CSS · Spring Boot · Computer Vision</div>
     <ul class="project-desc">
       <li>Web application analyzing candidate webcam video to track facial expressions, focus levels, and emotional cues.</li>
       <li>Built webcam recording interface and interactive visual timeline feedback reports to summarize candidate responses.</li>
@@ -466,7 +466,7 @@ const html = `<!doctype html>
       </div>
       <span class="meta-date">2025</span>
     </div>
-    <div class="project-tech">React · TypeScript · Node.js · WebSocket · Tailwind CSS</div>
+    <div class="project-tech">React · TypeScript · Express.js · WebSocket · Tailwind CSS</div>
     <ul class="project-desc">
       <li>Real-time chat web app supporting live messaging, user presence status, and typing indicators via WebSockets.</li>
       <li>Engineered auto-reconnect logic upon network interruptions with an ergonomic, responsive interface.</li>
@@ -486,7 +486,7 @@ const html = `<!doctype html>
       </div>
       <span class="meta-date">2025</span>
     </div>
-    <div class="project-tech">JavaScript · HTML · CSS · LocalStorage</div>
+   <div class="project-tech">React · Node.js · MongoDB · Tailwind CSS · shadcn/ui</div>
     <ul class="project-desc">
       <li>Lightweight task tracker with custom theme palettes, real-time tag search, and completion status filtering.</li>
       <li>Stores data directly in browser LocalStorage for instant, zero-login offline usage and fast responsiveness.</li>

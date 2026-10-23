@@ -25,7 +25,7 @@ const ease = [0.23, 1, 0.32, 1] as const;
 /* Honest, repo-verifiable proof — the solo open-source body of work. */
 const proof = [
   { value: "10+", label: "public repositories" },
-  { value: "6", label: "core languages" },
+  { value: "4", label: "core languages" },
 ];
 
 const socials = [
@@ -185,9 +185,7 @@ export default function Hero() {
                   Soongsil University
                 </span>{" "}
                 in Seoul. I build web apps, add{" "}
-                <span className="serif-italic text-[color:var(--ink)]">
-                  AI
-                </span>{" "}
+                <span className="serif-italic text-[color:var(--ink)]">AI</span>{" "}
                 to them, and keep the{" "}
                 <span className="serif-italic text-[color:var(--ink)]">
                   design
