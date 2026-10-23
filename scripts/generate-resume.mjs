@@ -318,7 +318,7 @@ const html = `<!doctype html>
 <div class="section">
   <div class="section-title">About Me</div>
   <p class="summary">
-    Software Engineering student at <strong>Soongsil University</strong> in Seoul with a strong foundation in full-stack web development. Experienced in building practical web applications using <strong>React</strong>, <strong>Spring Boot</strong>, and <strong>Node.js</strong>. Native in <strong>Vietnamese</strong> and fluent in <strong>Korean (TOPIK Level 5)</strong>, Eager to learn and use my software skills in real projects as a Full-Stack Developer or BrSE.
+    I am a Software Engineering student at <strong>Soongsil University</strong> in Seoul with a strong foundation in Sofeware Engineer. Experienced in building practical web applications using <strong>React</strong>, <strong>Spring Boot</strong>, and <strong>Node.js</strong>. Native in <strong>Vietnamese</strong> and fluent in <strong>Korean (TOPIK Level 5)</strong>, <strong>English (Working proficiency)</strong>, Eager to learn and use my software skills in real projects as a Sofeware Engineer or BrSE.
   </p>
 </div>
 
@@ -341,7 +341,7 @@ const html = `<!doctype html>
       <span>Seoul, South Korea</span>
     </div>
     <div class="edu-row-sub">
-      <span>2-Year Full-Time Korean Language Training · <strong class="edu-badge">TOPIK Level 5</strong></span>
+      <span>2-Year Full-Time Korean Language Training · <strong class="edu-badge">Level VI + TOPIK Level 5</strong></span>
       <span class="meta-date">Mar 2021 – Feb 2023</span>
     </div>
   </div>
@@ -370,7 +370,7 @@ const html = `<!doctype html>
 
   <div class="award-item">
     <div class="award-row">
-      <span class="award-name">• Korean Language Training Certificate — <strong>TOPIK Level 5</strong></span>
+      <span class="award-name">• Korean Language Training Certificate — <strong>Level VI</strong></span>
       <span><a href="https://drive.google.com/file/d/13mtINXR8kFavMt-cp7zj3X_9ZzGB2ldQ/view?usp=sharing" target="_blank" class="reward-link">Reward ↗</a></span>
     </div>
     <div class="award-sub">Seoul National University Institute</div>

@@ -1,5 +1,10 @@
 import { MapPin } from "lucide-react";
-import { experience, education, certifications } from "../data/resume";
+import {
+  experience,
+  education,
+  certifications,
+  certification2,
+} from "../data/resume";
 import { Container, Section, SectionHeader } from "../components/ui";
 import { Reveal } from "../components/Kinetic";
 
@@ -18,7 +23,7 @@ import { Reveal } from "../components/Kinetic";
 
 export default function Experience() {
   return (
-    <Section id="experience" aria-labelledby="experience-heading">
+    <Section id="experience" spacing="tight" aria-labelledby="experience-heading">
       <Container>
         <SectionHeader
           index="04"
@@ -111,7 +116,7 @@ export default function Experience() {
           </div>
 
           {/* ---- Education + Certifications ---- */}
-          <aside className="flex flex-col gap-10 lg:col-span-4">
+          <aside className="flex flex-col gap-8 lg:col-span-4">
             <section aria-labelledby="education-heading">
               <Reveal>
                 <h3 id="education-heading" className="eyebrow mb-4">
@@ -151,8 +156,8 @@ export default function Experience() {
                 </h3>
               </Reveal>
               <ul className="space-y-3">
-                {certifications.map((cert, i) => (
-                  <li key={`${cert.name}-${cert.year}`}>
+                {[...certifications, ...certification2].map((cert, i) => (
+                  <li key={`${cert.name}-${cert.year ?? i}`}>
                     <Reveal delay={Math.min(i * 0.06, 0.18)}>
                       <article className="rounded-[var(--r-md)] border border-[color:var(--line)] bg-[color:var(--surface)] p-5 shadow-[var(--shadow-sm)]">
                         <p className="font-display text-[1.02rem] font-semibold leading-snug text-[color:var(--ink)]">
@@ -162,9 +167,11 @@ export default function Experience() {
                           <p className="text-small text-[color:var(--ink-muted)]">
                             {cert.issuer}
                           </p>
-                          <span className="data text-[color:var(--ink-faint)]">
-                            {cert.year}
-                          </span>
+                          {cert.year && (
+                            <span className="data text-[color:var(--ink-faint)]">
+                              {cert.year}
+                            </span>
+                          )}
                         </div>
                       </article>
                     </Reveal>

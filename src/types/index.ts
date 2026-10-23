@@ -52,7 +52,7 @@ export interface Education {
 export interface Certification {
   name: string;
   issuer: string;
-  year: string;
+  year?: string;
 }
 
 export interface Skill {

@@ -2,15 +2,14 @@ import type { Experience, Education, Certification, Skill } from "../types";
 
 export const experience: Experience[] = [
   {
-    role: "Full-Stack Developer & BrSE Skill Development",
+    role: "Software Engineer & BrSE Skill Development",
     company: "Soongsil University (숭실대학교)",
     location: "Seoul, South Korea",
     period: "2023 – Present",
     current: true,
     bullets: [
-      "I build web and desktop apps with React, Next.js, Spring Boot and C++.",
-      "Two of my projects use AI: deepterview-v2 reads emotions from interview videos, and CoffeeAI takes coffee orders by voice.",
-      "I write specs in Korean and Vietnamese, so the person explaining the idea and the person coding understand each other.",
+      "I build web with React, Spring Boot.",
+      "I write specs in Korean, English and Vietnamese, so the person explaining the idea and the person coding understand each other.",
       "I try to keep my code tidy and set up CI/CD, mostly on my own open-source projects.",
     ],
   },
@@ -20,8 +19,8 @@ export const education: Education[] = [
   {
     degree: "BSc Software Engineering",
     institution: "Soongsil University (숭실대학교)",
-    period: "2023 – Present",
-    note: "Seoul, South Korea · Focus on Web Development, UX/UI Design",
+    period: "Mar 2023 – Mar 2027(Expected)",
+    note: "Seoul, South Korea · Software Engineer",
   },
 ];
 
@@ -29,7 +28,14 @@ export const certifications: Certification[] = [
   {
     name: "TOPIK Level 5",
     issuer: "National Institute for International Education",
-    year: "2023 - present",
+  },
+];
+
+export const certification2: Certification[] = [
+  {
+    name: "Level VI",
+    issuer: "Seoul National University — Korean Language Program",
+    year: "03/2021 – 02/2023",
   },
 ];
 

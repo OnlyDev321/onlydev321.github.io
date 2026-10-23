@@ -127,14 +127,14 @@ export default function Contact() {
   };
 
   return (
-    <Section id="contact" aria-labelledby="contact-heading">
+    <Section id="contact" spacing="tight" aria-labelledby="contact-heading">
       <Container>
         <SectionHeader
           index="05"
           label="CONTACT"
           id="contact-heading"
           title={["Say ", <span className="serif-italic">hello.</span>]}
-          lede="I’m a software engineering student in Seoul, looking for a full-stack, or BrSE role. Send me a message and I’ll reply myself."
+          lede="I’m a software engineering student in Seoul, looking for a Software Engineer or BrSE role. Send me a message and I’ll reply myself."
         />
 
         <Reveal className="mt-12 lg:mt-16">
@@ -165,8 +165,8 @@ export default function Contact() {
               <div>
                 <p className={labelClass}>Focus &amp; Roles</p>
                 <p className="mt-2.5 max-w-[42ch] text-body text-[color:var(--ink-muted)]">
-                  Full-stack web apps. Also open to BrSE work between Vietnam
-                  and Korea.
+                  Software Engineer. Also open to BrSE work between Vietnam and
+                  Korea.
                 </p>
               </div>
 
