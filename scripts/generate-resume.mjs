@@ -231,10 +231,17 @@ const html = `<!doctype html>
     font-weight: 700;
     color: #0f172a;
   }
-  .project-role {
+  .project-pos {
     font-size: 8.1pt;
-    font-weight: 600;
+    font-weight: 700;
     color: #0284c7;
+    margin-left: 3px;
+  }
+  .project-role {
+    font-size: 8.0pt;
+    font-weight: 500;
+    color: #64748b;
+    margin-left: 2px;
   }
   .project-tech {
     font-size: 7.6pt;
@@ -285,8 +292,9 @@ const html = `<!doctype html>
   .skills-table .cat {
     font-weight: 700;
     color: #1e293b;
-    width: 130px;
+    width: 150px;
     white-space: nowrap;
+    padding-right: 12px;
   }
   .skills-table .val {
     color: #475569;
@@ -386,9 +394,10 @@ const html = `<!doctype html>
     <div class="project-header">
       <div>
         <span class="project-name">• CampusMatch</span>
-        <span class="project-role"> — University Study &amp; Team Matching Platform</span>
+        <span class="project-pos">Full-stack</span>
+        <span class="project-role">— University Study &amp; Team Matching Platform</span>
       </div>
-      <span class="meta-date">2026</span>
+      <span class="meta-date">09/2026 – 12/2026</span>
     </div>
     <div class="project-tech">Next.js · React · TypeScript · Tailwind CSS · Spring Boot · PostgreSQL</div>
     <ul class="project-desc">
@@ -405,9 +414,10 @@ const html = `<!doctype html>
     <div class="project-header">
       <div>
         <span class="project-name">• Wumpus World</span>
-        <span class="project-role"> — Knowledge-Based AI Agent Simulation</span>
+        <span class="project-pos">AI Engineer</span>
+        <span class="project-role">— Knowledge-Based AI Agent Simulation</span>
       </div>
-      <span class="meta-date">2026</span>
+      <span class="meta-date">09/2026 – 12/2026</span>
     </div>
     <div class="project-tech">Python · Pygame · BFS</div>
     <ul class="project-desc">
@@ -424,9 +434,10 @@ const html = `<!doctype html>
     <div class="project-header">
       <div>
         <span class="project-name">• MMDL</span>
-        <span class="project-role"> — Multimodal LLM Reasoning Benchmark Research</span>
+        <span class="project-pos">AI / Machine Learning Engineer</span>
+        <span class="project-role">— Multimodal LLM Reasoning Benchmark Research</span>
       </div>
-      <span class="meta-date">2026</span>
+      <span class="meta-date">09/2026 – 12/2026</span>
     </div>
     <div class="project-tech">Python · PyTorch · Qwen-VL · Deep Learning</div>
     <ul class="project-desc">
@@ -443,9 +454,10 @@ const html = `<!doctype html>
     <div class="project-header">
       <div>
         <span class="project-name">• Deepterview v2</span>
-        <span class="project-role"> — AI Video Interview &amp; Behavioral Analysis</span>
+        <span class="project-pos">Frontend</span>
+        <span class="project-role">— AI Video Interview &amp; Behavioral Analysis</span>
       </div>
-      <span class="meta-date">2026</span>
+      <span class="meta-date">03/2026 – 08/2026</span>
     </div>
     <div class="project-tech">React · TypeScript · Tailwind CSS · Spring Boot · Computer Vision</div>
     <ul class="project-desc">
@@ -462,9 +474,10 @@ const html = `<!doctype html>
     <div class="project-header">
       <div>
         <span class="project-name">• MOJI Chat</span>
-        <span class="project-role"> — Real-Time Collaborative Messaging App</span>
+        <span class="project-pos">Full-stack Developer</span>
+        <span class="project-role">— Real-Time Collaborative Messaging App</span>
       </div>
-      <span class="meta-date">2025</span>
+      <span class="meta-date">08/2025 – 11/2025</span>
     </div>
     <div class="project-tech">React · TypeScript · Express.js · WebSocket · Tailwind CSS</div>
     <ul class="project-desc">
@@ -481,9 +494,10 @@ const html = `<!doctype html>
     <div class="project-header">
       <div>
         <span class="project-name">• todoX</span>
-        <span class="project-role"> — Minimalist Task &amp; Productivity Web App</span>
+        <span class="project-pos">Full-stack Developer</span>
+        <span class="project-role">— Minimalist Task &amp; Productivity Web App</span>
       </div>
-      <span class="meta-date">2025</span>
+      <span class="meta-date">05/2025 – 07/2025</span>
     </div>
     <div class="project-tech">React · Node.js · MongoDB · Tailwind CSS · shadcn/ui</div>
     <ul class="project-desc">
@@ -501,19 +515,23 @@ const html = `<!doctype html>
   <div class="section-title">Technical Skills &amp; Languages</div>
   <table class="skills-table">
     <tr>
-      <td class="cat">Languages:</td>
-      <td class="val">JavaScript, TypeScript, Java, C</td>
+      <td class="cat">Language:</td>
+      <td class="val">JavaScript / TypeScript, HTML / CSS, C, Java</td>
     </tr>
     <tr>
-      <td class="cat">Web &amp; Backend:</td>
-      <td class="val">React, Node.js, Spring Boot, Tailwind CSS</td>
+      <td class="cat">Framework/Library:</td>
+      <td class="val">React, Spring Boot, Node.js / Express, Tailwind CSS</td>
     </tr>
     <tr>
-      <td class="cat">Databases &amp; Tools:</td>
-      <td class="val">SQL, Git, Docker, Figma</td>
+      <td class="cat">Database:</td>
+      <td class="val">MongoDB + PostgreSQL</td>
     </tr>
     <tr>
-      <td class="cat">Languages:</td>
+      <td class="cat">Tools:</td>
+      <td class="val">Git, Docker, Figma</td>
+    </tr>
+    <tr>
+      <td class="cat">Language Skills:</td>
       <td class="val"><strong>Vietnamese</strong> (Native), <strong>Korean</strong> (Fluent, TOPIK Level 5), <strong>English</strong> (Working proficiency)</td>
     </tr>
   </table>
