@@ -392,8 +392,8 @@ const html = `<!doctype html>
     </div>
     <div class="project-tech">Next.js · React · TypeScript · Tailwind CSS · Spring Boot · PostgreSQL</div>
     <ul class="project-desc">
-      <li>Web platform connecting students for course study and project teams with student SSO verification.</li>
-      <li>Implemented academic filters (major, year), role quotas (FE/BE/Design), and real-time application dashboard.</li>
+      <li>Web platform connecting students to find study partners and form course project teams.</li>
+      <li>Added major/year filters, role recruitment slots (Frontend/Backend/Design), and application tracking.</li>
     </ul>
     <div class="project-links">
       Link: <a href="https://github.com/OnlyDev321/campus-match" target="_blank">GitHub Repo</a>
@@ -411,8 +411,8 @@ const html = `<!doctype html>
     </div>
     <div class="project-tech">Python · Pygame · BFS</div>
     <ul class="project-desc">
-      <li>Built an autonomous agent that collects percepts (stench, breeze, glitter) to navigate hazards using propositional logic.</li>
-      <li>Implemented safe BFS pathfinding and rendered an interactive 2D Pygame game interface with a real-time reasoning HUD.</li>
+      <li>Built an autonomous AI bot in Python that applies logic rules to navigate hazards, dodge traps, and find gold.</li>
+      <li>Created an interactive 2D Pygame game with BFS pathfinding to visualize the agent's safe moves step-by-step.</li>
     </ul>
     <div class="project-links">
       Link: <a href="https://github.com/OnlyDev321/wumpus-world" target="_blank">GitHub Repo</a>
@@ -430,8 +430,8 @@ const html = `<!doctype html>
     </div>
     <div class="project-tech">Python · PyTorch · Qwen-VL · Deep Learning</div>
     <ul class="project-desc">
-      <li>Fine-tuned Qwen-VL vision-language models on college-level reasoning benchmarks (MMMU &amp; MMMU-Pro).</li>
-      <li>Automated evaluation pipeline for model generation, strict rule-based scoring, and error pattern analysis.</li>
+      <li>Fine-tuned open-source Vision-Language models (Qwen-VL) to improve AI reasoning on multimodal tasks.</li>
+      <li>Built automated evaluation pipelines to benchmark model accuracy and inspect failure patterns.</li>
     </ul>
     <div class="project-links">
       Link: <a href="https://github.com/fijitlwkr/MMDL" target="_blank">GitHub Repo</a>
@@ -449,8 +449,8 @@ const html = `<!doctype html>
     </div>
     <div class="project-tech">React · TypeScript · Tailwind CSS · Spring Boot · Computer Vision</div>
     <ul class="project-desc">
-      <li>Web application analyzing candidate webcam video to track facial expressions, focus levels, and emotional cues.</li>
-      <li>Built webcam recording interface and interactive visual timeline feedback reports to summarize candidate responses.</li>
+      <li>Built an AI mock-interview tool that records webcam video and analyzes facial expressions and eye contact.</li>
+      <li>Designed an interactive feedback dashboard with a visual timeline to summarize response performance.</li>
     </ul>
     <div class="project-links">
       Link: <a href="https://github.com/OnlyDev321/deepterview-v2" target="_blank">GitHub Repo</a>
@@ -468,16 +468,15 @@ const html = `<!doctype html>
     </div>
     <div class="project-tech">React · TypeScript · Express.js · WebSocket · Tailwind CSS</div>
     <ul class="project-desc">
-      <li>Real-time chat web app supporting live messaging, user presence status, and typing indicators via WebSockets.</li>
-      <li>Engineered auto-reconnect logic upon network interruptions with an ergonomic, responsive interface.</li>
+      <li>Real-time chat web app featuring instant messaging, live typing indicators, and user presence status.</li>
+      <li>Implemented WebSocket auto-reconnect logic to ensure smooth, uninterrupted messaging on mobile and desktop.</li>
     </ul>
     <div class="project-links">
       Links: <a href="https://moji-frontend.vercel.app/" target="_blank">Live Demo</a><span class="sep">|</span><a href="https://github.com/OnlyDev321/MOJI" target="_blank">GitHub Repo</a>
     </div>
   </div>
-</div>
 
- <!-- 6. todoX -->
+  <!-- 6. todoX -->
   <div class="project-item">
     <div class="project-header">
       <div>
@@ -486,15 +485,16 @@ const html = `<!doctype html>
       </div>
       <span class="meta-date">2025</span>
     </div>
-   <div class="project-tech">React · Node.js · MongoDB · Tailwind CSS · shadcn/ui</div>
+    <div class="project-tech">React · Node.js · MongoDB · Tailwind CSS · shadcn/ui</div>
     <ul class="project-desc">
-      <li>Lightweight task tracker with custom theme palettes, real-time tag search, and completion status filtering.</li>
-      <li>Stores data directly in browser LocalStorage for instant, zero-login offline usage and fast responsiveness.</li>
+      <li>Lightweight task tracker with custom color themes, instant tag search, and quick status filtering.</li>
+      <li>Stored data locally with LocalStorage for fast, zero-login offline use and clean user interface.</li>
     </ul>
     <div class="project-links">
       Links: <a href="https://todox-jo2t.onrender.com/" target="_blank">Live Demo</a><span class="sep">|</span><a href="https://github.com/OnlyDev321/todoX" target="_blank">GitHub Repo</a>
     </div>
   </div>
+</div>
 
 <!-- Skills & Languages -->
 <div class="section">
