@@ -462,7 +462,7 @@ const html = `<!doctype html>
     <div class="project-tech">React · TypeScript · Tailwind CSS · Spring Boot · Computer Vision</div>
     <ul class="project-desc">
       <li>Connect models that analyze facial expressions.</li>
-      <li>Work on APIs for interview sessions and scores.</li>
+      <li>Work on APIs for interview sessions.</li>
     </ul>
     <div class="project-links">
       Link: <a href="https://github.com/OnlyDev321/deepterview-v2" target="_blank">GitHub Repo</a>
@@ -501,8 +501,8 @@ const html = `<!doctype html>
     </div>
     <div class="project-tech">React · Node.js · MongoDB · Tailwind CSS · shadcn/ui</div>
     <ul class="project-desc">
-      <li>Add tasks, tags, categories, and status options.</li>
-      <li>Build search and task completion filters.</li>
+      <li>Add tasks and status options.</li>
+      <li>Build search and task filters.</li>
     </ul>
     <div class="project-links">
       Links: <a href="https://todox-jo2t.onrender.com/" target="_blank">Live Demo</a><span class="sep">|</span><a href="https://github.com/OnlyDev321/todoX" target="_blank">GitHub Repo</a>
