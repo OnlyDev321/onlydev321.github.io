@@ -1,8 +1,8 @@
-import { useRef } from 'react'
-import { motion, useReducedMotion, useScroll, useSpring } from 'framer-motion'
-import { processSteps } from '../data/process'
-import { Container, Section, SectionHeader } from '../components/ui'
-import { Reveal } from '../components/Kinetic'
+import { useRef } from "react";
+import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
+import { processSteps } from "../data/process";
+import { Container, Section, SectionHeader } from "../components/ui";
+import { Reveal } from "../components/Kinetic";
 
 /* -------------------------------------------------------------------------- *
  *  PROCESS — earned 01..05 indices as a vertical stepped list on a hairline.  *
@@ -19,15 +19,19 @@ import { Reveal } from '../components/Kinetic'
  * -------------------------------------------------------------------------- */
 
 export default function Process() {
-  const reduce = useReducedMotion()
-  const railRef = useRef<HTMLDivElement>(null)
+  const reduce = useReducedMotion();
+  const railRef = useRef<HTMLDivElement>(null);
 
   /* Accent draw-line: scaleY fills the rail in step with scroll progress. */
   const { scrollYProgress } = useScroll({
     target: railRef,
-    offset: ['start 70%', 'end 60%'],
-  })
-  const drawScale = useSpring(scrollYProgress, { stiffness: 120, damping: 28, mass: 0.4 })
+    offset: ["start 70%", "end 60%"],
+  });
+  const drawScale = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 28,
+    mass: 0.4,
+  });
 
   return (
     <Section id="process" aria-labelledby="process-heading">
@@ -35,7 +39,12 @@ export default function Process() {
         <SectionHeader
           index="03"
           label="PROCESS"
-          title={['From idea to ', <span key="deploy" className="serif-italic">deploy.</span>]}
+          title={[
+            "From idea to ",
+            <span key="deploy" className="serif-italic">
+              deploy.
+            </span>,
+          ]}
           lede="The same five steps every time, whether it is a small app or a bigger system."
           id="process-heading"
         />
@@ -55,10 +64,10 @@ export default function Process() {
 
           <ol className="relative">
             {processSteps.map((step, i) => (
-              <li key={step.id} className="relative">
+              <li key={step.id} className="relative pb-6 sm:pb-10 last:pb-0">
                 <Reveal
                   delay={i * 0.08}
-                  className="grid grid-cols-1 pb-12 last:pb-0 sm:grid-cols-[5.5rem_1fr] sm:gap-x-8 sm:pb-16"
+                  className="grid grid-cols-1 sm:grid-cols-[5.5rem_1fr] sm:gap-x-8"
                 >
                   {/* Rail node dot — the one chrome accent, centered on the hairline. */}
                   <span
@@ -83,7 +92,7 @@ export default function Process() {
                       {step.body}
                     </p>
                     <ul className="mt-5 flex flex-wrap gap-2.5">
-                      {step.artifacts.map(artifact => (
+                      {step.artifacts.map((artifact) => (
                         <li
                           key={artifact}
                           className="chip inline-flex min-h-[1.9rem] items-center px-3 py-1"
@@ -100,5 +109,5 @@ export default function Process() {
         </div>
       </Container>
     </Section>
-  )
+  );
 }
