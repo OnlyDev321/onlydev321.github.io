@@ -382,6 +382,13 @@ const html = `<!doctype html>
       <span><a href="https://drive.google.com/file/d/13mtINXR8kFavMt-cp7zj3X_9ZzGB2ldQ/view?usp=sharing" target="_blank" class="reward-link">Reward ↗</a></span>
     </div>
     <div class="award-sub">Seoul National University Institute</div>
+        <div class="award-item">
+          <div class="award-row">
+            <span class="award-name">• FunPik — <strong>7th Place</strong></span>
+            <span><a href="https://drive.google.com/file/d/16uWw6OEvT4tEpSv1XhJuL1Vp8qbO8Vpm/view" target="_blank" class="reward-link">Reward ↗</a></span>
+          </div>
+          <div class="award-sub">iDesignLab Co., Ltd</div>
+        </div>
   </div>
 </div>
 
@@ -555,9 +562,10 @@ async function run() {
     margin: {
       top: "5mm",
       bottom: "5mm",
-      left: "8mm",
-      right: "8mm",
+      left: "5mm",
+      right: "5mm",
     },
+    scale: 0.95,
   });
   await browser.close();
   console.log("✅ Generated public/resume.pdf successfully!");
