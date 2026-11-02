@@ -9,7 +9,15 @@ import {
   Search,
   Sun,
 } from 'lucide-react'
-import { GithubIcon, FacebookIcon, InstagramIcon } from './SocialIcons'
+import {
+  GithubIcon,
+  LinkedinIcon,
+  XIcon,
+  FacebookIcon,
+  InstagramIcon,
+  ThreadsIcon,
+  TiktokIcon,
+} from './SocialIcons'
 import { projects } from '../data/projects'
 import { scrollToId } from '../lib/smoothScroll'
 import { useModalA11y } from '../hooks/useModalA11y'
@@ -115,6 +123,26 @@ export default function CommandPalette({ open, onClose, theme, onToggleTheme }: 
         external: true,
       },
       {
+        id: 'link-linkedin',
+        group: 'Links',
+        label: 'LinkedIn',
+        hint: 'linkedin.com/in/jinho-kim',
+        icon: <LinkedinIcon size={ICON} />,
+        keywords: 'linkedin professional network jinho kim work resume cv',
+        href: 'https://www.linkedin.com/in/jinho-kim-a33a13440/',
+        external: true,
+      },
+      {
+        id: 'link-x',
+        group: 'Links',
+        label: 'X (Twitter)',
+        hint: 'x.com/OnlyDev321',
+        icon: <XIcon size={ICON} />,
+        keywords: 'x twitter social OnlyDev321 post feed tweet',
+        href: 'https://x.com/OnlyDev321',
+        external: true,
+      },
+      {
         id: 'link-facebook',
         group: 'Links',
         label: 'Facebook',
@@ -128,10 +156,30 @@ export default function CommandPalette({ open, onClose, theme, onToggleTheme }: 
         id: 'link-instagram',
         group: 'Links',
         label: 'Instagram',
-        hint: 'instagram.com/kim_jinho2412',
+        hint: 'instagram.com/onlyd.jinho',
         icon: <InstagramIcon size={ICON} />,
-        keywords: 'instagram social kim jinho',
-        href: 'https://www.instagram.com/kim_jinho2412/',
+        keywords: 'instagram social onlyd jinho',
+        href: 'https://www.instagram.com/onlyd.jinho/',
+        external: true,
+      },
+      {
+        id: 'link-threads',
+        group: 'Links',
+        label: 'Threads',
+        hint: 'threads.net/@onlyd.jinho',
+        icon: <ThreadsIcon size={ICON} />,
+        keywords: 'threads social onlyd jinho',
+        href: 'https://www.threads.net/@onlyd.jinho',
+        external: true,
+      },
+      {
+        id: 'link-tiktok',
+        group: 'Links',
+        label: 'TikTok',
+        hint: 'tiktok.com/@onlyd.jinho',
+        icon: <TiktokIcon size={ICON} />,
+        keywords: 'tiktok social onlyd jinho video',
+        href: 'https://www.tiktok.com/@onlyd.jinho',
         external: true,
       },
       {

@@ -1,8 +1,11 @@
 import { ArrowUp } from "lucide-react";
 import {
   GithubIcon,
-  InstagramIcon,
+  LinkedinIcon,
+  XIcon,
   FacebookIcon,
+  InstagramIcon,
+  ThreadsIcon,
   TiktokIcon,
 } from "../components/SocialIcons";
 import { Container } from "../components/ui";
@@ -32,17 +35,32 @@ const connect = [
     label: "GitHub · OnlyDev321",
   },
   {
+    href: "https://www.linkedin.com/in/jinho-kim-a33a13440/",
+    icon: <LinkedinIcon size={16} />,
+    label: "LinkedIn · Kim Jin-ho",
+  },
+  {
+    href: "https://x.com/OnlyDev321",
+    icon: <XIcon size={16} />,
+    label: "X · OnlyDev321",
+  },
+  {
     href: "https://www.facebook.com/tran.hau.691306/",
     icon: <FacebookIcon size={16} />,
     label: "Facebook",
   },
   {
-    href: "https://www.instagram.com/kim_jinho2412/",
+    href: "https://www.instagram.com/onlyd.jinho/",
     icon: <InstagramIcon size={16} />,
     label: "Instagram",
   },
   {
-    href: "https://www.tiktok.com/@kim_jinho2412",
+    href: "https://www.threads.net/@onlyd.jinho",
+    icon: <ThreadsIcon size={16} />,
+    label: "Threads",
+  },
+  {
+    href: "https://www.tiktok.com/@onlyd.jinho",
     icon: <TiktokIcon size={16} />,
     label: "TikTok",
   },

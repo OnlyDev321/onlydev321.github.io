@@ -2,9 +2,12 @@
   Software Engineer: Tran Hau (김진호 / OnlyDev)
   Contact:    onlydev.321 [at] gmail.com
   GitHub:     https://github.com/OnlyDev321
+  LinkedIn:   https://www.linkedin.com/in/jinho-kim-a33a13440/
+  X:          https://x.com/OnlyDev321
   Facebook:   https://www.facebook.com/tran.hau.691306/
-  Instagram:  https://www.instagram.com/kim_jinho2412/
-  TikTok:     https://www.tiktok.com/@kim_jinho2412
+  Instagram:  https://www.instagram.com/onlyd.jinho/
+  Threads:    https://www.threads.net/@onlyd.jinho
+  TikTok:     https://www.tiktok.com/@onlyd.jinho
   From:       Seoul, South Korea (Soongsil University) & Vietnam
   Goal:       Full-Stack Development & Bridge Software Engineer (BrSE)
 

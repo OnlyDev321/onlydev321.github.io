@@ -8,8 +8,11 @@ import {
 import { ArrowDown, ArrowRight, Download } from "lucide-react";
 import {
   GithubIcon,
-  InstagramIcon,
+  LinkedinIcon,
+  XIcon,
   FacebookIcon,
+  InstagramIcon,
+  ThreadsIcon,
   TiktokIcon,
 } from "../components/SocialIcons";
 import LocalTime from "../components/LocalTime";
@@ -35,17 +38,32 @@ const socials = [
     label: "GitHub",
   },
   {
+    href: "https://www.linkedin.com/in/jinho-kim-a33a13440/",
+    icon: <LinkedinIcon size={16} />,
+    label: "LinkedIn",
+  },
+  {
+    href: "https://x.com/OnlyDev321",
+    icon: <XIcon size={16} />,
+    label: "X",
+  },
+  {
     href: "https://www.facebook.com/tran.hau.691306/",
     icon: <FacebookIcon size={16} />,
     label: "Facebook",
   },
   {
-    href: "https://www.instagram.com/kim_jinho2412/",
+    href: "https://www.instagram.com/onlyd.jinho/",
     icon: <InstagramIcon size={16} />,
     label: "Instagram",
   },
   {
-    href: "https://www.tiktok.com/@kim_jinho2412",
+    href: "https://www.threads.net/@onlyd.jinho",
+    icon: <ThreadsIcon size={16} />,
+    label: "Threads",
+  },
+  {
+    href: "https://www.tiktok.com/@onlyd.jinho",
     icon: <TiktokIcon size={16} />,
     label: "TikTok",
   },
@@ -249,7 +267,7 @@ export default function Hero() {
                 aria-hidden="true"
                 className="hidden h-3 w-px bg-[color:var(--line-strong)] sm:block"
               />
-              <ul className="flex items-center gap-2">
+              <ul className="flex flex-wrap items-center gap-2">
                 {socials.map((s) => (
                   <li key={s.label}>
                     <a

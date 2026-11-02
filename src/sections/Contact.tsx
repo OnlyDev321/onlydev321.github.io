@@ -2,8 +2,11 @@ import { useRef, useState, type FormEvent } from "react";
 import { Mail, MapPin, Copy, Check, Send } from "lucide-react";
 import {
   GithubIcon,
-  InstagramIcon,
+  LinkedinIcon,
+  XIcon,
   FacebookIcon,
+  InstagramIcon,
+  ThreadsIcon,
   TiktokIcon,
 } from "../components/SocialIcons";
 import { Container, Section, SectionHeader } from "../components/ui";
@@ -31,6 +34,20 @@ const channels = [
     external: true,
   },
   {
+    icon: <LinkedinIcon size={16} />,
+    label: "LinkedIn",
+    handle: "Kim Jin-ho",
+    href: "https://www.linkedin.com/in/jinho-kim-a33a13440/",
+    external: true,
+  },
+  {
+    icon: <XIcon size={16} />,
+    label: "X (Twitter)",
+    handle: "@OnlyDev321",
+    href: "https://x.com/OnlyDev321",
+    external: true,
+  },
+  {
     icon: <FacebookIcon size={16} />,
     label: "Facebook",
     handle: "Tran Hau",
@@ -40,15 +57,22 @@ const channels = [
   {
     icon: <InstagramIcon size={16} />,
     label: "Instagram",
-    handle: "@kim_jinho2412",
-    href: "https://www.instagram.com/kim_jinho2412/",
+    handle: "@onlyd.jinho",
+    href: "https://www.instagram.com/onlyd.jinho/",
+    external: true,
+  },
+  {
+    icon: <ThreadsIcon size={16} />,
+    label: "Threads",
+    handle: "@onlyd.jinho",
+    href: "https://www.threads.net/@onlyd.jinho",
     external: true,
   },
   {
     icon: <TiktokIcon size={16} />,
     label: "TikTok",
-    handle: "@kim_jinho2412",
-    href: "https://www.tiktok.com/@kim_jinho2412",
+    handle: "@onlyd.jinho",
+    href: "https://www.tiktok.com/@onlyd.jinho",
     external: true,
   },
   {
@@ -207,7 +231,7 @@ export default function Contact() {
               </button>
 
               {/* Channels */}
-              <ul className="mt-auto flex flex-col gap-1 border-t border-[color:var(--line)] pt-5">
+              <ul className="mt-auto grid grid-cols-1 gap-1 border-t border-[color:var(--line)] pt-5 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2">
                 {channels.map((c) => (
                   <li key={c.label}>
                     <a
