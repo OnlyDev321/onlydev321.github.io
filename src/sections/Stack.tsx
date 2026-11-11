@@ -17,9 +17,10 @@ import { Reveal } from '../components/Kinetic'
 
 /* Layer order, top of the stack to the surface, with editorial relabels. */
 const layers: { category: string; label: string }[] = [
-  { category: 'Core', label: 'Languages' },
-  { category: 'Web', label: 'Web' },
-  { category: 'Backend', label: 'Backend & database' },
+  { category: 'Core', label: 'Programming Languages' },
+  { category: 'Frontend', label: 'Frontend' },
+  { category: 'Backend', label: 'Backend' },
+  { category: 'Database', label: 'Database' },
   { category: 'AI', label: 'AI' },
   { category: 'Systems', label: 'Tools & deployment' },
   { category: 'Design', label: 'Design' },
@@ -47,11 +48,11 @@ export default function Stack() {
                 key={layer.category}
                 as="div"
                 delay={i * 0.06}
-                className="grid gap-x-10 gap-y-5 border-t border-[color:var(--line)] py-8 sm:py-10 lg:grid-cols-[200px_1fr] lg:gap-x-14"
+                className="grid gap-x-10 gap-y-5 border-t border-[color:var(--line)] py-8 sm:py-10 lg:grid-cols-[260px_1fr] lg:gap-x-14"
               >
                 {/* Left rail — the layer name + a mono count for systems legibility. */}
                 <div className="lg:pt-1">
-                  <h3 className="text-h3 font-display text-[color:var(--ink)]">{layer.label}</h3>
+                  <h3 className="text-h3 font-display text-[color:var(--ink)] whitespace-nowrap">{layer.label}</h3>
                   <span className="mt-1.5 block font-mono text-eyebrow uppercase tracking-[0.16em] text-[color:var(--ink-faint)]">
                     {String(items.length).padStart(2, '0')} tools
                   </span>

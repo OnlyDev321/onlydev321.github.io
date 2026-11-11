@@ -77,10 +77,7 @@ export default function Footer() {
       <Container>
         {/* ---- Mega-signature ---- */}
         <div className="block w-full text-left font-display text-xl sm:text-2xl font-bold tracking-[-0.02em] text-[color:var(--ink)]">
-          Tran{" "}
-          <span className="serif-italic text-[color:var(--ink)]">
-            Hau
-          </span>
+          Tran <span className="serif-italic text-[color:var(--ink)]">Hau</span>
           <span
             aria-hidden="true"
             className="serif-italic text-[color:var(--accent-strong)]"
@@ -94,7 +91,7 @@ export default function Footer() {
 
         <p className="mt-3 max-w-[60ch] text-body text-[color:var(--ink-muted)]">
           Software Engineer based in Seoul, South Korea. Studying at Soongsil
-          University and engineering open-source projects on GitHub.
+          University and open-source projects on GitHub.
         </p>
 
         {/* ---- Columns: Status · Sitemap · Connect (stack on mobile) ---- */}

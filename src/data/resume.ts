@@ -49,22 +49,24 @@ export const skills: Skill[] = [
   { name: "Java", category: "Core" },
   { name: "C", category: "Core" },
 
-  // Web — building the pages users see
-  { name: "HTML", category: "Web" },
-  { name: "CSS", category: "Web" },
-  { name: "React", category: "Web" },
-  { name: "Tailwind CSS", category: "Web" },
+  // Frontend
+  { name: "HTML", category: "Frontend" },
+  { name: "CSS", category: "Frontend" },
+  { name: "React", category: "Frontend" },
+  { name: "Tailwind CSS", category: "Frontend" },
 
-  // Backend & data — the server and the database
+  // Backend
   { name: "Spring Boot", category: "Backend" },
   { name: "Node.js", category: "Backend" },
   // { name: "Express.js", category: "Backend" },
   // { name: "NestJS", category: "Backend" },
   // { name: "REST APIs", category: "Backend" },
   // { name: "WebSockets", category: "Backend" },
-  // { name: "MySQL", category: "Backend" },
-  // { name: "MongoDB", category: "Backend" },
-  // { name: "PostgreSQL", category: "Backend" },
+
+  // Database
+  { name: "MySQL", category: "Database" },
+  { name: "PostgreSQL", category: "Database" },
+  // { name: "MongoDB", category: "Database" },
 
   // AI / ML — the parts that read or understand something
   // { name: "Emotion detection", category: "AI" },
